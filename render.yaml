@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: thrunox-systems
+    runtime: static
+    buildCommand: mkdir -p dist && cp index.html logo.png dist/
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
