@@ -1,53 +1,1780 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#071525">
-  <title>Thrunox Systems | Structured execution for complex business</title>
-  <meta name="description" content="Thrunox Systems turns strategy into accountable execution across operations, RCM, compliance, licensing and ESG advisory.">
-  <link rel="icon" href="logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrunox Systems | Notions in Motion, Results in Reality</title>
+  <meta name="description" content="Thrunox Systems translates strategy into execution through structured, scalable, and compliant systems across Operations & Supply Chain, US Healthcare RCM, Licensing & Liaisoning, Digital Compliance, and ESG Advisory.">
+  <link rel="icon" href="logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              slate: '#0b1120',
+              card: '#111b2e'
+            }
+          },
+          animation: {
+            'float': 'floating 6s ease-in-out infinite',
+            'float-slow': 'floating 9s ease-in-out infinite reverse',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s infinite linear',
+            'text-shine': 'textShine 4s linear infinite',
+            'pulse-ring': 'pulseRing 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
+          },
+          keyframes: {
+            floating: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+              '50%': { opacity: '0.6', transform: 'scale(1.05)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' }
+            },
+            textShine: {
+              '0%': { backgroundPosition: '0% 50%' },
+              '100%': { backgroundPosition: '200% 50%' }
+            },
+            pulseRing: {
+              '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+              '50%': { transform: 'scale(1.4)', opacity: '0' },
+              '100%': { transform: 'scale(1.4)', opacity: '0' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root{--navy:#071525;--ink:#102238;--muted:#5f7084;--paper:#f7f9fc;--line:#dce4ed;--brand:#0872c6;--aqua:#119d90;--shadow:0 18px 42px #112a431a;--radius:18px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}a{color:inherit;text-decoration:none}button{font:inherit}.container{width:min(1160px,calc(100% - 40px));margin:auto}.skip{position:fixed;top:-70px;left:16px;z-index:100;background:#fff;padding:.7rem 1rem;border-radius:8px;font-weight:700}.skip:focus{top:16px}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #f0ad3d;outline-offset:3px}.eyebrow{display:inline-flex;align-items:center;gap:.5rem;color:#075491;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:"";width:22px;height:2px;background:var(--aqua)}h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.04em;line-height:1.1}h1,h2,h3,p{margin-top:0}h2{margin:.75rem 0 1rem;font-size:clamp(2rem,4vw,3.05rem)}.section{padding:94px 0}.section-head{max-width:690px;margin-bottom:42px}.section-head p{color:var(--muted);font-size:1.05rem}.button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:45px;padding:.72rem 1rem;border:1px solid transparent;border-radius:9px;background:var(--brand);color:#fff;font-size:.84rem;font-weight:800;cursor:pointer;transition:.18s}.button:hover{background:#075491;transform:translateY(-1px);box-shadow:0 8px 18px #0872c633}.button.secondary{color:#075491;background:#edf7ff;border-color:#c8e4fa}.topbar{background:#06111f;color:#c7d3df;font-size:.76rem}.topbar .container{min-height:34px;display:flex;justify-content:space-between;align-items:center;gap:1rem}.credentials,.top-actions{display:flex;gap:1rem;flex-wrap:wrap}.verified{color:#b8eadb;font-weight:700}.verified:before{content:"";display:inline-block;width:.45rem;height:.45rem;margin-right:.4rem;border-radius:50%;background:#2cc89b}.top-actions a:hover{color:#fff}.header{position:sticky;top:0;z-index:50;background:#fffffff5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav-wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:flex;align-items:center;gap:.7rem}.brand img{width:130px;height:42px;object-fit:contain;border-radius:7px}.brand-copy{padding-left:.7rem;border-left:1px solid var(--line)}.brand-copy b{display:block;font:800 .83rem/1.1 Manrope}.brand-copy span{display:block;margin-top:.15rem;color:var(--muted);font-size:.61rem;letter-spacing:.07em;text-transform:uppercase}.nav{display:flex;align-items:center;gap:1.5rem;margin-left:auto}.nav a{color:#405168;font-size:.81rem;font-weight:700}.nav a:hover{color:var(--brand)}.nav-cta{min-height:40px;padding:.55rem .85rem}.menu{display:none;width:44px;height:44px;padding:0;background:#fff;color:var(--navy);border:1px solid var(--line)}.mobile-nav{display:none;padding-bottom:1rem;border-top:1px solid var(--line)}.mobile-nav.open{display:grid}.mobile-nav a{padding:.8rem .2rem;border-bottom:1px solid var(--line);font-weight:700;color:#405168}
-    .hero{position:relative;overflow:hidden;color:#f8fbff;background:var(--navy)}.hero:before{content:"";position:absolute;top:-360px;right:-260px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,#1f9ebf66,transparent 66%)}.hero:after{content:"";position:absolute;inset:0;opacity:.23;background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.13fr .87fr;gap:5rem;align-items:center;padding:100px 0 88px}.hero .eyebrow{color:#9ee8df}.hero .eyebrow:before{background:#9ee8df}h1{max-width:710px;margin:1rem 0 1.4rem;font-size:clamp(2.7rem,5vw,4.75rem)}h1 em{color:#65d4c7;font-style:normal}.hero-copy{max-width:640px;color:#c7d8e7;font-size:1.08rem}.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}.hero .secondary{color:#edf7ff;background:transparent;border-color:#ffffff47}.hero .secondary:hover{background:#ffffff19}.hero-points{display:flex;flex-wrap:wrap;gap:1.1rem;margin:2rem 0 0;padding:0;list-style:none;color:#b6c9da;font-size:.82rem;font-weight:600}.hero-points li{display:flex;gap:.35rem;align-items:center}.hero-points i{width:16px;color:#65d4c7}.route{padding:1.5rem;border:1px solid #a3cae640;border-radius:var(--radius);background:#0c243db8;box-shadow:0 28px 60px #00000038;backdrop-filter:blur(10px)}.route-label{margin:0 0 .85rem;color:#aabfd3;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-bottom:1.3rem;padding:.3rem;border-radius:10px;background:#ffffff12}.tabs button{border:0;border-radius:7px;padding:.72rem .5rem;color:#b8c8d7;background:transparent;font-size:.75rem;font-weight:800;cursor:pointer}.tabs button[aria-selected=true]{color:#05243f;background:#eaf9f7}.route h2{margin:0 0 .7rem;color:#fff;font-size:1.5rem}.route p:not(.route-label){color:#bdd0e0;font-size:.9rem}.route-list{display:grid;gap:.6rem;margin:0;padding:0;list-style:none}.route-list li{display:grid;grid-template-columns:29px 1fr;gap:.65rem;align-items:center;min-height:50px;padding:.55rem;border-top:1px solid #ffffff1c;color:#d8e4ed;font-size:.78rem}.route-list i{display:grid;place-items:center;width:29px;height:29px;color:#75ddd2;border-radius:7px;background:#65d4c71f}.route-list b{display:block;color:#fff;font-size:.83rem}
-    .trust{background:#fff;border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);align-items:stretch}.trust-item{display:flex;align-items:center;gap:.7rem;min-height:90px;padding:1rem 1.25rem;border-right:1px solid var(--line)}.trust-item:last-child{border:0}.trust-item i{flex:0 0 auto;color:var(--brand)}.trust-item strong{display:block;font-size:.78rem}.trust-item span{display:block;color:var(--muted);font-size:.71rem}.trust-title{color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.075em;line-height:1.35;text-transform:uppercase}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}.card{display:flex;min-height:360px;flex-direction:column;padding:1.6rem;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:.2s}.card:hover{border-color:#aacde7;box-shadow:var(--shadow);transform:translateY(-3px)}.icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:1.35rem;border-radius:12px;color:#075491;background:#e9f5fe}.card:nth-child(2) .icon,.card:nth-child(5) .icon{color:#078273;background:#e6f7f4}.card:nth-child(3) .icon{color:#a2600b;background:#fff4de}.card:nth-child(4) .icon{color:#7552ab;background:#f1edfb}.number{color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.card h3{margin:.65rem 0 .7rem;font-size:1.26rem}.card p{color:var(--muted);font-size:.9rem}.card ul{display:grid;gap:.5rem;margin:1rem 0 1.3rem;padding:0;list-style:none;color:#465a70;font-size:.8rem}.card li{display:flex;gap:.5rem}.card li:before{content:"";width:6px;height:6px;flex:0 0 auto;margin-top:.4rem;border-radius:50%;background:var(--aqua)}.text-link{display:inline-flex;align-items:center;gap:.35rem;margin-top:auto;color:#075491;font-size:.82rem;font-weight:800}.text-link i{width:16px;transition:.18s}.text-link:hover i{transform:translateX(3px)}
-    .proof{color:#e9f5fc;background:var(--navy)}.proof-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:5rem;align-items:center}.proof .eyebrow{color:#92dcd5}.proof .eyebrow:before{background:#92dcd5}.proof h2{color:#fff}.proof .section-head{margin-bottom:0}.proof .section-head p{color:#bed0df}.proof-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.proof-item{min-height:142px;padding:1.25rem;border:1px solid #add1eb2e;border-radius:14px;background:#ffffff0b}.proof-item i{color:#68d2c6;width:21px}.proof-item h3{margin:1rem 0 .4rem;color:#fff;font-size:.96rem;letter-spacing:-.02em}.proof-item p{margin:0;color:#bcd0df;font-size:.79rem}.process{background:#fff}.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}.steps:before{content:"";position:absolute;top:26px;left:12%;right:12%;height:1px;background:var(--line)}.step{position:relative;z-index:1}.step-index{display:grid;place-items:center;width:53px;height:53px;margin-bottom:1.2rem;color:#075491;border:1px solid #b9dcf5;border-radius:50%;background:#edf8ff;font:800 .9rem Manrope}.step h3{margin-bottom:.55rem;font-size:1.1rem}.step p{color:var(--muted);font-size:.86rem}.markets{background:#eef5f9}.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.market{padding:clamp(1.5rem,3vw,2.4rem);border:1px solid #d7e5ed;border-radius:var(--radius);background:#fff}.market>i{width:28px;height:28px;color:var(--brand)}.market h3{margin:1rem 0 .7rem;font-size:1.4rem}.market>p{color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}.tags span{padding:.38rem .64rem;border:1px solid #dce7ef;border-radius:99px;color:#40566f;background:#f8fbfd;font-size:.74rem;font-weight:700}
-    .scope{color:#eaf4fa;background:linear-gradient(135deg,#08213a,#0a4264)}.scope-box{display:grid;grid-template-columns:.77fr 1.23fr;gap:4rem;align-items:center;padding:clamp(1.7rem,5vw,4.4rem);border:1px solid #ceedf833;border-radius:24px;background:#03111f47}.scope h2{margin:.8rem 0 1rem;color:#fff}.scope p{color:#c1d8e7}.scope .eyebrow{color:#82e0d5}.scope .eyebrow:before{background:#82e0d5}.form{display:grid;gap:1.15rem}.field{margin:0;padding:0;border:0}.field legend{margin-bottom:.6rem;color:#d6e8f3;font-size:.76rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}.choice{position:relative;display:block;cursor:pointer}.choice input{position:absolute;opacity:0}.choice span{display:block;min-height:51px;padding:.62rem .5rem;border:1px solid #d2e9f752;border-radius:9px;color:#d9e8f0;background:#ffffff0f;font-size:.77rem;font-weight:700;text-align:center;transition:.18s}.choice input:checked+span{color:#05314a;border-color:#a3eadf;background:#a8e8df}.result{min-height:111px;padding:1rem 1.1rem;border-left:3px solid #6fddd0;border-radius:4px 10px 10px 4px;background:#00000029}.result strong{display:block;color:#9ce4db;font-size:.81rem}.result p{margin:.35rem 0 0;color:#e5f0f5;font-size:.86rem}.result .button{min-height:39px;margin-top:.75rem;padding:.5rem .8rem;background:#2cc5b2;color:#042535}.labs{background:#fff}.labs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.lab{padding:1.3rem;border:1px solid var(--line);border-radius:14px;background:#fff}.lab i{color:var(--brand)}.lab span{display:block;margin-top:1.1rem;color:var(--aqua);font-size:.67rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.lab h3{margin:.45rem 0 .6rem;font-size:1rem}.lab p{margin:0;color:var(--muted);font-size:.8rem}.cta{color:#fff;background:#071525}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:60px 0}.cta h2{margin:0 0 .7rem;color:#fff;font-size:clamp(1.8rem,3vw,2.5rem)}.cta p{margin:0;color:#c6d5e2}.cta-actions{display:flex;flex-wrap:wrap;gap:.75rem;min-width:max-content}.cta .secondary{color:#fff;background:transparent;border-color:#ffffff59}.cta .secondary:hover{background:#ffffff19}footer{color:#91a3b4;background:#040c16}.footer-main{display:grid;grid-template-columns:1.3fr .7fr .8fr;gap:3rem;padding:48px 0 34px}.footer-brand img{width:142px;border-radius:7px;background:#fff}.footer-brand p{max-width:300px;margin:1rem 0 0;font-size:.82rem}.footer-group h3{margin:0 0 1rem;color:#e6f0f8;font-size:.86rem}.footer-group a,.footer-group p{display:block;margin:0 0 .65rem;font-size:.82rem}.footer-group a:hover{color:#fff}.footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding:18px 0;border-top:1px solid #ffffff1a;font-size:.73rem}.whatsapp{position:fixed;right:20px;bottom:20px;z-index:45;display:grid;place-items:center;width:52px;height:52px;color:#fff;border:2px solid #fff;border-radius:50%;background:#1ebd79;box-shadow:0 8px 25px #0324184d}.whatsapp:hover{background:#159b63;transform:translateY(-2px)}
-    @media(max-width:1040px){.nav{display:none}.menu{display:grid;place-items:center}.hero-grid{gap:2.5rem}.service-grid{grid-template-columns:repeat(2,1fr)}.labs-grid{grid-template-columns:repeat(2,1fr)}.trust-grid{grid-template-columns:repeat(3,1fr)}.trust-title{grid-column:span 3;min-height:52px}}@media(max-width:760px){.container{width:min(100% - 32px,1160px)}.topbar .container{min-height:42px;justify-content:center}.credentials span:not(.verified),.top-actions{display:none}.brand-copy{display:none}.hero-grid,.proof-grid,.scope-box,.cta-inner{grid-template-columns:1fr;gap:2rem}.hero-grid{padding:65px 0 62px}h1{font-size:clamp(2.42rem,12vw,3.55rem)}.hero-copy{font-size:1rem}.route{padding:1.15rem}.trust-grid{grid-template-columns:1fr 1fr}.trust-title{grid-column:span 2}.trust-item{min-height:82px;padding:.85rem}.trust-item:nth-child(3){border-right:0}.section{padding:68px 0}.section-head{margin-bottom:32px}.service-grid,.market-grid{grid-template-columns:1fr}.card{min-height:auto}.steps{grid-template-columns:1fr 1fr;gap:1.5rem 1rem}.steps:before{display:none}.labs-grid{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.cta-actions{min-width:0;width:100%}.cta-actions .button{flex:1}.footer-main{grid-template-columns:1fr;gap:1.4rem}.footer-bottom{display:block}.footer-bottom span+span{display:block;margin-top:.5rem}}@media(max-width:410px){.nav-cta{display:none}.hero-actions .button{width:100%}.trust-grid,.proof-list,.steps{grid-template-columns:1fr}.trust-title{grid-column:auto}.trust-item{border-right:0;border-bottom:1px solid var(--line)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-    /* Guard against decorative elements creating a horizontal mobile scroll. */
-    body { overflow-x: hidden; }
+    /* Glassmorphism & High-tech Glow Effects */
+    .glass-card {
+      background: rgba(17, 27, 46, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.25);
+    }
+    .neon-glow {
+      box-shadow: 0 0 35px -5px rgba(2, 132, 199, 0.3);
+    }
+    .gradient-border {
+      position: relative;
+      border-radius: 1rem;
+    }
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.5), rgba(16, 185, 129, 0.5), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .text-gradient-shine {
+      background: linear-gradient(90deg, #38bdf8 0%, #34d399 25%, #f8fafc 50%, #38bdf8 75%, #34d399 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textShine 6s linear infinite;
+    }
+
+    /* Chromatic Arc Gradient (from Thrunox Logo & LinkedIn Deck) */
+    .text-gradient-rainbow {
+      background: linear-gradient(90deg, #f59e0b 0%, #ef4444 25%, #ec4899 50%, #8b5cf6 75%, #06b6d4 100%);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    /* Subtle Dotted Matrix Pattern from Thrunox LinkedIn Deck */
+    .dotted-matrix {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+      background-size: 8px 8px;
+    }
+
+    /* High-tech Cyber Grid & Radar Scan */
+    .cyber-grid {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+    }
+    .radar-sweep {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      right: 0;
+      height: 250px;
+      background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.06), transparent);
+      animation: radarScan 12s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes radarScan {
+      0% { top: -250px; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    /* High-Tech Shooting Energy Beams / Fiber Pulses */
+    .shooting-stream {
+      position: fixed;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.9), rgba(16, 185, 129, 0.9), #fff);
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.8));
+      opacity: 0;
+      transform: rotate(-30deg);
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 9999px;
+    }
+    .shooting-stream:nth-child(1) { top: 18%; left: 15%; width: 140px; animation: shootBeam 6s infinite ease-out 0.5s; }
+    .shooting-stream:nth-child(2) { top: 35%; left: 70%; width: 200px; animation: shootBeam 8s infinite ease-out 2.8s; }
+    .shooting-stream:nth-child(3) { top: 62%; left: 25%; width: 160px; animation: shootBeam 7s infinite ease-out 4.5s; }
+    .shooting-stream:nth-child(4) { top: 80%; left: 65%; width: 180px; animation: shootBeam 9s infinite ease-out 1.2s; }
+    .shooting-stream:nth-child(5) { top: 48%; left: 40%; width: 120px; animation: shootBeam 7.5s infinite ease-out 6s; }
+
+    @keyframes shootBeam {
+      0% {
+        transform: rotate(-30deg) translateX(-150px);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.85;
+      }
+      35% {
+        transform: rotate(-30deg) translateX(450px);
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
-<body>
-<a class="skip" href="#main">Skip to main content</a>
-<div class="topbar"><div class="container"><div class="credentials"><span class="verified">MSME UDYAM-KR-03-0764425</span><span>MCA LLPIN: ACX-9472</span><span>75+ years combined leadership experience</span></div><div class="top-actions"><a href="tel:+919980182009">+91 99801 82009</a><a href="mailto:thrunoxsystems@gmail.com">thrunoxsystems@gmail.com</a></div></div></div>
-<header class="header"><div class="container nav-wrap"><a class="brand" href="#top" aria-label="Thrunox Systems home"><img src="logo.png" alt="Thrunox Systems"><span class="brand-copy"><b>Thrunox Systems</b><span>Strategize · Execute · Excel</span></span></a><nav class="nav" aria-label="Primary"><a href="#services">Capabilities</a><a href="#why">Why Thrunox</a><a href="#process">Approach</a><a href="#markets">Markets</a><a href="#labs">Labs</a></nav><div style="display:flex;gap:.6rem;align-items:center"><a class="button nav-cta" href="#scope">Discuss a requirement <i data-lucide="arrow-up-right"></i></a><button class="menu" id="menu" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation"><i data-lucide="menu"></i></button></div></div><nav class="container mobile-nav" id="mobileNav" aria-label="Mobile navigation"><a href="#services">Capabilities</a><a href="#why">Why Thrunox</a><a href="#process">Approach</a><a href="#markets">Markets</a><a href="#labs">Labs</a><a href="#scope">Discuss a requirement</a></nav></header>
-<main id="main">
-<section class="hero" id="top"><div class="container hero-grid"><div><span class="eyebrow">Notions in motion, results in reality</span><h1>Strategy is only useful when it becomes <em>execution.</em></h1><p class="hero-copy">Thrunox Systems designs and delivers the operating systems behind complex businesses—bringing structure, speed, and compliance to every critical step.</p><div class="hero-actions"><a class="button" href="#scope">Plan your next move <i data-lucide="arrow-right"></i></a><a class="button secondary" href="#services">Explore capabilities</a></div><ul class="hero-points"><li><i data-lucide="circle-check"></i>Senior-led engagements</li><li><i data-lucide="circle-check"></i>Built for accountable delivery</li><li><i data-lucide="circle-check"></i>India &amp; US operations</li></ul></div><aside class="route" aria-label="Service focus"><p class="route-label">Choose your focus</p><div class="tabs" role="tablist" aria-label="Service market"><button id="indiaTab" role="tab" aria-selected="true">India operations</button><button id="usTab" role="tab" aria-selected="false">US healthcare RCM</button></div><div id="marketContent" role="tabpanel" aria-live="polite"><h2 id="marketTitle">Turn complex operations into controlled delivery.</h2><p id="marketText">For enterprises navigating tenders, supply chains, approvals and digital compliance in India.</p><ul class="route-list" id="marketList"><li><i data-lucide="clipboard-check"></i><span><b>Bid to execution</b>Structured tender, BOQ and delivery support.</span></li><li><i data-lucide="shield-check"></i><span><b>Audit-ready by design</b>Compliance built into the operating flow.</span></li><li><i data-lucide="workflow"></i><span><b>One accountable partner</b>Clear ownership across every workstream.</span></li></ul></div></aside></div></section>
-<section class="trust"><div class="container trust-grid"><div class="trust-item trust-title">Built for regulated, high-stakes execution</div><div class="trust-item"><i data-lucide="file-check-2"></i><div><strong>GeM &amp; CPPP</strong><span>Tender operations</span></div></div><div class="trust-item"><i data-lucide="shield"></i><div><strong>HIPAA-aligned</strong><span>RCM operations</span></div></div><div class="trust-item"><i data-lucide="key-round"></i><div><strong>Class 3 DSC</strong><span>Digital compliance</span></div></div><div class="trust-item"><i data-lucide="leaf"></i><div><strong>ESG &amp; BRSR</strong><span>Responsible growth</span></div></div></div></section>
-<section class="section" id="services"><div class="container"><div class="section-head"><span class="eyebrow">Integrated capabilities</span><h2>One partner for the work that makes growth dependable.</h2><p>We connect strategy to the processes, controls and people needed to carry it through—without handing off responsibility at the difficult part.</p></div><div class="service-grid">
-<article class="card"><div class="icon"><i data-lucide="factory"></i></div><span class="number">01 · Operations</span><h3>Project management &amp; supply chain</h3><p>From bid to delivery, establish the control systems that protect margins and momentum.</p><ul><li>Tender evaluation &amp; BOQ models</li><li>Vendor coordination &amp; execution control</li><li>Scalable operating frameworks</li></ul><a class="text-link" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20need%20support%20with%20operations%20or%20a%20tender.">Discuss operations <i data-lucide="arrow-right"></i></a></article>
-<article class="card"><div class="icon"><i data-lucide="chart-no-axes-combined"></i></div><span class="number">02 · Finance &amp; RCM</span><h3>Accounting, bookkeeping &amp; revenue cycle</h3><p>Bring financial visibility and revenue discipline to a workflow that is easy to govern.</p><ul><li>US healthcare revenue-cycle support</li><li>Bookkeeping &amp; financial reporting</li><li>Denial and collection process improvement</li></ul><a class="text-link" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20would%20like%20to%20discuss%20RCM%20or%20finance%20systems.">Discuss RCM &amp; finance <i data-lucide="arrow-right"></i></a></article>
-<article class="card"><div class="icon"><i data-lucide="landmark"></i></div><span class="number">03 · Advisory</span><h3>Licensing, liaisoning &amp; strategic consulting</h3><p>Move from unclear requirements to a coordinated, approval-ready path forward.</p><ul><li>Licensing and statutory-readiness support</li><li>Stakeholder and approval coordination</li><li>Practical implementation roadmaps</li></ul><a class="text-link" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20need%20licensing%20or%20strategic%20consulting%20support.">Discuss an approval path <i data-lucide="arrow-right"></i></a></article>
-<article class="card"><div class="icon"><i data-lucide="file-key-2"></i></div><span class="number">04 · Digital compliance</span><h3>Secure, paperless execution</h3><p>Replace slow paperwork with compliant digital processes that teams can actually use.</p><ul><li>Class 3 DSC and e-signature support</li><li>Corporate USB cryptographic tokens</li><li>Compliance-friendly digital workflows</li></ul><a class="text-link" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20need%20digital%20compliance%20or%20DSC%20support.">Discuss digital compliance <i data-lucide="arrow-right"></i></a></article>
-<article class="card"><div class="icon"><i data-lucide="sprout"></i></div><span class="number">05 · ESG</span><h3>ESG advisory &amp; BRSR readiness</h3><p>Turn evolving sustainability expectations into clear reporting and operational action.</p><ul><li>BRSR reporting frameworks</li><li>Sustainability and supply-chain reviews</li><li>Governance for long-term resilience</li></ul><a class="text-link" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20would%20like%20to%20discuss%20ESG%20or%20BRSR%20readiness.">Discuss ESG readiness <i data-lucide="arrow-right"></i></a></article>
-<article class="card" style="background:#0b2945;border-color:#164b74;color:#fff"><div class="icon" style="background:#1c608e;color:#bce9ff"><i data-lucide="compass"></i></div><span class="number" style="color:#9bc9e8">Senior leadership desk</span><h3>Have a complex mandate?</h3><p style="color:#c7daea">Bring us the hard, cross-functional work. We’ll help you define the right path and own the execution architecture.</p><ul style="color:#d7e8f5"><li>Direct senior-partner access</li><li>Clear first-step recommendation</li><li>No generic hand-offs</li></ul><a class="text-link" style="color:#8de2d7" href="tel:+919980182009">Call +91 99801 82009 <i data-lucide="arrow-right"></i></a></article></div></div></section>
-<section class="section proof" id="why"><div class="container proof-grid"><div class="section-head"><span class="eyebrow">Why Thrunox</span><h2>Advice is only the beginning. We stay accountable for the outcome.</h2><p>We pair multidisciplinary leadership with hands-on execution support, so plans become reliable operating practice—not another presentation.</p><a class="button secondary" href="#process">See how we work <i data-lucide="arrow-down"></i></a></div><div class="proof-list"><article class="proof-item"><i data-lucide="users-round"></i><h3>Experienced leadership</h3><p>75+ years of combined cross-industry leadership experience.</p></article><article class="proof-item"><i data-lucide="blocks"></i><h3>Connected expertise</h3><p>Operations, finance, compliance and technology in one conversation.</p></article><article class="proof-item"><i data-lucide="target"></i><h3>Delivery-led</h3><p>Clear ownership, milestones and practical decisions from day one.</p></article><article class="proof-item"><i data-lucide="trending-up"></i><h3>Built to scale</h3><p>Systems designed to reduce rework and support sustainable growth.</p></article></div></div></section>
-<section class="section process" id="process"><div class="container"><div class="section-head"><span class="eyebrow">Our approach</span><h2>A practical route from ambiguity to control.</h2><p>Every engagement starts with the work in front of you and produces a clear, owned path to better execution.</p></div><div class="steps"><article class="step"><div class="step-index">01</div><h3>Diagnose</h3><p>Identify constraints, risks, dependencies and the operational reality behind the request.</p></article><article class="step"><div class="step-index">02</div><h3>Design</h3><p>Define the workflow, controls, commercial logic and accountable owners.</p></article><article class="step"><div class="step-index">03</div><h3>Deliver</h3><p>Execute alongside your team with an emphasis on clarity, pace and quality.</p></article><article class="step"><div class="step-index">04</div><h3>Sustain</h3><p>Transfer the systems, visibility and governance needed to keep progress intact.</p></article></div></div></section>
-<section class="section markets" id="markets"><div class="container"><div class="section-head"><span class="eyebrow">Where we work</span><h2>Built for organizations with no room for operational drift.</h2><p>We support businesses facing meaningful complexity—whether they’re scaling, regulated, or both.</p></div><div class="market-grid"><article class="market"><i data-lucide="building-2"></i><h3>India enterprise operations</h3><p>For manufacturers, engineering firms, industrial operators and emerging businesses aligning tenders, delivery, compliance and growth.</p><div class="tags"><span>Manufacturing</span><span>Engineering &amp; fabrication</span><span>Deep-tech</span><span>Growth-stage SMEs</span></div></article><article class="market"><i data-lucide="heart-pulse"></i><h3>US healthcare RCM</h3><p>For healthcare organizations that need a disciplined, HIPAA-aligned approach to revenue-cycle operations and financial workflows.</p><div class="tags"><span>Billing operations</span><span>Claim workflows</span><span>Compliance support</span><span>Revenue visibility</span></div></article></div></div></section>
-<section class="section scope" id="scope"><div class="container"><div class="scope-box"><div><span class="eyebrow">Start with a clear first step</span><h2>Tell us what needs to move.</h2><p>Select the closest need and timeframe. We’ll frame the right initial conversation—without a generic sales loop.</p></div><div class="form"><fieldset class="field"><legend>Your priority</legend><div class="choices"><label class="choice"><input type="radio" name="priority" value="operations" checked><span>Operations &amp; tender</span></label><label class="choice"><input type="radio" name="priority" value="rcm"><span>RCM &amp; finance</span></label><label class="choice"><input type="radio" name="priority" value="compliance"><span>Compliance &amp; licensing</span></label></div></fieldset><fieldset class="field"><legend>Your timing</legend><div class="choices"><label class="choice"><input type="radio" name="timing" value="urgent" checked><span>Urgent · under 48 hours</span></label><label class="choice"><input type="radio" name="timing" value="planned"><span>Planned · this quarter</span></label><label class="choice"><input type="radio" name="timing" value="ongoing"><span>Ongoing partnership</span></label></div></fieldset><div class="result" aria-live="polite"><strong id="scopeTitle">A focused operations review is the right first conversation.</strong><p id="scopeText">We’ll help you identify immediate tender and execution risks, then outline the clearest next action.</p><a id="scopeLink" class="button" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20need%20urgent%20operations%20or%20tender%20support.">Send this to Thrunox <i data-lucide="arrow-up-right"></i></a></div></div></div></div></section>
-<section class="section labs" id="labs"><div class="container"><div class="section-head"><span class="eyebrow">Thrunox Labs</span><h2>Incubating systems for the next operational challenge.</h2><p>Applied product concepts under development to solve specific execution bottlenecks across health, field operations and industry.</p></div><div class="labs-grid"><article class="lab"><i data-lucide="heart-pulse"></i><span>Digital health</span><h3>Healthcare Ops Platform</h3><p>Scheduling, workflow orchestration and EHR claim-scrubbing support.</p></article><article class="lab"><i data-lucide="siren"></i><span>Emergency care</span><h3>Disaster Triage Network</h3><p>Digital triage, bed allocation and dynamic resource dispatch.</p></article><article class="lab"><i data-lucide="truck"></i><span>Field infrastructure</span><h3>Modular Smart Mobile Lab</h3><p>Containerized mobile-lab concepts for rural health and testing.</p></article><article class="lab"><i data-lucide="layers-3"></i><span>Enterprise software</span><h3>Modular Python ERP</h3><p>Lightweight resource planning designed for industrial SMEs.</p></article></div></div></section>
-</main>
-<section class="cta"><div class="container cta-inner"><div><h2>Ready to reduce execution lag?</h2><p>Connect with the Thrunox team in Bengaluru for an informed, direct conversation.</p></div><div class="cta-actions"><a class="button" href="tel:+919980182009"><i data-lucide="phone"></i>Call +91 99801 82009</a><a class="button secondary" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%2C%20I%20would%20like%20to%20discuss%20an%20execution%20requirement."><i data-lucide="message-circle"></i>WhatsApp us</a></div></div></section>
-<footer><div class="container footer-main"><div class="footer-brand"><img src="logo.png" alt="Thrunox Systems"><p>Structured, scalable and compliant systems for businesses ready to turn strategy into reliable execution.</p></div><div class="footer-group"><h3>Explore</h3><a href="#services">Capabilities</a><a href="#why">Why Thrunox</a><a href="#process">Our approach</a><a href="#labs">Thrunox Labs</a></div><div class="footer-group"><h3>Contact</h3><a href="tel:+919980182009">+91 99801 82009</a><a href="mailto:thrunoxsystems@gmail.com">thrunoxsystems@gmail.com</a><p>BG Road, Bengaluru 560083</p><a target="_blank" href="https://linkedin.com/company/thrunoxsystems">LinkedIn</a></div></div><div class="container footer-bottom"><span>© 2026 Thrunox Systems LLP. All rights reserved.</span><span>UDYAM-KR-03-0764425 · MCA LLPIN: ACX-9472</span></div></footer>
-<a class="whatsapp" target="_blank" href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems" aria-label="Message Thrunox Systems on WhatsApp"><i data-lucide="message-circle"></i></a>
-<script>
-const icons=()=>window.lucide&&lucide.createIcons();icons();
-const menu=document.getElementById('menu'),mobile=document.getElementById('mobileNav');menu.onclick=()=>{const open=mobile.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.innerHTML='<i data-lucide="'+(open?'x':'menu')+'"></i>';icons()};mobile.querySelectorAll('a').forEach(a=>a.onclick=()=>{mobile.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.innerHTML='<i data-lucide="menu"></i>';icons()});
-const markets={india:{t:'Turn complex operations into controlled delivery.',p:'For enterprises navigating tenders, supply chains, approvals and digital compliance in India.',i:[['clipboard-check','Bid to execution','Structured tender, BOQ and delivery support.'],['shield-check','Audit-ready by design','Compliance built into the operating flow.'],['workflow','One accountable partner','Clear ownership across every workstream.']]},us:{t:'Bring order to every revenue-cycle decision.',p:'For US healthcare organizations strengthening RCM operations, billing workflows and financial visibility.',i:[['heart-pulse','RCM workflow control','Reliable support from claim through collection.'],['file-check-2','Compliance-aware processes','HIPAA-aligned operational discipline.'],['chart-no-axes-combined','Better financial visibility','Clearer data for practical decisions.']]}};
-function market(k){let d=markets[k];marketTitle.textContent=d.t;marketText.textContent=d.p;marketList.innerHTML=d.i.map(x=>'<li><i data-lucide="'+x[0]+'"></i><span><b>'+x[1]+'</b>'+x[2]+'</span></li>').join('');indiaTab.setAttribute('aria-selected',k==='india');usTab.setAttribute('aria-selected',k==='us');icons()}indiaTab.onclick=()=>market('india');usTab.onclick=()=>market('us');
-const info={operations:{urgent:['A focused operations review is the right first conversation.','We’ll help you identify immediate tender and execution risks, then outline the clearest next action.'],planned:['A scoped operations roadmap will create the most leverage.','We’ll map the delivery system, commercial controls and owners needed for the next phase.'],ongoing:['An operating-system partnership is a strong fit.','We’ll explore how Thrunox can provide ongoing execution structure and senior oversight.']},rcm:{urgent:['A rapid RCM workflow review is the right first step.','We’ll focus the initial conversation on immediate revenue-cycle constraints and priority actions.'],planned:['A revenue-cycle improvement roadmap is the right fit.','We’ll identify the process, reporting and governance changes that can improve control this quarter.'],ongoing:['A steady RCM operations partnership is a strong fit.','We’ll discuss the rhythm, reporting and workflow ownership needed for ongoing improvement.']},compliance:{urgent:['A compliance triage conversation should come first.','We’ll clarify the approval or digital-compliance need and identify the fastest responsible route.'],planned:['A compliance-readiness plan is the right fit.','We’ll map requirements, dependencies and the implementation path before the deadline arrives.'],ongoing:['A long-term governance partnership may be the right fit.','We’ll explore how to make compliance a reliable part of everyday operations.']}};
-function scope(){let p=document.querySelector('[name=priority]:checked').value,t=document.querySelector('[name=timing]:checked').value,d=info[p][t];scopeTitle.textContent=d[0];scopeText.textContent=d[1];scopeLink.href='https://wa.me/919980182009?text='+encodeURIComponent('Hello Thrunox, I need '+(t==='urgent'?'urgent':t)+' support with '+(p==='rcm'?'RCM and finance':p==='compliance'?'compliance and licensing':'operations and tender execution')+'.')}document.querySelectorAll('.form input').forEach(i=>i.onchange=scope);
-</script>
-</body></html>
+<body class="bg-[#070d18] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-sky-500 selection:text-white">
+
+  <!-- Animated Background Engine: Cyber Grid, Shooting Streams & Dynamic Node Network -->
+  <canvas id="networkCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+  <div class="fixed inset-0 cyber-grid pointer-events-none z-0 opacity-45"></div>
+  <div class="radar-sweep"></div>
+
+  <!-- Dynamic Shooting Light Beams / Energy Streams -->
+  <div class="shooting-stream"></div>
+  <div class="shooting-stream"></div>
+  <div class="shooting-stream"></div>
+  <div class="shooting-stream"></div>
+  <div class="shooting-stream"></div>
+
+  <!-- Ambient Glowing Orbs Background (Visual Depth) -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute top-1/3 -right-40 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-10 left-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-float"></div>
+  </div>
+
+  <!-- Top Trust & Statutory Strip (Exact Company Registrations from LinkedIn Deck) -->
+  <div class="relative z-50 bg-[#091122]/90 border-b border-slate-800/80 text-[11px] py-1.5 px-4 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-3 text-center sm:text-left">
+      <div class="flex items-center gap-2 sm:gap-3 flex-wrap justify-center sm:justify-start">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold tracking-wide text-[10px] sm:text-[11px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> MSME UDYAM-KR-03-0764425
+        </span>
+        <span class="text-slate-500 hidden md:inline">&bull;</span>
+        <span class="text-slate-400 font-medium text-[10px] sm:text-[11px]">MCA LLPIN: ACX-9472</span>
+        <span class="text-slate-500 hidden lg:inline">&bull;</span>
+        <span class="text-slate-300 font-medium hidden lg:inline text-[11px]">75+ Yrs Leadership</span>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4 text-slate-400 text-[10px] sm:text-[11px]">
+        <a href="tel:+919980182009" class="hover:text-white flex items-center gap-1 transition-colors">
+          <i data-lucide="phone" class="w-3 h-3 text-sky-400"></i> +91-9980182009
+        </a>
+        <a href="mailto:thrunoxsystems@gmail.com" class="hover:text-white hidden md:flex items-center gap-1 transition-colors">
+          <i data-lucide="mail" class="w-3 h-3 text-amber-400"></i> thrunoxsystems@gmail.com
+        </a>
+        <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems" target="_blank" class="hover:text-emerald-400 flex items-center gap-1 text-emerald-400 transition-colors font-semibold">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp Desk
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-40 bg-[#070d18]/90 backdrop-blur-xl border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18 sm:h-20">
+        
+        <!-- Logo & Motto -->
+        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+          <div class="bg-white p-1 rounded-lg border border-white/10 shadow-sm transition-transform group-hover:scale-105 shrink-0">
+            <img src="logo.png" alt="Thrunox Systems" class="h-8 sm:h-9 w-auto object-contain">
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-white text-base sm:text-lg tracking-tight block">Thrunox Systems</span>
+            <span class="text-[9px] sm:text-[10px] text-gradient-rainbow font-extrabold uppercase tracking-widest block">Strategize &bull; Execute &bull; Excel</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-slate-300">
+          <a href="#verticals" class="hover:text-sky-400 transition-colors">Our Verticals</a>
+          <a href="#why-thrunox" class="hover:text-sky-400 transition-colors">Why Thrunox</a>
+          <a href="#approach" class="hover:text-sky-400 transition-colors">Our Approach</a>
+          <a href="#markets" class="hover:text-sky-400 transition-colors">Where We Work</a>
+          <a href="#labs" class="hover:text-sky-400 transition-colors">R&amp;D Labs</a>
+        </nav>
+
+        <!-- Fast Actions & Mobile Menu Toggle -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="#simulator" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all">
+            <i data-lucide="sliders" class="w-3.5 h-3.5 text-sky-400"></i> <span class="hidden md:inline">Scope</span> Estimator
+          </a>
+          <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20we%20want%20to%20discuss%20an%20execution%20requirement." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white shadow-lg shadow-emerald-500/20 transition-all transform hover:scale-[1.02]">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i> <span class="hidden xs:inline">Fast-Track</span> Inquiry
+          </a>
+          <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors border border-white/5">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Responsive Slide-Down Mobile/Tablet Drawer -->
+    <div id="mobileDrawer" class="hidden lg:hidden bg-[#091122]/98 border-b border-white/10 px-4 pt-3 pb-6 space-y-3 backdrop-blur-2xl transition-all">
+      <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+        <a href="#verticals" class="mobile-nav-link p-2.5 rounded-lg bg-white/5 text-slate-200 hover:bg-sky-500 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4 text-sky-400"></i> Business Verticals
+        </a>
+        <a href="#why-thrunox" class="mobile-nav-link p-2.5 rounded-lg bg-white/5 text-slate-200 hover:bg-sky-500 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-amber-400"></i> Why Thrunox
+        </a>
+        <a href="#approach" class="mobile-nav-link p-2.5 rounded-lg bg-white/5 text-slate-200 hover:bg-sky-500 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i> Our Approach
+        </a>
+        <a href="#markets" class="mobile-nav-link p-2.5 rounded-lg bg-white/5 text-slate-200 hover:bg-sky-500 hover:text-white transition-all flex items-center gap-2">
+          <i data-lucide="briefcase" class="w-4 h-4 text-emerald-400"></i> Where We Work
+        </a>
+      </div>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Partner Desk
+        </a>
+        <a href="tel:+919980182009" class="w-full text-center py-2 rounded-xl bg-white/5 text-slate-300 font-semibold text-xs flex items-center justify-center gap-2">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i> Direct Line: +91-9980182009
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Exact Motto & Value Positioning from LinkedIn Deck -->
+  <section class="relative z-10 pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Headline & Value Hook -->
+      <div class="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
+        
+        <!-- Motto Badge -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 text-slate-300 text-[11px] sm:text-xs font-semibold backdrop-blur-md animate-float">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          <span class="font-medium text-slate-200 tracking-wide">Notions in Motion, Results in Reality</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.14] font-display">
+          Translating Strategy Into Execution. <br>
+          <span class="text-gradient-shine">
+            Structured. Scalable. Compliant.
+          </span>
+        </h1>
+
+        <!-- Exact positioning text from Page 1 of LinkedIn PDF -->
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed px-2">
+          Thrunox Systems enables businesses to translate strategy into execution through structured, scalable, and compliant systems across <strong class="text-white font-semibold">Project Management, Operations &amp; Supply Chain, Finance &amp; Revenue Cycle Management (RCM), Licensing &amp; Liaisoning, Digital Compliance,</strong> and <strong class="text-white font-semibold">ESG Advisory</strong>.
+        </p>
+
+        <!-- The 3 Action Pillars (Strategize • Execute • Excel) -->
+        <div class="pt-1 flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs font-bold">
+          <span class="px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Strategize
+          </span>
+          <span class="text-slate-600 hidden sm:inline">&bull;</span>
+          <span class="px-3.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span> Execute
+          </span>
+          <span class="text-slate-600 hidden sm:inline">&bull;</span>
+          <span class="px-3.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Excel.
+          </span>
+        </div>
+
+        <!-- Segment Switcher Bar -->
+        <div class="pt-3 flex justify-center px-2">
+          <div class="w-full sm:w-auto grid grid-cols-1 sm:grid-cols-2 p-1.5 gap-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-md">
+            <button onclick="switchMarket('india')" id="tabBtnIndia" class="w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-brand-600 text-white shadow-md">
+              <span>🇮🇳 Indian Enterprise, Operations &amp; Tenders</span>
+            </button>
+            <button onclick="switchMarket('us')" id="tabBtnUS" class="w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white">
+              <span>🇺🇸 US Healthcare RCM &amp; Financial Systems</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- High-Visual Live Operations Cockpit -->
+      <div class="mt-12 max-w-5xl mx-auto relative">
+        <div class="gradient-border glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden neon-glow">
+          
+          <!-- Cockpit Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></div>
+              <div>
+                <span class="text-xs font-bold text-slate-200 uppercase tracking-wider block">Live Operational Pulse</span>
+                <span id="marketSubtitle" class="text-[11px] text-sky-400 font-medium">Active Track: Indian Enterprise Operations, Procurement &amp; Licensing</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs">
+              <span class="text-slate-400">Guaranteed Turnaround:</span>
+              <span id="slaTicker" class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 font-bold border border-emerald-500/20">
+                &lt; 24h Tender Audit
+              </span>
+            </div>
+          </div>
+
+          <!-- Dynamic Visual Metrics Grid -->
+          <div id="dynamicMetrics" class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 my-8">
+            
+            <!-- Metric 1 -->
+            <div class="bg-[#0b1325]/80 p-4 sm:p-5 rounded-xl border border-white/5 hover:border-amber-500/30 transition-all">
+              <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-2">
+                <span>Tender Win Ratio</span>
+                <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
+              </div>
+              <div id="kpi-val-1" class="text-2xl sm:text-3xl font-extrabold text-white font-display">94.8%</div>
+              <div class="text-[10px] text-emerald-400 mt-1 font-semibold flex items-center gap-1">
+                <i data-lucide="trending-up" class="w-3 h-3"></i> Zero Doc Disqualifications
+              </div>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="bg-[#0b1325]/80 p-4 sm:p-5 rounded-xl border border-white/5 hover:border-pink-500/30 transition-all">
+              <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-2">
+                <span>Class 3 DSC Speed</span>
+                <i data-lucide="key" class="w-4 h-4 text-pink-400"></i>
+              </div>
+              <div id="kpi-val-2" class="text-2xl sm:text-3xl font-extrabold text-white font-display">28 Mins</div>
+              <div class="text-[10px] text-pink-400 mt-1 font-semibold flex items-center gap-1">
+                <i data-lucide="check" class="w-3 h-3"></i> Aadhaar Paperless OTP
+              </div>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="bg-[#0b1325]/80 p-4 sm:p-5 rounded-xl border border-white/5 hover:border-rose-500/30 transition-all">
+              <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-2">
+                <span>Statutory Clearances</span>
+                <i data-lucide="shield-check" class="w-4 h-4 text-rose-400"></i>
+              </div>
+              <div id="kpi-val-3" class="text-2xl sm:text-3xl font-extrabold text-white font-display">100%</div>
+              <div class="text-[10px] text-emerald-400 mt-1 font-semibold flex items-center gap-1">
+                <i data-lucide="award" class="w-3 h-3"></i> Single-Point Ownership
+              </div>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="bg-[#0b1325]/80 p-4 sm:p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+              <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-2">
+                <span>Leadership Experience</span>
+                <i data-lucide="users" class="w-4 h-4 text-purple-400"></i>
+              </div>
+              <div id="kpi-val-4" class="text-2xl sm:text-3xl font-extrabold text-white font-display">75+ Yrs</div>
+              <div class="text-[10px] text-purple-400 mt-1 font-semibold flex items-center gap-1">
+                <i data-lucide="check-circle" class="w-3 h-3"></i> Cross-Industry Titans
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Action Bar Inside Cockpit -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+            <div class="flex items-center gap-3 text-xs text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span id="quickStatus">Live Bidding &amp; Operations Support Active on GeM 4.0 &amp; CPPP</span>
+            </div>
+            <a id="cockpitCTA" href="https://wa.me/919980182009?text=Hello%20Thrunox%20Team,%20I%20have%20an%20urgent%20active%20tender%20or%20execution%20need." target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <span id="cockpitCTAText">Initiate 24h Tender Dossier Review</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Supported Systems & Compliance Badge Strip -->
+  <section class="border-y border-white/5 bg-[#08101e]/60 py-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
+          Governed Protocols &amp; Regulatory Standards:
+        </span>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-semibold text-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="p-1 rounded bg-amber-500/10 text-amber-400"><i data-lucide="file-check" class="w-4 h-4"></i></span> GeM 4.0 &amp; CPPP
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="p-1 rounded bg-purple-500/10 text-purple-400"><i data-lucide="shield" class="w-4 h-4"></i></span> HIPAA Aligned
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="p-1 rounded bg-pink-500/10 text-pink-400"><i data-lucide="key" class="w-4 h-4"></i></span> CCA Class-3 DSC
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="p-1 rounded bg-rose-500/10 text-rose-400"><i data-lucide="award" class="w-4 h-4"></i></span> MSME Udyam Verified
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="p-1 rounded bg-cyan-500/10 text-cyan-400"><i data-lucide="leaf" class="w-4 h-4"></i></span> SEBI BRSR ESG
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Our Integrated Business Verticals (Exact 5 from LinkedIn PDF) -->
+  <section id="verticals" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+          Core Capabilities
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
+          Our Integrated Business Verticals
+        </h2>
+        <p class="text-sm text-slate-400 max-w-2xl mx-auto">
+          Translating complex enterprise requirements into high-velocity, audit-ready operational systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Vertical 1: Project Management, Operations & Supply Chain (Amber Accent) -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-amber-500/40 transition-all">
+          <div class="absolute top-3 right-3 w-16 h-16 dotted-matrix opacity-20 pointer-events-none"></div>
+          <div class="w-full h-1 bg-amber-500/80 rounded-full mb-6"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="hard-hat" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full">Vertical 01</span>
+              <span class="text-xs font-semibold text-slate-400">Bid to Execution</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display">Project Management, Operations &amp; Supply Chain</h3>
+            <p class="text-xs font-medium text-amber-300/90 mb-3">From Bid to Execution — Delivered with Control</p>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              From Tendering to Delivery to Operations. We eliminate operational bottlenecks, formulate margin-locked BOQ models, and synchronize multi-tier supplier networks.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs">
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>Reduced delays, cost overruns, and inefficiencies</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>Higher project success rates on GeM &amp; CPPP</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>Stronger vendor &amp; supply chain coordination</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>Scalable operational frameworks</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919980182009?text=I%20need%20Project%20Management,%20Operations%20or%20Tender%20Support." target="_blank" class="w-full text-center py-2.5 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-slate-950 text-white font-semibold text-xs border border-white/10 hover:border-amber-400 transition-all flex items-center justify-center gap-1.5">
+            <span>Engage Operations Team</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Vertical 2: Accounting, Bookkeeping & RCM (Purple Accent) -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-purple-500/40 transition-all ring-1 ring-purple-500/20">
+          <div class="absolute top-3 right-3 w-16 h-16 dotted-matrix opacity-20 pointer-events-none"></div>
+          <div class="w-full h-1 bg-purple-500/80 rounded-full mb-6"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="calculator" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full">Vertical 02</span>
+              <span class="text-xs font-semibold text-slate-400">Revenue Cycle</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display">Accounting, Bookkeeping &amp; RCM</h3>
+            <p class="text-xs font-medium text-purple-300/90 mb-3">Maximizing Revenue. Minimizing Leakage.</p>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              We build systems that ensure predictable cash flow, compliance, and financial clarity. From US Healthcare medical billing to enterprise bookkeeping and tax governance.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs">
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span>Faster collections &amp; reduced denial rates (&lt;4.2%)</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span>Audit-ready, compliant financial systems</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span>Improved financial visibility for leadership decisions</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span>Sustained financial discipline &amp; cash velocity</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919980182009?text=I%20want%20to%20audit%20our%20RCM,%20Bookkeeping%20or%20Collections." target="_blank" class="w-full text-center py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-purple-600/20">
+            <span>Free Denial &amp; RCM Audit</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Vertical 3: Licensing, Liasoning & Strategic Consulting (Coral/Red Accent) -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-rose-500/40 transition-all">
+          <div class="absolute top-3 right-3 w-16 h-16 dotted-matrix opacity-20 pointer-events-none"></div>
+          <div class="w-full h-1 bg-rose-500/80 rounded-full mb-6"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="file-text" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2.5 py-0.5 rounded-full">Vertical 03</span>
+              <span class="text-xs font-semibold text-slate-400">Statutory Readiness</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display">Licensing, Liasoning &amp; Strategic Consulting</h3>
+            <p class="text-xs font-medium text-rose-300/90 mb-3">From Approvals to Operational Readiness</p>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              We simplify regulatory complexity and accelerate business readiness across ministries, pollution control boards, industrial development corporations, and municipal bodies.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs">
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+                <span>Faster approvals and reduced time-to-market</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+                <span>Lower compliance risk with pre-audit dossiers</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+                <span>Single-point ownership across all departments</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+                <span>Seamless transition from entity setup to operations</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919980182009?text=I%20need%20Licensing%20and%20Government%20Liasoning%20support." target="_blank" class="w-full text-center py-2.5 rounded-xl bg-white/5 hover:bg-rose-500 hover:text-white text-white font-semibold text-xs border border-white/10 hover:border-rose-400 transition-all flex items-center justify-center gap-1.5">
+            <span>Accelerate Approvals</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Vertical 4: Digital Compliance & E-Signature Solutions (Pink/Magenta Accent) -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-pink-500/40 transition-all">
+          <div class="absolute top-3 right-3 w-16 h-16 dotted-matrix opacity-20 pointer-events-none"></div>
+          <div class="w-full h-1 bg-pink-500/80 rounded-full mb-6"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-pink-400 bg-pink-500/10 px-2.5 py-0.5 rounded-full">Vertical 04</span>
+              <span class="text-xs font-semibold text-slate-400">Paperless Speed</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display">Digital Compliance &amp; E-Signature Solutions</h3>
+            <p class="text-xs font-medium text-pink-300/90 mb-3">From Paperwork to Seamless Digital Execution</p>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              We enable secure, compliant, and scalable digital workflows. Instant Aadhaar OTP Class-3 DSC issuance, corporate USB cryptographic tokens, and automated enterprise e-Sign workflows.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs">
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-pink-400 shrink-0"></i>
+                <span>Faster document turnaround (Under 30 minutes)</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-pink-400 shrink-0"></i>
+                <span>Reduced manual dependencies &amp; physical courier lag</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-pink-400 shrink-0"></i>
+                <span>Enhanced compliance, legal validity &amp; audit trails</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-pink-400 shrink-0"></i>
+                <span>Scalable, 100% paperless corporate operations</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919980182009?text=I%20need%20a%20Class%203%20Digital%20Signature%20or%20E-Sign%20solution." target="_blank" class="w-full text-center py-2.5 rounded-xl bg-white/5 hover:bg-pink-500 hover:text-white text-white font-semibold text-xs border border-white/10 hover:border-pink-400 transition-all flex items-center justify-center gap-1.5">
+            <span>Issue Class 3 DSC Token</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Vertical 5: ESG Advisory (Cyan Accent) -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between group hover:border-cyan-500/40 transition-all">
+          <div class="absolute top-3 right-3 w-16 h-16 dotted-matrix opacity-20 pointer-events-none"></div>
+          <div class="w-full h-1 bg-cyan-500/80 rounded-full mb-6"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="leaf" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full">Vertical 05</span>
+              <span class="text-xs font-semibold text-slate-400">Future-Ready</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display">ESG Advisory</h3>
+            <p class="text-xs font-medium text-cyan-300/90 mb-3">Building Responsible and Future-Ready Businesses</p>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              We help organizations align with evolving ESG expectations while maintaining operational strength. Practical BRSR reporting frameworks, sustainability audits, and supply chain decarbonization.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs">
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span>Improved ESG compliance &amp; SEBI BRSR reporting</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span>Stronger investor, bank &amp; stakeholder trust</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1 border-b border-white/5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span>Operational risk mitigation &amp; long-term sustainability</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300 py-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span>Alignment with global GRI &amp; BRSR standards</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919980182009?text=I%20want%20to%20consult%20on%20ESG%20Advisory%20and%20BRSR." target="_blank" class="w-full text-center py-2.5 rounded-xl bg-white/5 hover:bg-cyan-500 hover:text-slate-950 text-white font-semibold text-xs border border-white/10 hover:border-cyan-400 transition-all flex items-center justify-center gap-1.5">
+            <span>Structure ESG Roadmap</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Senior Partner Strike Team Card -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between bg-gradient-to-br from-sky-950/40 via-slate-900 to-[#070d18] border border-sky-500/20">
+          <div class="w-full h-1 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-full mb-6"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 text-white flex items-center justify-center mb-5 shadow-lg shadow-sky-500/25">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2.5 py-0.5 rounded-full">Direct Leadership Desk</span>
+            <h3 class="text-lg font-bold text-white mt-2 mb-1.5 font-display">Complex Strategic Mandate?</h3>
+            <p class="text-xs text-slate-300 mb-6 leading-relaxed">
+              Direct access to our senior leadership pool for complex industrial, tender consortiums, defense offsets, or cross-border turnkey execution.
+            </p>
+            <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-slate-300 space-y-1.5 mb-6">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Direct Senior Partners — No Junior Gatekeepers</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Execution-Led — Outcomes Realized, Not Just Advised</div>
+            </div>
+          </div>
+
+          <a href="tel:+919980182009" class="w-full py-2.5 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-bold text-xs transition-all flex items-center justify-center gap-2">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-sky-600"></i> Call Leadership: +91-9980182009
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Why Thrunox ? (Exact 4 Points from LinkedIn PDF Slide 2) -->
+  <section id="why-thrunox" class="py-20 bg-[#091122]/90 border-t border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          Competitive Advantage
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
+          Why Thrunox ?
+        </h2>
+        <p class="text-sm text-slate-400 max-w-xl mx-auto">
+          We combine executive depth with ground-level execution to guarantee tangible business outcomes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Reason 1 -->
+        <div class="glass-card p-6 rounded-2xl border border-white/5 relative group hover:border-purple-500/30 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white font-display mb-1">75+ Years</div>
+          <h3 class="text-sm font-bold text-slate-200 mb-2">Combined Leadership Experience</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Veteran directors with decades of experience heading industrial operations, finance, and regulatory liaisoning across India and global markets.
+          </p>
+        </div>
+
+        <!-- Reason 2 -->
+        <div class="glass-card p-6 rounded-2xl border border-white/5 relative group hover:border-pink-500/30 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white font-display mb-1">Cross-Industry</div>
+          <h3 class="text-sm font-bold text-slate-200 mb-2">Multidisciplinary Expertise</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Deep domain authority across Deep-Tech, Manufacturing, Engineering Fabrication, Pharmaceuticals &amp; Healthcare.
+          </p>
+        </div>
+
+        <!-- Reason 3 -->
+        <div class="glass-card p-6 rounded-2xl border border-white/5 relative group hover:border-amber-500/30 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white font-display mb-1">Execution-Led</div>
+          <h3 class="text-sm font-bold text-slate-200 mb-2">Beyond Advisory Consulting</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            We don't just hand over strategy presentations. Our teams take ground-level ownership of filings, tenders, and operational rollouts.
+          </p>
+        </div>
+
+        <!-- Reason 4 -->
+        <div class="glass-card p-6 rounded-2xl border border-white/5 relative group hover:border-emerald-500/30 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white font-display mb-1">Measurable</div>
+          <h3 class="text-sm font-bold text-slate-200 mb-2">Cost, Efficiency &amp; Scalability</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Quantified results: lower claim denial rates, zero tender document disqualifications, and compressed regulatory lead times.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Our Approach (Exact Diagnose -> Design -> Deliver -> Sustain from LinkedIn PDF Slide 4) -->
+  <section id="approach" class="py-24 bg-[#08101e]/80 border-t border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+          Our Approach
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
+          A Structured, Execution-Driven Model
+        </h2>
+        <p class="text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          "We combine <strong class="text-sky-400 font-semibold">data-driven insights</strong> with <strong class="text-pink-400 font-semibold">hands-on implementation</strong>, ensuring outcomes are realized — not just recommended."
+        </p>
+      </div>
+
+      <!-- 4 Connected Process Stages -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1: Diagnose -->
+        <div class="glass-card p-7 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-purple-500/40 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded">Stage 01</span>
+            <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-xs">01</div>
+          </div>
+          <h3 class="text-xl font-extrabold text-white mb-2 font-display">Diagnose</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Deconstruct operational inefficiencies, audit historical claim denials, inspect tender disqualification risks, and pinpoint regulatory bottlenecks.
+          </p>
+          <div class="text-[11px] text-purple-300 font-medium flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3 h-3"></i> Root-Cause Data Discovery
+          </div>
+        </div>
+
+        <!-- Step 2: Design -->
+        <div class="glass-card p-7 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-pink-500/40 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded">Stage 02</span>
+            <div class="w-8 h-8 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold text-xs">02</div>
+          </div>
+          <h3 class="text-xl font-extrabold text-white mb-2 font-display">Design</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Formulate compliance checklists, BOQ margin models, scrubbing SOPs, and governance frameworks designed for predictable, scalable operations.
+          </p>
+          <div class="text-[11px] text-pink-300 font-medium flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3 h-3"></i> Structured Roadmap &amp; SOPs
+          </div>
+        </div>
+
+        <!-- Step 3: Deliver -->
+        <div class="glass-card p-7 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-amber-500/40 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded">Stage 03</span>
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-xs">03</div>
+          </div>
+          <h3 class="text-xl font-extrabold text-white mb-2 font-display">Deliver</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Ground-level implementation: active tender submission, single-point department liaisoning, overnight billing scrubbing, and rapid DSC token rollout.
+          </p>
+          <div class="text-[11px] text-amber-300 font-medium flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3 h-3"></i> Realized Milestones on Ground
+          </div>
+        </div>
+
+        <!-- Step 4: Sustain -->
+        <div class="glass-card p-7 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-cyan-500/40 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded">Stage 04</span>
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xs">04</div>
+          </div>
+          <h3 class="text-xl font-extrabold text-white mb-2 font-display">Sustain</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Continuous governance, SLA tracking, vendor management, and leak minimization to ensure systems remain resilient and scalable long-term.
+          </p>
+          <div class="text-[11px] text-cyan-300 font-medium flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3 h-3"></i> Ongoing Governance &amp; Scale
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Where We Work & Who We Partner With (Exact Matrix from LinkedIn PDF Slide 4) -->
+  <section id="markets" class="py-20 bg-[#091122]/90 border-t border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+          Industries &amp; Engagement
+        </span>
+        <h2 class="text-3xl font-extrabold text-white font-display">
+          Where We Work &bull; Who We Partner With
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Column 1: WHERE WE WORK ? -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 relative">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+              <i data-lucide="factory" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400 block">Target Sectors</span>
+              <h3 class="text-xl font-bold text-white font-display">WHERE WE WORK ?</h3>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-sky-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-sky-500/20 text-sky-400 mt-0.5"><i data-lucide="settings" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Manufacturing &amp; Industrial Operations</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Production line optimization, statutory approvals, and industrial supply chains.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-sky-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 mt-0.5"><i data-lucide="wrench" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Engineering Services &amp; Fabrication</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Heavy engineering, EPC contractor tender bids, BOQ modeling, and vendor alignment.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-purple-500/20 text-purple-400 mt-0.5"><i data-lucide="heart-pulse" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Pharmaceutical &amp; Healthcare</h4>
+                <p class="text-xs text-slate-400 mt-0.5">US RCM billing, HIPAA regulatory compliance, and clinical supply operations.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 mt-0.5"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Deep-Tech &amp; Emerging Businesses</h4>
+                <p class="text-xs text-slate-400 mt-0.5">High-velocity tech enterprises structuring compliant operational and IP frameworks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: WHO WE PARTNER WITH ? -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 relative">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+              <i data-lucide="handshake" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 block">Client Profiles</span>
+              <h3 class="text-xl font-bold text-white font-display">WHO WE PARTNER WITH ?</h3>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 mt-0.5"><i data-lucide="rocket" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Startups Scaling Operations</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Translating early product traction into dependable, compliant commercial systems.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-sky-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-sky-500/20 text-sky-400 mt-0.5"><i data-lucide="building" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Growth-Stage &amp; Mid-Sized Enterprises</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Eliminating margin leakage, reducing paperwork delays, and scaling governance.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-purple-500/20 text-purple-400 mt-0.5"><i data-lucide="shield" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Organizations Strengthening Compliance</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Institutions navigating stringent licensing, e-Sign security, or SEBI BRSR standards.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5 hover:border-amber-500/30 transition-all">
+              <div class="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 mt-0.5"><i data-lucide="check-check" class="w-4 h-4"></i></div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Businesses Building Scalable Systems</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Companies upgrading from ad-hoc processes to institutional, audit-ready operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Interactive Visual Scope & Feasibility Simulator (High-Conversion Lead Funnel) -->
+  <section id="simulator" class="py-20 bg-[#070d18] border-t border-white/5 relative z-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-10 border border-sky-500/20 relative">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            Interactive Feasibility Simulator
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 font-display">
+            Calculate Your Execution Velocity
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">Select your service domain and turnaround urgency to generate an instant action roadmap.</p>
+        </div>
+
+        <!-- 3-Pill Interactive Selectors -->
+        <div class="space-y-6 mb-8">
+          
+          <!-- Requirement Type -->
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">1. Select Core Vertical</label>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="simFocusGroup">
+              <button onclick="setSimFocus('tender', this)" class="sim-btn active px-3 py-2.5 rounded-xl text-xs font-semibold bg-amber-500 text-slate-950 border border-amber-400 text-center transition-all font-bold">
+                Operations &amp; Tenders
+              </button>
+              <button onclick="setSimFocus('rcm', this)" class="sim-btn px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all">
+                RCM &amp; Finance
+              </button>
+              <button onclick="setSimFocus('license', this)" class="sim-btn px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all">
+                Licensing &amp; Liaison
+              </button>
+              <button onclick="setSimFocus('dsc', this)" class="sim-btn px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all">
+                Class 3 DSC Token
+              </button>
+              <button onclick="setSimFocus('esg', this)" class="sim-btn px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all">
+                ESG &amp; BRSR
+              </button>
+            </div>
+          </div>
+
+          <!-- Urgency Speed -->
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">2. Turnaround Urgency</label>
+            <div class="grid grid-cols-3 gap-2.5" id="simSpeedGroup">
+              <button onclick="setSimSpeed('critical', this)" class="speed-btn active px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-white border border-emerald-400 text-center transition-all font-bold">
+                Critical (&lt; 48 Hours)
+              </button>
+              <button onclick="setSimSpeed('standard', this)" class="speed-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all">
+                Standard (15 Days)
+              </button>
+              <button onclick="setSimSpeed('retainer', this)" class="speed-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all">
+                Monthly Retainer
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Output Box -->
+        <div class="bg-black/40 rounded-2xl p-6 border border-white/10 text-center space-y-4">
+          <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span id="simOutputHeader">Execution Roadmap Ready &bull; Dedicated Senior Partner Assigned</span>
+          </div>
+          <p id="simOutputBody" class="text-xs sm:text-sm text-slate-200 max-w-xl mx-auto">
+            Action Protocol: Fast-track 24h Tender Document Scrutiny &amp; BOQ margin protection to ensure zero disqualification on GeM/CPPP.
+          </p>
+          <div class="pt-2">
+            <button onclick="launchSimWhatsApp()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs inline-flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Send Parameters to WhatsApp Partner Desk
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 6: Proprietary R&D Products Showcase (Engineering Labs) -->
+  <section id="labs" class="py-24 relative z-10 bg-[#08101e]/60 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            Proprietary IP &amp; Engineering Labs
+          </span>
+          <h2 class="text-3xl font-extrabold text-white mt-3 font-display">
+            Platforms Under Active Incubation
+          </h2>
+          <p class="text-xs text-slate-400 mt-1 max-w-xl">
+            Modular hardware and software frameworks developed in-house to solve critical operational bottlenecks.
+          </p>
+        </div>
+        <a href="https://wa.me/919980182009?text=I%20want%20to%20discuss%20pilot%20collaboration%20on%20Thrunox%20Labs%20products." target="_blank" class="text-xs font-bold px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white inline-flex items-center gap-1.5 transition-all">
+          <span>Apply for Pilot Partnership</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Lab 1 -->
+        <div class="glass-card rounded-2xl p-5 border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+              <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[9px] font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded">Digital Health</span>
+            <h3 class="font-bold text-sm text-white mt-2 mb-1.5 font-display">Healthcare Ops Platform</h3>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              Automated clinic scheduling, workflow orchestration, and EHR claim scrubbing.
+            </p>
+          </div>
+          <div class="text-[10px] text-slate-500 pt-3 border-t border-white/5 mt-4">
+            Cloud &bull; EMR &bull; HIPAA Aligned
+          </div>
+        </div>
+
+        <!-- Lab 2 -->
+        <div class="glass-card rounded-2xl p-5 border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <i data-lucide="siren" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Emergency Care</span>
+            <h3 class="font-bold text-sm text-white mt-2 mb-1.5 font-display">Disaster Triage Network</h3>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              Rapid digital triage, bed allocation, and dynamic resource dispatch during crises.
+            </p>
+          </div>
+          <div class="text-[10px] text-slate-500 pt-3 border-t border-white/5 mt-4">
+            Real-Time Triage &bull; Telehealth
+          </div>
+        </div>
+
+        <!-- Lab 3 -->
+        <div class="glass-card rounded-2xl p-5 border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="truck" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[9px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Hardware Fabrication</span>
+            <h3 class="font-bold text-sm text-white mt-2 mb-1.5 font-display">Modular Smart Mobile Lab</h3>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              Turnkey containerized BSL-level mobile labs for rural health and field testing.
+            </p>
+          </div>
+          <div class="text-[10px] text-slate-500 pt-3 border-t border-white/5 mt-4">
+            Cleanroom &bull; HVAC &bull; Off-Grid Power
+          </div>
+        </div>
+
+        <!-- Lab 4 -->
+        <div class="glass-card rounded-2xl p-5 border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[9px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Enterprise Software</span>
+            <h3 class="font-bold text-sm text-white mt-2 mb-1.5 font-display">Modular Python ERP</h3>
+            <p class="text-[11px] text-slate-400 leading-relaxed">
+              Lightweight resource planning engineered specifically for industrial SMEs.
+            </p>
+          </div>
+          <div class="text-[10px] text-slate-500 pt-3 border-t border-white/5 mt-4">
+            Python &bull; Open API Architecture
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final High-Impact Consultation Close -->
+  <section class="py-20 bg-gradient-to-b from-[#0b1325] to-[#070d18] border-t border-white/5 relative z-10 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-emerald-400 text-slate-950 flex items-center justify-center mx-auto mb-6 shadow-xl shadow-sky-500/20">
+        <i data-lucide="zap" class="w-8 h-8"></i>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
+        Eliminate Operational &amp; Execution Lag.
+      </h2>
+      <p class="text-sm text-slate-300 max-w-lg mx-auto mt-3">
+        Connect directly with our senior partners in Bengaluru. Hands-on leadership &bull; immediate milestone scoping.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <a href="tel:+919980182009" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+          <i data-lucide="phone" class="w-4 h-4 text-sky-600"></i> Call Direct: +91-9980182009
+        </a>
+        <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Leadership,%20I%20am%20ready%20to%20discuss%20our%20execution%20requirements." target="_blank" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Chat on WhatsApp (Priority)
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modern Clean Minimalist Footer (Exact Corporate Registrations from Deck) -->
+  <footer class="bg-[#050a14] border-t border-white/5 py-12 text-xs text-slate-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-1 rounded-md">
+            <img src="logo.png" alt="Thrunox Systems" class="h-7 w-auto">
+          </div>
+          <div>
+            <span class="font-display font-bold text-white text-sm block">Thrunox Systems LLP</span>
+            <span class="text-[10px] text-sky-400 font-semibold">Notions in Motion, Results in Reality</span>
+          </div>
+        </div>
+        <div class="text-center md:text-right text-[11px] text-slate-400">
+          UDYAM-KR-03-0764425 &bull; MCA LLPIN: ACX-9472 &bull; BG Road, Bengaluru, 560083
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div>&copy; 2026 Thrunox Systems LLP. All Rights Reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="mailto:thrunoxsystems@gmail.com" class="hover:text-white transition-colors">thrunoxsystems@gmail.com</a>
+          <a href="https://linkedin.com/company/thrunoxsystems" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+          <a href="tel:+919980182009" class="hover:text-white transition-colors">+91-9980182009</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky WhatsApp CTA with Pulse Radar Wave -->
+  <div class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50">
+    <div class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30 pointer-events-none"></div>
+    <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems" target="_blank" aria-label="WhatsApp Us" class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-2xl flex items-center justify-center transform hover:scale-110 active:scale-95 transition-all border-2 border-white/20">
+      <i data-lucide="message-circle" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+    </a>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Initialize Icons
+    lucide.createIcons();
+
+    // Mobile Drawer Navigation Logic
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+        lucide.createIcons();
+      });
+      mobileDrawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
+    }
+
+    // Number Count-Up Animation
+    function animateCountUp(element, start, end, duration, decimals = 0, prefix = '', suffix = '') {
+      if (!element) return;
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentVal = (start + (end - start) * easeOut).toFixed(decimals);
+        element.innerText = prefix + currentVal + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    // Market Switcher (India Operations vs US Healthcare Toggle)
+    let currentMarket = 'india';
+
+    function switchMarket(market) {
+      currentMarket = market;
+      const btnIndia = document.getElementById('tabBtnIndia');
+      const btnUS = document.getElementById('tabBtnUS');
+      const subtitle = document.getElementById('marketSubtitle');
+      const sla = document.getElementById('slaTicker');
+      const status = document.getElementById('quickStatus');
+      const ctaText = document.getElementById('cockpitCTAText');
+      const ctaBtn = document.getElementById('cockpitCTA');
+      const metricsContainer = document.getElementById('dynamicMetrics');
+
+      if (market === 'india') {
+        btnIndia.className = "w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-brand-600 text-white shadow-md";
+        btnUS.className = "w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+        subtitle.innerText = "Active Track: Indian Enterprise Operations, Procurement & Licensing";
+        sla.innerText = "< 24h Tender Audit";
+        status.innerText = "Live Bidding & Operations Support Active on GeM 4.0 & CPPP";
+        ctaText.innerText = "Initiate 24h Tender Dossier Review";
+        ctaBtn.href = "https://wa.me/919980182009?text=I%20need%2024h%20Tender%20Dossier%20Review%20for%20GeM/CPPP.";
+
+        metricsContainer.innerHTML = `
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-amber-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Tender Win Ratio</span>
+              <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
+            </div>
+            <div id="kpi-val-1" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">0.0%</div>
+            <div class="text-[10px] text-emerald-400 mt-1 font-semibold flex items-center gap-1">Zero Doc Disqualifications</div>
+          </div>
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-pink-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Class 3 DSC Speed</span>
+              <i data-lucide="key" class="w-4 h-4 text-pink-400"></i>
+            </div>
+            <div id="kpi-val-2" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">0 Mins</div>
+            <div class="text-[10px] text-pink-400 mt-1 font-semibold flex items-center gap-1">Aadhaar Paperless OTP</div>
+          </div>
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-rose-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Statutory Clearances</span>
+              <i data-lucide="shield-check" class="w-4 h-4 text-rose-400"></i>
+            </div>
+            <div id="kpi-val-3" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">0%</div>
+            <div class="text-[10px] text-emerald-400 mt-1 font-semibold flex items-center gap-1">Single-Point Ownership</div>
+          </div>
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Leadership Experience</span>
+              <i data-lucide="users" class="w-4 h-4 text-purple-400"></i>
+            </div>
+            <div id="kpi-val-4" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">0+ Yrs</div>
+            <div class="text-[10px] text-purple-400 mt-1 font-semibold flex items-center gap-1">Cross-Industry Titans</div>
+          </div>
+        `;
+        lucide.createIcons();
+        animateCountUp(document.getElementById('kpi-val-1'), 0, 94.8, 900, 1, '', '%');
+        animateCountUp(document.getElementById('kpi-val-2'), 0, 28, 800, 0, '', ' Mins');
+        animateCountUp(document.getElementById('kpi-val-3'), 0, 100, 850, 0, '', '%');
+        animateCountUp(document.getElementById('kpi-val-4'), 0, 75, 750, 0, '', '+ Yrs');
+      } else {
+        btnUS.className = "w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md";
+        btnIndia.className = "w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+        subtitle.innerText = "Active Track: US Healthcare RCM & Financial Operations";
+        sla.innerText = "Overnight 12h Turnaround";
+        status.innerText = "HIPAA-Compliant Billing & Scrubbing Pods Active";
+        ctaText.innerText = "Request Free 20-Claim Denial Audit";
+        ctaBtn.href = "https://wa.me/919980182009?text=I%20am%20interested%20in%20the%20Free%2020-Claim%20Denial%20Audit%20for%20US%20Healthcare.";
+
+        metricsContainer.innerHTML = `
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Denial Rate Target</span>
+              <i data-lucide="trending-down" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+            <div id="kpi-us-1" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-emerald-400 font-display">< 0.0%</div>
+            <div class="text-[10px] text-slate-400 mt-1 font-semibold">Clean Claim Scrubbing</div>
+          </div>
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Turnaround Shift</span>
+              <i data-lucide="clock" class="w-4 h-4 text-sky-400"></i>
+            </div>
+            <div id="kpi-us-2" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">0 Hours</div>
+            <div class="text-[10px] text-sky-400 mt-1 font-semibold">Overnight Processing</div>
+          </div>
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Security &amp; Protocol</span>
+              <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+            <div class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">HIPAA</div>
+            <div class="text-[10px] text-emerald-400 mt-1 font-semibold">100% Encrypted VPN</div>
+          </div>
+          <div class="bg-[#0b1325]/80 p-3.5 sm:p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+            <div class="text-slate-400 text-xs font-medium flex items-center justify-between mb-1.5">
+              <span>Collections Boost</span>
+              <i data-lucide="dollar-sign" class="w-4 h-4 text-amber-400"></i>
+            </div>
+            <div id="kpi-us-4" class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display">+0%</div>
+            <div class="text-[10px] text-amber-400 mt-1 font-semibold">Within 90 Days</div>
+          </div>
+        `;
+        lucide.createIcons();
+        animateCountUp(document.getElementById('kpi-us-1'), 12, 4.2, 900, 1, '< ', '%');
+        animateCountUp(document.getElementById('kpi-us-2'), 0, 12, 800, 0, '', ' Hours');
+        animateCountUp(document.getElementById('kpi-us-4'), 0, 18, 850, 0, '+', '%');
+      }
+    }
+
+    // Trigger Initial Animation on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      animateCountUp(document.getElementById('kpi-val-1'), 0, 94.8, 900, 1, '', '%');
+      animateCountUp(document.getElementById('kpi-val-2'), 0, 28, 800, 0, '', ' Mins');
+      animateCountUp(document.getElementById('kpi-val-3'), 0, 100, 850, 0, '', '%');
+      animateCountUp(document.getElementById('kpi-val-4'), 0, 75, 750, 0, '', '+ Yrs');
+    });
+
+    // Simulator Interactive Pills
+    let simFocus = 'tender';
+    let simSpeed = 'critical';
+
+    const simDescriptions = {
+      'tender_critical': 'Action Protocol: Fast-track 24h Tender Document Scrutiny & BOQ margin protection to ensure zero disqualification on GeM/CPPP.',
+      'tender_standard': 'Action Protocol: Full-cycle Tender discovery, competitor pricing intelligence, and comprehensive bid documentation filing.',
+      'tender_retainer': 'Action Protocol: Dedicated monthly procurement team managing live GeM catalogs and continuous tender participation.',
+      'rcm_critical': 'Action Protocol: Emergency 48h Denial Analysis & high-volume accounts receivable recovery for your medical practice.',
+      'rcm_standard': 'Action Protocol: Standard 12h overnight billing submission pod, credentialing, and clean-claim scrubbing.',
+      'rcm_retainer': 'Action Protocol: Complete end-to-end outsourced billing department with monthly MIS dashboards & HIPAA audits.',
+      'dsc_critical': 'Action Protocol: Immediate 30-Minute Paperless Aadhaar OTP issuance with same-day cryptographic token dispatch.',
+      'dsc_standard': 'Action Protocol: Corporate & foreign director DSC documentation validation and issuance within 24 hours.',
+      'dsc_retainer': 'Action Protocol: Bulk organizational e-signature API integration for automated workflow signing.',
+      'license_critical': 'Action Protocol: Rapid statutory review & direct department liaisoning to unblock stalled government files.',
+      'license_standard': 'Action Protocol: End-to-end regulatory dossier preparation and single-point municipal / state approvals.',
+      'license_retainer': 'Action Protocol: Comprehensive ongoing compliance advisory, labor laws, and statutory filing monitoring.',
+      'esg_critical': 'Action Protocol: Rapid gap assessment for upcoming SEBI BRSR filing deadline or investor due diligence.',
+      'esg_standard': 'Action Protocol: Full-scope Scope 1/2/3 data architecture, materiality assessment, and BRSR report preparation.',
+      'esg_retainer': 'Action Protocol: Year-round sustainability governance, supply chain ESG audit, and stakeholder reporting.'
+    };
+
+    function setSimFocus(focus, el) {
+      simFocus = focus;
+      document.querySelectorAll('#simFocusGroup button').forEach(b => {
+        b.className = "sim-btn px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all";
+      });
+      el.className = "sim-btn active px-3 py-2.5 rounded-xl text-xs font-semibold bg-amber-500 text-slate-950 border border-amber-400 text-center transition-all font-bold";
+      updateSimOutput();
+    }
+
+    function setSimSpeed(speed, el) {
+      simSpeed = speed;
+      document.querySelectorAll('#simSpeedGroup button').forEach(b => {
+        b.className = "speed-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-white/30 text-center transition-all";
+      });
+      el.className = "speed-btn active px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-white border border-emerald-400 text-center transition-all font-bold";
+      updateSimOutput();
+    }
+
+    function updateSimOutput() {
+      const key = `${simFocus}_${simSpeed}`;
+      const desc = simDescriptions[key] || 'Action Protocol: Custom execution roadmap designed with dedicated senior partner assignment.';
+      document.getElementById('simOutputBody').innerText = desc;
+    }
+
+    function launchSimWhatsApp() {
+      const key = `${simFocus}_${simSpeed}`;
+      const desc = simDescriptions[key] || '';
+      const msg = `*Feasibility Scope Request - Thrunox Systems*%0A%0A` +
+                  `*Target:* ${encodeURIComponent(simFocus.toUpperCase())}%0A` +
+                  `*Timeline:* ${encodeURIComponent(simSpeed.toUpperCase())}%0A` +
+                  `*Details:* ${encodeURIComponent(desc)}%0A%0A` +
+                  `Please connect with me regarding our execution roadmap.`;
+      window.open(`https://wa.me/919980182009?text=${msg}`, '_blank');
+    }
+
+    // High-Tech Canvas Starfield, Constellation Network & Shooting Stars Engine
+    (function initCosmicBackground() {
+      const canvas = document.getElementById('networkCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let stars = [];
+      let nodes = [];
+      let packets = [];
+      let comets = [];
+      let sparks = [];
+      
+      const isMobile = window.innerWidth < 640;
+      const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+      
+      const starCount = isMobile ? 60 : 120;
+      const nodeCount = isMobile ? 28 : (isTablet ? 45 : 70);
+      const connectionDist = isMobile ? 90 : 130;
+      let mouse = { x: -1000, y: -1000, radius: isMobile ? 110 : 160 };
+
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+      window.addEventListener('mouseout', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      });
+
+      function createSparks(x, y, count = 14) {
+        for (let s = 0; s < count; s++) {
+          sparks.push(new Spark(x, y));
+        }
+      }
+
+      window.addEventListener('click', (e) => {
+        createSparks(e.clientX, e.clientY, 16);
+      });
+
+      window.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) {
+          const t = e.touches[0];
+          mouse.x = t.clientX;
+          mouse.y = t.clientY;
+          createSparks(t.clientX, t.clientY, 10);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      });
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // Background Twinkling & Drifting Stars
+      class Star {
+        constructor() {
+          this.reset(true);
+        }
+        reset(randomY = false) {
+          this.x = Math.random() * width;
+          this.y = randomY ? Math.random() * height : -5;
+          this.size = Math.random() * 1.6 + 0.5;
+          this.baseAlpha = Math.random() * 0.7 + 0.2;
+          this.alpha = this.baseAlpha;
+          this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+          this.twinklePhase = Math.random() * Math.PI * 2;
+          this.vy = Math.random() * 0.25 + 0.08;
+          this.vx = (Math.random() - 0.5) * 0.1;
+          this.color = Math.random() > 0.6 ? '#38bdf8' : (Math.random() > 0.5 ? '#a7f3d0' : '#ffffff');
+        }
+        update() {
+          this.y += this.vy;
+          this.x += this.vx;
+          this.twinklePhase += this.twinkleSpeed;
+          this.alpha = this.baseAlpha + Math.sin(this.twinklePhase) * 0.35;
+          if (this.y > height + 10 || this.x < -10 || this.x > width + 10) {
+            this.reset(false);
+          }
+        }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = Math.max(0.05, Math.min(1, this.alpha));
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          if (this.size > 1.2) {
+            ctx.shadowBlur = 6;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+          }
+          ctx.restore();
+        }
+      }
+
+      // Constellation Network Nodes
+      class Node {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.55;
+          this.vy = (Math.random() - 0.5) * 0.55;
+          this.radius = Math.random() * 1.8 + 1.2;
+          this.color = Math.random() > 0.4 ? 'rgba(56, 189, 248, ' : 'rgba(16, 185, 129, ';
+          this.baseAlpha = Math.random() * 0.45 + 0.35;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            this.x -= (dx / dist) * force * 1.8;
+            this.y -= (dy / dist) * force * 1.8;
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = this.color + this.baseAlpha + ')';
+          ctx.fill();
+        }
+      }
+
+      // Data Packet / Light Pulse along Constellation Edges
+      class DataPacket {
+        constructor(p1, p2) {
+          this.p1 = p1;
+          this.p2 = p2;
+          this.progress = 0;
+          this.speed = Math.random() * 0.025 + 0.015;
+          this.alive = true;
+        }
+        update() {
+          this.progress += this.speed;
+          if (this.progress >= 1) this.alive = false;
+        }
+        draw() {
+          const curX = this.p1.x + (this.p2.x - this.p1.x) * this.progress;
+          const curY = this.p1.y + (this.p2.y - this.p1.y) * this.progress;
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(curX, curY, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = '#38bdf8';
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // Shooting Meteor / Comet
+      class Comet {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * width + 200;
+          this.y = -50;
+          this.length = Math.random() * 120 + 80;
+          this.speed = Math.random() * 8 + 6;
+          this.angle = Math.PI / 4 + (Math.random() - 0.5) * 0.2;
+          this.vx = -Math.cos(this.angle) * this.speed;
+          this.vy = Math.sin(this.angle) * this.speed;
+          this.opacity = Math.random() * 0.8 + 0.2;
+          this.active = false;
+          this.timer = Math.random() * 240 + 60;
+        }
+        update() {
+          if (!this.active) {
+            this.timer--;
+            if (this.timer <= 0) {
+              this.active = true;
+            }
+            return;
+          }
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.y > height + 200 || this.x < -200) {
+            this.reset();
+          }
+        }
+        draw() {
+          if (!this.active) return;
+          ctx.save();
+          const tailX = this.x - this.vx * (this.length / this.speed);
+          const tailY = this.y - this.vy * (this.length / this.speed);
+          const grad = ctx.createLinearGradient(this.x, this.y, tailX, tailY);
+          grad.addColorStop(0, 'rgba(255, 255, 255, ' + this.opacity + ')');
+          grad.addColorStop(0.2, 'rgba(56, 189, 248, ' + (this.opacity * 0.8) + ')');
+          grad.addColorStop(1, 'transparent');
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 1.8;
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y);
+          ctx.lineTo(tailX, tailY);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      // Interactive Click/Touch Sparks
+      class Spark {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 4 + 1.5;
+          this.vx = Math.cos(angle) * speed;
+          this.vy = Math.sin(angle) * speed;
+          this.life = 1;
+          this.decay = Math.random() * 0.04 + 0.02;
+          this.color = Math.random() > 0.5 ? '#38bdf8' : (Math.random() > 0.5 ? '#34d399' : '#f59e0b');
+          this.size = Math.random() * 2.5 + 1;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.life -= this.decay;
+        }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = Math.max(this.life, 0);
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      for (let s = 0; s < starCount; s++) stars.push(new Star());
+      for (let n = 0; n < nodeCount; n++) nodes.push(new Node());
+      for (let c = 0; c < 3; c++) comets.push(new Comet());
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < stars.length; i++) {
+          stars[i].update();
+          stars[i].draw();
+        }
+
+        for (let i = 0; i < nodes.length; i++) {
+          nodes[i].update();
+          nodes[i].draw();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < connectionDist) {
+              const alpha = (1 - dist / connectionDist) * 0.25;
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+              ctx.lineWidth = 0.75;
+              ctx.stroke();
+
+              if (Math.random() < 0.0004 && packets.length < 8) {
+                packets.push(new DataPacket(nodes[i], nodes[j]));
+              }
+            }
+          }
+        }
+
+        for (let k = packets.length - 1; k >= 0; k--) {
+          packets[k].update();
+          packets[k].draw();
+          if (!packets[k].alive) {
+            packets.splice(k, 1);
+          }
+        }
+
+        for (let c = 0; c < comets.length; c++) {
+          comets[c].update();
+          comets[c].draw();
+        }
+
+        for (let s = sparks.length - 1; s >= 0; s--) {
+          sparks[s].update();
+          sparks[s].draw();
+          if (sparks[s].life <= 0) {
+            sparks.splice(s, 1);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
+</body>
+</html>
