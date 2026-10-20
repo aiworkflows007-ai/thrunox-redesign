@@ -170,7 +170,7 @@
 <body class="selection:bg-amber-500/20 selection:text-amber-900">
 
   <!-- Interactive Background Canvas: Restrained Engineering Particle Network -->
-  <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+  <canvas id="systemRunningCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-50"></canvas>
 
   <!-- Sticky Header: Exact Brochure Light Titanium Grey with Black Logo Text -->
   <header class="sticky top-0 z-50 bg-[#eaedf1]/95 backdrop-blur-xl border-b border-slate-300/80 transition-all shadow-sm">
@@ -290,7 +290,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
-          <!-- LEFT SIDE: MECHANICAL ENGINEERING -->
+          <!-- LEFT SIDE: MECHANICAL ENGINEERING (With Slow-Motion CAD Motion Graphics) -->
           <div class="thrunox-card rounded-2xl p-6 sm:p-8 relative overflow-hidden group flex flex-col justify-between cad-grid">
             <!-- Subtle slow rotating CAD blueprint ring in background -->
             <div class="absolute -top-16 -right-16 w-64 h-64 border border-amber-600/15 rounded-full pointer-events-none animate-slow-spin">
@@ -305,7 +305,7 @@
                   <i data-lucide="cog" class="w-3.5 h-3.5 animate-slow-spin text-amber-700"></i> Mechanical Engineering
                 </span>
                 <span class="text-[11px] font-mono text-slate-600 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span> CAD / CAM &amp; Tooling
+                  <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span> Slow-Motion CAD Engine
                 </span>
               </div>
 
@@ -316,16 +316,36 @@
                 Precision engineering execution spanning 3D CAD modeling, custom mechanical fabrication, structural stress analysis (FEA), and industrial machinery coordination.
               </p>
 
-              <!-- Image Container with Slow Ambient Movement -->
-              <div class="relative rounded-xl overflow-hidden mb-5 aspect-video border border-slate-200 group-hover:border-amber-400 transition-all shadow-md">
-                <img src="images/mechanical-hero.jpg" alt="Mechanical Engineering CAD and Industrial Robotics" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <!-- Interactive Motion Graphics Container: Planetary Gear Kinematics & Laser Scanline -->
+              <div class="relative rounded-xl overflow-hidden mb-5 aspect-video border border-slate-300 group-hover:border-amber-500 transition-all shadow-md bg-[#0d131f]">
                 
-                <!-- Telemetry HUD Overlay -->
-                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-100 bg-slate-900/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
-                  <span class="flex items-center gap-1.5 text-amber-300"><i data-lucide="crosshair" class="w-3.5 h-3.5"></i> Tol: ±0.02 mm</span>
-                  <span>SolidWorks / NX CAD</span>
-                  <span class="text-emerald-300 font-semibold">Execution Ready</span>
+                <!-- Background Workshop Photo (Subtle blend) -->
+                <img id="mechBgImg" src="images/mechanical-hero.jpg" alt="Mechanical Engineering CAD and Industrial Robotics" class="absolute inset-0 w-full h-full object-cover opacity-45 mix-blend-luminosity transform scale-100 group-hover:scale-105 transition-all duration-1000 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f18]/90 via-[#0a0f18]/40 to-transparent"></div>
+
+                <!-- LIVE SLOW-MOTION CAD CANVAS OVERLAY -->
+                <canvas id="mechMotionCanvas" class="absolute inset-0 w-full h-full z-10"></canvas>
+
+                <!-- Top Interactive Mode Selector -->
+                <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between text-[10px] font-mono">
+                  <div class="inline-flex items-center gap-1 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-500/30 text-amber-300">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span id="mechStatusText">CAD KINEMATICS // ACTIVE</span>
+                  </div>
+                  <div class="flex items-center gap-1 bg-black/60 backdrop-blur-md p-1 rounded-lg border border-white/10">
+                    <button onclick="setMechView('cad')" id="btnMechCad" class="px-2 py-0.5 rounded text-[10px] bg-amber-600 text-white font-bold transition-all">CAD</button>
+                    <button onclick="setMechView('hybrid')" id="btnMechHybrid" class="px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all">Hybrid</button>
+                    <button onclick="setMechView('photo')" id="btnMechPhoto" class="px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all">Photo</button>
+                  </div>
+                </div>
+
+                <!-- Bottom Telemetry HUD Overlay -->
+                <div class="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between text-[11px] font-mono text-slate-200 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                  <span class="flex items-center gap-1.5 text-amber-300"><i data-lucide="crosshair" class="w-3.5 h-3.5"></i> Tol: ±0.012 mm</span>
+                  <span class="hidden sm:inline text-slate-400">Torque: 340 N·m // 18 RPM</span>
+                  <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> FEA: Nominal
+                  </span>
                 </div>
               </div>
 
@@ -358,7 +378,7 @@
             </div>
           </div>
 
-          <!-- RIGHT SIDE: SOFTWARE ENGINEERING -->
+          <!-- RIGHT SIDE: SOFTWARE ENGINEERING (With Slow-Motion Digital Twin Motion Graphics) -->
           <div class="thrunox-card rounded-2xl p-6 sm:p-8 relative overflow-hidden group flex flex-col justify-between cad-grid">
             <!-- Subtle slow reverse spinning cyber circuit in background -->
             <div class="absolute -top-16 -right-16 w-64 h-64 border border-sky-600/15 rounded-full pointer-events-none animate-slow-spin-reverse">
@@ -371,7 +391,7 @@
                   <i data-lucide="code-2" class="w-3.5 h-3.5 animate-pulse text-sky-700"></i> Software Engineering
                 </span>
                 <span class="text-[11px] font-mono text-slate-600 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span> Cloud &amp; Digital Twin
+                  <span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span> Slow-Motion Twin Engine
                 </span>
               </div>
 
@@ -382,16 +402,36 @@
                 Full-stack software engineering, distributed cloud architecture, data pipelines, and research towards an accessible Digital Twin &amp; Virtual Sandbox for MSMEs.
               </p>
 
-              <!-- Image Container with Slow Ambient Movement -->
-              <div class="relative rounded-xl overflow-hidden mb-5 aspect-video border border-slate-200 group-hover:border-sky-400 transition-all shadow-md">
-                <img src="images/software-hero.jpg" alt="Software Engineering Code and Systems Architecture" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <!-- Interactive Motion Graphics Container: Digital Twin Graph & Telemetry Stream -->
+              <div class="relative rounded-xl overflow-hidden mb-5 aspect-video border border-slate-300 group-hover:border-sky-500 transition-all shadow-md bg-[#09101d]">
                 
-                <!-- Terminal Code HUD Overlay -->
-                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-100 bg-slate-900/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                <!-- Background Code Photo (Subtle blend) -->
+                <img id="softBgImg" src="images/software-hero.jpg" alt="Software Engineering Code and Systems Architecture" class="absolute inset-0 w-full h-full object-cover opacity-45 mix-blend-luminosity transform scale-100 group-hover:scale-105 transition-all duration-1000 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#09101d]/90 via-[#09101d]/40 to-transparent"></div>
+
+                <!-- LIVE SLOW-MOTION DIGITAL TWIN CANVAS OVERLAY -->
+                <canvas id="softMotionCanvas" class="absolute inset-0 w-full h-full z-10"></canvas>
+
+                <!-- Top Interactive Mode Selector -->
+                <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between text-[10px] font-mono">
+                  <div class="inline-flex items-center gap-1 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-sky-500/30 text-sky-300">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <span id="softStatusText">TWIN SANDBOX // SIMULATING</span>
+                  </div>
+                  <div class="flex items-center gap-1 bg-black/60 backdrop-blur-md p-1 rounded-lg border border-white/10">
+                    <button onclick="setSoftView('twin')" id="btnSoftTwin" class="px-2 py-0.5 rounded text-[10px] bg-sky-600 text-white font-bold transition-all">Twin</button>
+                    <button onclick="setSoftView('hybrid')" id="btnSoftHybrid" class="px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all">Hybrid</button>
+                    <button onclick="setSoftView('photo')" id="btnSoftPhoto" class="px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all">Photo</button>
+                  </div>
+                </div>
+
+                <!-- Bottom Telemetry HUD Overlay -->
+                <div class="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between text-[11px] font-mono text-slate-200 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
                   <span class="flex items-center gap-1.5 text-amber-300"><i data-lucide="terminal" class="w-3.5 h-3.5"></i> twin.evaluate()</span>
-                  <span>Pipeline: Active</span>
-                  <span class="text-emerald-300 font-semibold">&lt; 12ms Latency</span>
+                  <span class="hidden sm:inline text-slate-400">Flow: 1,420 units/hr</span>
+                  <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> &lt; 6.4ms Latency
+                  </span>
                 </div>
               </div>
 
@@ -425,7 +465,6 @@
           </div>
 
         </div>
-      </div>
 
       <!-- Section 2: What We Focus On (Tab 1, Section 2) -->
       <div class="mt-16 pt-12 border-t border-slate-300/60">
@@ -2119,73 +2158,535 @@
     }
 
     // ==========================================
-    // RESTRAINED ENGINEERING PARTICLE NETWORK
-    // Subtle connected nodes representing
-    // engineering intelligence & digital systems
     // ==========================================
-    const canvas = document.getElementById('particleCanvas');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let w = canvas.width = window.innerWidth;
-      let h = canvas.height = window.innerHeight;
+    // 1. RUNNING SYSTEM OPERATING BACKGROUND
+    // Orthogonal bus traces, data pulses, and
+    // system telemetry nodes looking like a live running OS
+    // ==========================================
+    const bgCanvas = document.getElementById('systemRunningCanvas') || document.getElementById('particleCanvas');
+    if (bgCanvas) {
+      const ctx = bgCanvas.getContext('2d');
+      let w = bgCanvas.width = window.innerWidth;
+      let h = bgCanvas.height = window.innerHeight;
 
       window.addEventListener('resize', () => {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
+        w = bgCanvas.width = window.innerWidth;
+        h = bgCanvas.height = window.innerHeight;
       });
 
-      const particleCount = Math.min(Math.floor(w / 35), 45);
-      const particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.22,
-          vy: (Math.random() - 0.5) * 0.22,
-          radius: Math.random() * 1.5 + 1.0,
-          color: Math.random() > 0.5 ? 'rgba(166, 115, 25, ' : 'rgba(100, 116, 139, '
+      // Grid spacing for the running system circuit lines
+      const stepX = 140;
+      const stepY = 120;
+
+      // System pulses moving along orthogonal buses
+      const pulses = [];
+      const pulseCount = Math.min(Math.floor(w / 70), 28);
+
+      for (let i = 0; i < pulseCount; i++) {
+        pulses.push({
+          x: Math.floor(Math.random() * (w / stepX)) * stepX,
+          y: Math.floor(Math.random() * (h / stepY)) * stepY,
+          vx: Math.random() > 0.5 ? (Math.random() > 0.5 ? 0.6 : -0.6) : 0,
+          vy: 0,
+          progress: 0,
+          len: Math.floor(Math.random() * 40 + 25),
+          color: Math.random() > 0.4 ? 'rgba(184, 134, 11, ' : 'rgba(56, 189, 248, ',
+          size: Math.random() * 1.5 + 1.2
         });
+        if (pulses[i].vx === 0) {
+          pulses[i].vy = Math.random() > 0.5 ? 0.6 : -0.6;
+        }
       }
 
-      function animateParticles() {
+      // Faint System Telemetry Labels drifting at grid points
+      const systemLabels = [
+        { text: 'SYS.CORE // ACTIVE', gridX: 2, gridY: 3, alpha: 0.18, dAlpha: 0.002 },
+        { text: 'CLK: 100Hz // SYNC', gridX: 6, gridY: 2, alpha: 0.15, dAlpha: -0.0015 },
+        { text: 'BUS: 256-BIT // FLOW: 99.8%', gridX: 4, gridY: 7, alpha: 0.2, dAlpha: 0.0018 },
+        { text: 'SANDBOX.EXEC // STANDBY', gridX: 8, gridY: 5, alpha: 0.16, dAlpha: -0.002 },
+        { text: 'TELEMETRY.NODE_04 // VERIFIED', gridX: 3, gridY: 9, alpha: 0.14, dAlpha: 0.0016 }
+      ];
+
+      let radarRadius = 0;
+      let radarAlpha = 0.25;
+
+      function animateRunningSystem() {
         ctx.clearRect(0, 0, w, h);
 
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          p.x += p.vx;
-          p.y += p.vy;
+        // A. Draw Orthogonal Bus Lines
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
+        ctx.lineWidth = 1;
 
-          if (p.x < 0) p.x = w;
-          if (p.x > w) p.x = 0;
-          if (p.y < 0) p.y = h;
-          if (p.y > h) p.y = 0;
-
+        for (let x = 0; x < w; x += stepX) {
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = p.color + '0.35)';
-          ctx.fill();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, h);
+          ctx.stroke();
+        }
 
-          for (let j = i + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dx = p.x - p2.x;
-            const dy = p.y - p2.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
+        for (let y = 0; y < h; y += stepY) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
 
-            if (dist < 130) {
+        // B. Draw Junction Beacons at selected intersections
+        for (let x = 0; x < w; x += stepX) {
+          for (let y = 0; y < h; y += stepY) {
+            if ((x / stepX + y / stepY) % 3 === 0) {
               ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = `rgba(166, 115, 25, ${0.12 * (1 - dist / 130)})`;
-              ctx.lineWidth = 0.6;
-              ctx.stroke();
+              ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(184, 134, 11, 0.25)';
+              ctx.fill();
+
+              ctx.beginPath();
+              ctx.arc(x, y, 1, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+              ctx.fill();
             }
           }
         }
 
-        requestAnimationFrame(animateParticles);
+        // C. Draw & Update Moving Data Pulses
+        for (let i = 0; i < pulses.length; i++) {
+          const p = pulses[i];
+
+          // Draw pulse head
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color + '0.85)';
+          ctx.fill();
+
+          // Draw trailing line
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.x - p.vx * p.len, p.y - p.vy * p.len);
+          ctx.strokeStyle = p.color + '0.35)';
+          ctx.lineWidth = p.size;
+          ctx.stroke();
+
+          // Move
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Junction turn logic
+          const atGridX = Math.abs(p.x % stepX) < 1;
+          const atGridY = Math.abs(p.y % stepY) < 1;
+
+          if (atGridX && atGridY && Math.random() < 0.2) {
+            // Turn 90 degrees
+            if (p.vx !== 0) {
+              p.vy = Math.random() > 0.5 ? 0.6 : -0.6;
+              p.vx = 0;
+            } else {
+              p.vx = Math.random() > 0.5 ? 0.6 : -0.6;
+              p.vy = 0;
+            }
+          }
+
+          // Wrap edges
+          if (p.x < 0) p.x = w;
+          if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h;
+          if (p.y > h) p.y = 0;
+        }
+
+        // D. Draw System Telemetry Labels
+        ctx.font = '10px monospace';
+        for (const lbl of systemLabels) {
+          lbl.alpha += lbl.dAlpha;
+          if (lbl.alpha > 0.35 || lbl.alpha < 0.08) lbl.dAlpha = -lbl.dAlpha;
+          ctx.fillStyle = `rgba(15, 23, 42, ${lbl.alpha})`;
+          ctx.fillText(lbl.text, lbl.gridX * stepX + 8, lbl.gridY * stepY - 6);
+        }
+
+        // E. Slow Heartbeat Radar Wave (Every 14s)
+        radarRadius += 0.8;
+        if (radarRadius > Math.max(w, h) * 0.9) {
+          radarRadius = 0;
+        }
+        ctx.beginPath();
+        ctx.arc(w / 2, h / 2, radarRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(184, 134, 11, ${0.08 * (1 - radarRadius / (Math.max(w, h) * 0.9))})`;
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+
+        requestAnimationFrame(animateRunningSystem);
       }
 
-      animateParticles();
+      animateRunningSystem();
+    }
+
+    // ==========================================
+    // 2. MECHANICAL CAD SLOW-MOTION ENGINE
+    // Planetary gear kinematics, laser scanline,
+    // coordinate triad, and precision dimensions
+    // ==========================================
+    const mechCanvas = document.getElementById('mechMotionCanvas');
+    let mechViewMode = 'cad';
+
+    function setMechView(mode) {
+      mechViewMode = mode;
+      const img = document.getElementById('mechBgImg');
+      const text = document.getElementById('mechStatusText');
+      document.getElementById('btnMechCad').className = mode === 'cad' ? 'px-2 py-0.5 rounded text-[10px] bg-amber-600 text-white font-bold transition-all' : 'px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all';
+      document.getElementById('btnMechHybrid').className = mode === 'hybrid' ? 'px-2 py-0.5 rounded text-[10px] bg-amber-600 text-white font-bold transition-all' : 'px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all';
+      document.getElementById('btnMechPhoto').className = mode === 'photo' ? 'px-2 py-0.5 rounded text-[10px] bg-amber-600 text-white font-bold transition-all' : 'px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all';
+
+      if (mode === 'cad') {
+        img.style.opacity = '0.15';
+        text.innerText = 'CAD KINEMATICS // ACTIVE';
+      } else if (mode === 'hybrid') {
+        img.style.opacity = '0.65';
+        text.innerText = 'HYBRID HOLOGRAPHIC // SYNC';
+      } else {
+        img.style.opacity = '1.0';
+        text.innerText = 'WORKSHOP PHOTO // VIEW';
+      }
+    }
+
+    if (mechCanvas) {
+      const mctx = mechCanvas.getContext('2d');
+      let mw, mh;
+
+      function resizeMech() {
+        mw = mechCanvas.width = mechCanvas.offsetWidth || 500;
+        mh = mechCanvas.height = mechCanvas.offsetHeight || 280;
+      }
+      resizeMech();
+      window.addEventListener('resize', resizeMech);
+
+      let sunAngle = 0;
+      let scanY = 0;
+      let scanDir = 1;
+
+      // Draw gear with teeth
+      function drawGear(cx, cy, r, teeth, angle, color, fillColor) {
+        mctx.save();
+        mctx.translate(cx, cy);
+        mctx.rotate(angle);
+
+        mctx.beginPath();
+        for (let i = 0; i < teeth; i++) {
+          const a = (i / teeth) * Math.PI * 2;
+          const aNext = ((i + 0.5) / teeth) * Math.PI * 2;
+          const toothH = r * 0.14;
+
+          mctx.lineTo(Math.cos(a) * (r + toothH), Math.sin(a) * (r + toothH));
+          mctx.lineTo(Math.cos(aNext) * (r - toothH), Math.sin(aNext) * (r - toothH));
+        }
+        mctx.closePath();
+        mctx.fillStyle = fillColor || 'rgba(184, 134, 11, 0.15)';
+        mctx.fill();
+        mctx.strokeStyle = color || '#c89641';
+        mctx.lineWidth = 1.5;
+        mctx.stroke();
+
+        // Inner pitch circle & bore
+        mctx.beginPath();
+        mctx.arc(0, 0, r * 0.45, 0, Math.PI * 2);
+        mctx.fillStyle = 'rgba(10, 15, 24, 0.85)';
+        mctx.fill();
+        mctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        mctx.lineWidth = 1;
+        mctx.stroke();
+
+        // Keyway / center cross
+        mctx.beginPath();
+        mctx.moveTo(-r * 0.25, 0); mctx.lineTo(r * 0.25, 0);
+        mctx.moveTo(0, -r * 0.25); mctx.lineTo(0, r * 0.25);
+        mctx.strokeStyle = 'rgba(200, 150, 65, 0.8)';
+        mctx.stroke();
+
+        mctx.restore();
+      }
+
+      function animateMech() {
+        if (mechViewMode !== 'photo') {
+          mctx.clearRect(0, 0, mw, mh);
+
+          const cx = mw * 0.52;
+          const cy = mh * 0.52;
+          const sunR = Math.min(mw, mh) * 0.18;
+          const planetR = sunR * 0.65;
+          const orbitR = sunR + planetR;
+
+          // A. Slow rotation of central sun gear
+          sunAngle += 0.007; // Slow motion speed
+          drawGear(cx, cy, sunR, 18, sunAngle, '#d4a359', 'rgba(200, 150, 65, 0.25)');
+
+          // B. 3 Planet gears meshing in slow motion
+          for (let p = 0; p < 3; p++) {
+            const orbitAngle = (p / 3) * Math.PI * 2 + sunAngle * 0.4;
+            const px = cx + Math.cos(orbitAngle) * orbitR;
+            const py = cy + Math.sin(orbitAngle) * orbitR;
+            const planetSpin = -sunAngle * (sunR / planetR);
+
+            drawGear(px, py, planetR, 12, planetSpin, '#94a3b8', 'rgba(148, 163, 184, 0.2)');
+
+            // Pitch circle tangent lines
+            mctx.beginPath();
+            mctx.arc(cx, cy, orbitR, 0, Math.PI * 2);
+            mctx.strokeStyle = 'rgba(200, 150, 65, 0.2)';
+            mctx.setLineDash([4, 4]);
+            mctx.stroke();
+            mctx.setLineDash([]);
+          }
+
+          // C. CAD Orthographic Dimension Markers
+          mctx.font = '9px monospace';
+          mctx.fillStyle = '#f8fafc';
+          mctx.fillText('Ø ' + (sunR * 2.8).toFixed(1) + ' mm [SUN]', cx - 45, cy + sunR + 25);
+          mctx.fillText('MODULE: 2.50 // PRESS. ANGLE: 20°', 16, 52);
+          mctx.fillText('CAD MODEL: SOLIDWORKS 2026 // SLOW KINEMATICS', 16, 66);
+
+          // Dimension lines with arrows
+          mctx.beginPath();
+          mctx.moveTo(cx - sunR, cy - sunR - 12);
+          mctx.lineTo(cx + sunR, cy - sunR - 12);
+          mctx.strokeStyle = 'rgba(212, 163, 89, 0.7)';
+          mctx.stroke();
+
+          // D. Slow Laser Inspection Sweep Beam
+          scanY += scanDir * 0.65;
+          if (scanY > mh) { scanY = mh; scanDir = -1; }
+          if (scanY < 0) { scanY = 0; scanDir = 1; }
+
+          mctx.beginPath();
+          mctx.moveTo(0, scanY);
+          mctx.lineTo(mw, scanY);
+          mctx.strokeStyle = 'rgba(56, 189, 248, 0.85)';
+          mctx.lineWidth = 1.5;
+          mctx.stroke();
+
+          // Laser glow gradient
+          const scanGrad = mctx.createLinearGradient(0, scanY - 14, 0, scanY);
+          scanGrad.addColorStop(0, 'rgba(56, 189, 248, 0)');
+          scanGrad.addColorStop(1, 'rgba(56, 189, 248, 0.15)');
+          mctx.fillStyle = scanGrad;
+          mctx.fillRect(0, scanY - 14, mw, 14);
+
+          // E. Rotating 3D Coordinate Triad Gizmo (Top Right)
+          const gx = mw - 35;
+          const gy = 40;
+          const gLen = 22;
+          const gAngle = sunAngle * 0.8;
+
+          mctx.lineWidth = 1.5;
+          // X-axis (Red)
+          mctx.beginPath();
+          mctx.moveTo(gx, gy);
+          mctx.lineTo(gx + Math.cos(gAngle) * gLen, gy + Math.sin(gAngle) * (gLen * 0.5));
+          mctx.strokeStyle = '#ef4444';
+          mctx.stroke();
+          // Y-axis (Green)
+          mctx.beginPath();
+          mctx.moveTo(gx, gy);
+          mctx.lineTo(gx + Math.cos(gAngle + 2.1) * gLen, gy + Math.sin(gAngle + 2.1) * (gLen * 0.5));
+          mctx.strokeStyle = '#10b981';
+          mctx.stroke();
+          // Z-axis (Blue)
+          mctx.beginPath();
+          mctx.moveTo(gx, gy);
+          mctx.lineTo(gx, gy - gLen);
+          mctx.strokeStyle = '#38bdf8';
+          mctx.stroke();
+        } else {
+          mctx.clearRect(0, 0, mw, mh);
+        }
+
+        requestAnimationFrame(animateMech);
+      }
+
+      animateMech();
+    }
+
+    // ==========================================
+    // 3. SOFTWARE & DIGITAL TWIN MOTION ENGINE
+    // Connected pipeline nodes, glowing data packets,
+    // oscilloscope telemetry, and streaming syntax
+    // ==========================================
+    const softCanvas = document.getElementById('softMotionCanvas');
+    let softViewMode = 'twin';
+
+    function setSoftView(mode) {
+      softViewMode = mode;
+      const img = document.getElementById('softBgImg');
+      const text = document.getElementById('softStatusText');
+      document.getElementById('btnSoftTwin').className = mode === 'twin' ? 'px-2 py-0.5 rounded text-[10px] bg-sky-600 text-white font-bold transition-all' : 'px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all';
+      document.getElementById('btnSoftHybrid').className = mode === 'hybrid' ? 'px-2 py-0.5 rounded text-[10px] bg-sky-600 text-white font-bold transition-all' : 'px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all';
+      document.getElementById('btnSoftPhoto').className = mode === 'photo' ? 'px-2 py-0.5 rounded text-[10px] bg-sky-600 text-white font-bold transition-all' : 'px-2 py-0.5 rounded text-[10px] text-slate-300 hover:text-white transition-all';
+
+      if (mode === 'twin') {
+        img.style.opacity = '0.15';
+        text.innerText = 'TWIN SANDBOX // SIMULATING';
+      } else if (mode === 'hybrid') {
+        img.style.opacity = '0.65';
+        text.innerText = 'HYBRID TELEMETRY // SYNC';
+      } else {
+        img.style.opacity = '1.0';
+        text.innerText = 'CODE WORKSPACE // VIEW';
+      }
+    }
+
+    if (softCanvas) {
+      const sctx = softCanvas.getContext('2d');
+      let sw, sh;
+
+      function resizeSoft() {
+        sw = softCanvas.width = softCanvas.offsetWidth || 500;
+        sh = softCanvas.height = softCanvas.offsetHeight || 280;
+      }
+      resizeSoft();
+      window.addEventListener('resize', resizeSoft);
+
+      // Define 5 Interactive System Nodes across the canvas
+      function getNodes() {
+        return [
+          { name: 'INGEST API', x: sw * 0.14, y: sh * 0.52, icon: '⚡', color: '#38bdf8' },
+          { name: 'STREAM BUS', x: sw * 0.36, y: sh * 0.32, icon: '〰', color: '#d4a359' },
+          { name: 'TWIN SANDBOX', x: sw * 0.58, y: sh * 0.52, icon: '⚙', color: '#10b981' },
+          { name: 'AI INFERENCE', x: sw * 0.78, y: sh * 0.32, icon: '▲', color: '#c084fc' },
+          { name: 'TELEMETRY', x: sw * 0.88, y: sh * 0.65, icon: '📊', color: '#38bdf8' }
+        ];
+      }
+
+      // Packets flowing between connected nodes
+      const softPackets = [
+        { from: 0, to: 1, t: 0.1, speed: 0.007, color: '#38bdf8' },
+        { from: 1, to: 2, t: 0.5, speed: 0.006, color: '#d4a359' },
+        { from: 2, to: 3, t: 0.8, speed: 0.008, color: '#10b981' },
+        { from: 3, to: 4, t: 0.3, speed: 0.007, color: '#c084fc' }
+      ];
+
+      let oscPhase = 0;
+      let pulseRadii = [0, 0, 0, 0, 0];
+
+      function animateSoft() {
+        if (softViewMode !== 'photo') {
+          sctx.clearRect(0, 0, sw, sh);
+          const nodes = getNodes();
+
+          // A. Draw Bus Connections
+          sctx.lineWidth = 1.5;
+          for (let i = 0; i < nodes.length - 1; i++) {
+            const n1 = nodes[i];
+            const n2 = nodes[i + 1];
+
+            sctx.beginPath();
+            sctx.moveTo(n1.x, n1.y);
+            // Orthogonal path with slight bend
+            const midX = (n1.x + n2.x) / 2;
+            sctx.lineTo(midX, n1.y);
+            sctx.lineTo(midX, n2.y);
+            sctx.lineTo(n2.x, n2.y);
+            sctx.strokeStyle = 'rgba(148, 163, 184, 0.28)';
+            sctx.stroke();
+          }
+
+          // B. Move and Draw Glowing Data Packets along bus lines
+          for (const pkt of softPackets) {
+            pkt.t += pkt.speed;
+            if (pkt.t > 1) {
+              pkt.t = 0;
+              // Trigger ripple at destination node
+              pulseRadii[pkt.to] = 1;
+            }
+
+            const n1 = nodes[pkt.from];
+            const n2 = nodes[pkt.to];
+            const midX = (n1.x + n2.x) / 2;
+
+            // Interpolate position along orthogonal path
+            let px, py;
+            if (pkt.t < 0.33) {
+              const subT = pkt.t / 0.33;
+              px = n1.x + (midX - n1.x) * subT;
+              py = n1.y;
+            } else if (pkt.t < 0.66) {
+              const subT = (pkt.t - 0.33) / 0.33;
+              px = midX;
+              py = n1.y + (n2.y - n1.y) * subT;
+            } else {
+              const subT = (pkt.t - 0.66) / 0.34;
+              px = midX + (n2.x - midX) * subT;
+              py = n2.y;
+            }
+
+            // Draw glowing packet
+            sctx.beginPath();
+            sctx.arc(px, py, 3, 0, Math.PI * 2);
+            sctx.fillStyle = pkt.color;
+            sctx.shadowColor = pkt.color;
+            sctx.shadowBlur = 8;
+            sctx.fill();
+            sctx.shadowBlur = 0;
+          }
+
+          // C. Draw System Nodes & Expanding Ripples
+          for (let i = 0; i < nodes.length; i++) {
+            const node = nodes[i];
+
+            // Ripple
+            if (pulseRadii[i] > 0) {
+              pulseRadii[i] += 0.45;
+              sctx.beginPath();
+              sctx.arc(node.x, node.y, 14 + pulseRadii[i], 0, Math.PI * 2);
+              sctx.strokeStyle = `rgba(56, 189, 248, ${0.4 * (1 - pulseRadii[i] / 20)})`;
+              sctx.lineWidth = 1;
+              sctx.stroke();
+              if (pulseRadii[i] > 20) pulseRadii[i] = 0;
+            }
+
+            // Node Outer Circle
+            sctx.beginPath();
+            sctx.arc(node.x, node.y, 14, 0, Math.PI * 2);
+            sctx.fillStyle = '#0f172a';
+            sctx.fill();
+            sctx.strokeStyle = node.color;
+            sctx.lineWidth = 2;
+            sctx.stroke();
+
+            // Node Inner Dot
+            sctx.beginPath();
+            sctx.arc(node.x, node.y, 4, 0, Math.PI * 2);
+            sctx.fillStyle = node.color;
+            sctx.fill();
+
+            // Label
+            sctx.font = '8px monospace';
+            sctx.fillStyle = '#cbd5e1';
+            sctx.textAlign = 'center';
+            sctx.fillText(node.name, node.x, node.y + 26);
+            sctx.textAlign = 'left';
+          }
+
+          // D. Live Telemetry Oscilloscope Waveform (Bottom)
+          oscPhase += 0.04;
+          sctx.beginPath();
+          sctx.moveTo(16, sh - 38);
+          for (let x = 16; x < sw - 16; x += 3) {
+            const waveY = (sh - 38) + Math.sin((x * 0.04) + oscPhase) * 6 + Math.cos((x * 0.08) - oscPhase * 0.5) * 3;
+            sctx.lineTo(x, waveY);
+          }
+          sctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+          sctx.lineWidth = 1.2;
+          sctx.stroke();
+
+          sctx.font = '9px monospace';
+          sctx.fillStyle = '#94a3b8';
+          sctx.fillText('MSME_TWIN_SANDBOX // REPLICA 01', 16, 52);
+          sctx.fillText('THROUGHPUT: 1,420 units/hr // STATUS: STEADY', 16, 66);
+          sctx.fillText('LIVE STREAM LATENCY: 6.4ms', 16, sh - 48);
+        } else {
+          sctx.clearRect(0, 0, sw, sh);
+        }
+
+        requestAnimationFrame(animateSoft);
+      }
+
+      animateSoft();
     }
   </script>
 
