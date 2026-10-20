@@ -1,4 +1,13 @@
 *.pdf
+!Thrunox-Systems-Company-Brochure.pdf
+!brochure.pdf
+!privacy-policy.pdf
+!terms-and-conditions.pdf
 *.png
 !logo.png
+!logo-darkened-crown.png
+!images/*
 dist/
+details_extracted/
+details of company/
+*.bak

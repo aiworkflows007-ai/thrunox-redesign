@@ -2,7 +2,7 @@ services:
   - type: web
     name: thrunox-systems
     runtime: static
-    buildCommand: mkdir -p dist && cp index.html logo.png dist/
+    buildCommand: mkdir -p dist && cp -r index.html logo.png images *.pdf dist/ 2>/dev/null || true
     staticPublishPath: ./dist
     headers:
       - path: /*
