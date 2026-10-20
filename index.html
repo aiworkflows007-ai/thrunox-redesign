@@ -7,7 +7,10 @@
   <meta name="description" content="Thrunox Systems is an execution-focused business platform translating strategy into structured, practical, and scalable execution across Project Management, Operations, Supply Chain, Accounting, US Healthcare RCM, Digital Compliance, Cyber Security, and ESG Advisory.">
   <link rel="icon" href="logo.png">
 
-  <!-- Google Fonts: Manrope -->
+  <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,8 +26,9 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Manrope"', 'sans-serif'],
-            display: ['"Manrope"', 'sans-serif']
+            sans: ['"Plus Jakarta Sans"', '"Manrope"', 'sans-serif'],
+            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace', 'ui-monospace']
           },
           colors: {
             brand: {
@@ -66,6 +70,59 @@
   </script>
 
   <style>
+    /* Enhanced Text & Visual Elevation */
+    @keyframes goldShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .btn-gold-shimmer {
+      background: linear-gradient(90deg, #b8860b 0%, #d4af37 40%, #b8860b 80%);
+      background-size: 200% auto;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-gold-shimmer:hover {
+      background-position: right center;
+      box-shadow: 0 8px 24px -2px rgba(184, 134, 11, 0.45);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll reveal transitions */
+    .reveal-on-scroll {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Enhanced Card Depth & Glass Rim */
+    .thrunox-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(203, 213, 225, 0.85);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .thrunox-card:hover {
+      border-color: rgba(184, 134, 11, 0.45);
+      box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.08), 0 0 24px -4px rgba(184, 134, 11, 0.12);
+      transform: translateY(-3px);
+    }
+
+    /* Sub-card glass styling */
+    .thrunox-subcard {
+      background: rgba(248, 250, 252, 0.85);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      transition: all 0.25s ease;
+    }
+    .thrunox-subcard:hover {
+      background: rgba(255, 255, 255, 0.98);
+      border-color: rgba(184, 134, 11, 0.35);
+      box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.04);
+    }
+
     /* Exact Thrunox Brochure Color & Theme System */
     body {
       background: linear-gradient(180deg, #eaedf1 0%, #dfe3e8 50%, #e2e6eb 100%);
@@ -184,12 +241,15 @@
           </div>
         </a>
 
-        <!-- Main Desktop Navigation: 4 Core Tabs as per Handoff Doc -->
-        <nav class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-slate-700">
-          <a href="#about" class="nav-tab hover:text-amber-800 transition-colors py-2 border-b-2 border-transparent hover:border-amber-700">About Us</a>
-          <a href="#services" class="nav-tab hover:text-amber-800 transition-colors py-2 border-b-2 border-transparent hover:border-amber-700">Services</a>
-          <a href="#industries" class="nav-tab hover:text-amber-800 transition-colors py-2 border-b-2 border-transparent hover:border-amber-700">Industries</a>
-          <a href="#innovation" class="nav-tab hover:text-amber-800 transition-colors py-2 border-b-2 border-transparent hover:border-amber-700">Innovation &amp; Solutions</a>
+        <!-- Main Desktop Navigation: 4 Core Tabs with Animated Hover Indicators -->
+        <nav class="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-700">
+          <a href="#about" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">About Us</a>
+          <a href="#services" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">Services</a>
+          <a href="#industries" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">Industries</a>
+          <a href="#innovation" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">Innovation &amp; Solutions</a>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50/90 border border-emerald-300/60 text-emerald-800 text-[10px] font-mono font-bold tracking-tight shadow-2xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> SYSTEM ACTIVE
+          </span>
         </nav>
 
         <!-- Fast Actions & Header Contact Us Button -->
@@ -243,36 +303,78 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Introduction & Tagline (from Brochure & Handoff Doc) -->
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-5 shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
-          Notions in Motion, Results in Reality
+      <div class="text-center max-w-4xl mx-auto mb-10 reveal-on-scroll">
+        
+        <!-- Illuminated Kicker Pill with Crown Motif -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 border border-amber-300/80 shadow-[0_2px_14px_rgba(184,134,11,0.12)] text-amber-900 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-md">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+          </span>
+          <span class="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700 bg-clip-text text-transparent font-extrabold tracking-widest">
+            Notions in Motion • Results in Reality
+          </span>
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
-          Thrunox Systems LLP
+
+        <!-- High-Impact Dual-Tone Title with Space Grotesk / Jakarta Display -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 mb-5 leading-[1.08] font-display">
+          Thrunox <span class="bg-gradient-to-r from-slate-900 via-amber-900 to-amber-700 bg-clip-text text-transparent">Systems LLP</span>
         </h1>
-        <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-semibold mb-6">
-          Strategize. Execute. Excel.
+
+        <!-- Illuminated Triple Mantra -->
+        <div class="inline-flex items-center justify-center gap-2.5 text-base sm:text-lg md:text-xl font-bold mb-6 text-slate-800 tracking-tight bg-white/60 px-5 py-1.5 rounded-full border border-slate-200/80 shadow-2xs">
+          <span class="text-amber-800">Strategize.</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+          <span class="text-slate-950">Execute.</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+          <span class="text-amber-700">Excel.</span>
+        </div>
+
+        <!-- Crisp High-Contrast Value Proposition -->
+        <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-4 max-w-3xl mx-auto font-medium">
+          Thrunox Systems enables businesses to translate strategy into execution through <strong class="text-slate-900 font-semibold">Structured, Scalable, and Compliant Systems</strong> across Project Management, Operations &amp; Supply Chain, Finance, Revenue Cycle Management, Licensing &amp; Strategic Consulting, Digital Compliance, and ESG Advisory.
         </p>
-        <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
-          Thrunox Systems enables businesses to translate strategy into execution through Structured, Scalable, and Compliant Systems across Project Management, Operations &amp; Supply Chain, Finance, Revenue Cycle Management, Licensing and Strategic Consulting, Digital Compliance, and ESG Advisory.
-        </p>
-        <p class="text-xs sm:text-sm text-slate-600 mb-8 italic">
-          Our approach is centred on understanding business requirements into a clear scope, practical workstreams, responsibilities and an execution plan. Our model is designed to be adaptable to different business sizes, operational environments and stages of growth.
+        <p class="text-xs sm:text-sm text-slate-600 mb-8 italic max-w-2xl mx-auto leading-relaxed">
+          Our approach is centred on understanding business requirements into a clear scope, practical workstreams, responsibilities and an execution plan — adaptable to different business sizes, operational environments and stages of growth.
         </p>
         
-        <!-- Hero Action Buttons as defined in handoff doc -->
+        <!-- Hero Action Buttons with Shimmer & Smooth Interactivity -->
         <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          <a href="#services" class="btn-gold px-5 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-md">
-            Explore Our Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <a href="#services" class="btn-gold-shimmer text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg group">
+            Explore Our Services <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
           </a>
-          <a href="#innovation" class="btn-dark px-5 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-md">
+          <a href="#innovation" class="btn-dark px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all">
             Explore Innovation &amp; Solutions <i data-lucide="compass" class="w-4 h-4 text-amber-400"></i>
           </a>
-          <a href="Thrunox-Systems-Company-Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="btn-secondary px-5 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 border-slate-300 text-slate-800 hover:text-amber-800 shadow-sm">
+          <a href="details%20of%20company/Thrunox%20Systems-%20Company%20Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="btn-secondary px-5 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 border-slate-300 text-slate-800 hover:text-amber-800 shadow-sm hover:border-amber-400 transition-all">
             <i data-lucide="download" class="w-4 h-4 text-amber-700"></i> Download Company Brochure
           </a>
         </div>
+
+        <!-- 4-Column Executive Authority & Metrics Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mt-10">
+          <div class="thrunox-card p-4 rounded-xl text-center border border-slate-200/90 shadow-2xs hover:shadow-sm transition-all group">
+            <div class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-amber-700 to-amber-900 bg-clip-text text-transparent font-display">5+</div>
+            <div class="text-xs font-bold text-slate-900 mt-1">Core Verticals</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">Projects, SCM, RCM, ESG &amp; Advisory</div>
+          </div>
+          <div class="thrunox-card p-4 rounded-xl text-center border border-slate-200/90 shadow-2xs hover:shadow-sm transition-all group">
+            <div class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-sky-600 to-blue-800 bg-clip-text text-transparent font-display">Zero-Risk</div>
+            <div class="text-xs font-bold text-slate-900 mt-1">Virtual Sandbox</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">Digital Twin for MSME Shop Floors</div>
+          </div>
+          <div class="thrunox-card p-4 rounded-xl text-center border border-slate-200/90 shadow-2xs hover:shadow-sm transition-all group">
+            <div class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-emerald-600 to-teal-800 bg-clip-text text-transparent font-display">100%</div>
+            <div class="text-xs font-bold text-slate-900 mt-1">Deliverable Control</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">From Tendering to Commissioning</div>
+          </div>
+          <div class="thrunox-card p-4 rounded-xl text-center border border-slate-200/90 shadow-2xs hover:shadow-sm transition-all group">
+            <div class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-800 bg-clip-text text-transparent font-display">4 Sectors</div>
+            <div class="text-xs font-bold text-slate-900 mt-1">Domain Focus</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">HealthTech, MSME, Solar, EdTech</div>
+          </div>
+        </div>
+
       </div>
 
       <!-- ============================================================== -->
@@ -632,15 +734,26 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section 1: Services Introduction -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-3">Our Services</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Practical Support for Business Execution</h2>
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-700"></i> Core Competencies
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 mb-4 font-display">Practical Support for Business Execution</h2>
         <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
           Every business faces operational, financial, regulatory and organisational challenges that require the right combination of planning, coordination and specialist support.
         </p>
-        <p class="text-xs sm:text-sm text-slate-600 mt-2">
+        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
           Thrunox Systems helps businesses structure these requirements and explore practical ways to address them. Depending on the engagement, we coordinate with relevant professionals and specialist service partners to support defined business objectives.
         </p>
+      </div>
+
+      <!-- Interactive Quick Switcher Filter Bar -->
+      <div class="flex items-center justify-center flex-wrap gap-2 mb-12">
+        <button onclick="filterServiceView('all')" id="svcTabAll" class="svc-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-sm">All 4 Verticals</button>
+        <button onclick="filterServiceView('svc1')" id="svcTab1" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">1. Projects &amp; SCM</button>
+        <button onclick="filterServiceView('svc2')" id="svcTab2" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">2. Finance &amp; US RCM</button>
+        <button onclick="filterServiceView('svc3')" id="svcTab3" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">3. Compliance &amp; Cyber Security</button>
+        <button onclick="filterServiceView('svc4')" id="svcTab4" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">4. ESG Advisory</button>
       </div>
 
       <!-- Section 2: Service Verticals (Stacked Cards with Specific CTAs) -->
@@ -649,13 +762,15 @@
         <!-- ========================================== -->
         <!-- Service 1: Project Management & Operations -->
         <!-- ========================================== -->
-        <div class="thrunox-card p-6 sm:p-10 rounded-2xl relative">
+        <div id="cardSvc1" class="thrunox-card p-6 sm:p-10 rounded-2xl relative service-block reveal-on-scroll">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 mb-8">
-            <div>
-              <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">Service 1</span>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white font-extrabold flex items-center justify-center shrink-0 shadow-sm font-display">01</div>
+              <div>
+                <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-0.5">Vertical 1 • Execution Management</span>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Project Management, Operations &amp; Supply Chain</h3>
               <p class="text-xs sm:text-sm text-slate-600 mt-1">From Bid to Execution — Delivered with Control from Tendering to Delivery to Operations.</p>
-            </div>
+            </div></div>
             <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20I%20would%20like%20to%20discuss%20a%20requirement%20related%20to%20Project%20Management,%20Operations%20%26%20Supply%20Chain." target="_blank" class="btn-gold px-4 py-2.5 rounded-xl font-bold text-xs inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-md">
               <i data-lucide="message-circle" class="w-4 h-4"></i> Discuss Your Requirements
             </a>
@@ -727,13 +842,15 @@
         <!-- ========================================== -->
         <!-- Service 2: Accounting & US Healthcare RCM   -->
         <!-- ========================================== -->
-        <div class="thrunox-card p-6 sm:p-10 rounded-2xl relative">
+        <div id="cardSvc2" class="thrunox-card p-6 sm:p-10 rounded-2xl relative service-block reveal-on-scroll">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 mb-8">
-            <div>
-              <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">Service 2</span>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white font-extrabold flex items-center justify-center shrink-0 shadow-sm font-display">02</div>
+              <div>
+                <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-0.5">Vertical 2 • Financial Engineering</span>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Accounting, Bookkeeping &amp; Revenue Cycle Management (RCM)</h3>
               <p class="text-xs sm:text-sm text-slate-600 mt-1">Maximizing Revenue. Minimizing Leakage. We build systems ensuring predictable cash flow and compliance.</p>
-            </div>
+            </div></div>
             <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20I%20would%20like%20to%20discuss%20an%20Accounting,%20Bookkeeping%20or%20Revenue%20Cycle%20Management%20requirement." target="_blank" class="btn-gold px-4 py-2.5 rounded-xl font-bold text-xs inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-md">
               <i data-lucide="message-circle" class="w-4 h-4"></i> Discuss Your Requirements
             </a>
@@ -792,13 +909,15 @@
         <!-- ========================================== -->
         <!-- Service 3: Compliance & Cyber Security      -->
         <!-- ========================================== -->
-        <div class="thrunox-card p-6 sm:p-10 rounded-2xl relative">
+        <div id="cardSvc3" class="thrunox-card p-6 sm:p-10 rounded-2xl relative service-block reveal-on-scroll">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 mb-8">
-            <div>
-              <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">Service 3</span>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white font-extrabold flex items-center justify-center shrink-0 shadow-sm font-display">03</div>
+              <div>
+                <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-0.5">Vertical 3 • Strategic Consulting</span>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Compliance &amp; Cyber Security</h3>
               <p class="text-xs sm:text-sm text-slate-600 mt-1">From Paperwork to Seamless Digital Execution &amp; Enterprise Cyber Resilience.</p>
-            </div>
+            </div></div>
             <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20I%20would%20like%20to%20enquire%20about%20Compliance%20%26%20Cyber%20Security%20Solutions." target="_blank" class="btn-gold px-4 py-2.5 rounded-xl font-bold text-xs inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-md">
               <i data-lucide="shield" class="w-4 h-4"></i> Explore Solutions
             </a>
@@ -903,13 +1022,15 @@
         <!-- ========================================== -->
         <!-- Service 4: ESG Advisory                     -->
         <!-- ========================================== -->
-        <div class="thrunox-card p-6 sm:p-10 rounded-2xl relative">
+        <div id="cardSvc4" class="thrunox-card p-6 sm:p-10 rounded-2xl relative service-block reveal-on-scroll">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 mb-8">
-            <div>
-              <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-1">Service 4</span>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white font-extrabold flex items-center justify-center shrink-0 shadow-sm font-display">04</div>
+              <div>
+                <span class="text-xs font-mono font-bold text-amber-800 uppercase tracking-widest block mb-0.5">Vertical 4 • Regulatory Structuring</span>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">ESG Advisory &amp; Sustainable Operations</h3>
               <p class="text-xs sm:text-sm text-slate-600 mt-1">Building Responsible and Future-Ready Businesses.</p>
-            </div>
+            </div></div>
             <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20I%20would%20like%20to%20discuss%20an%20ESG%20Advisory%20requirement." target="_blank" class="btn-gold px-4 py-2.5 rounded-xl font-bold text-xs inline-flex items-center gap-2 self-start md:self-auto shrink-0 shadow-md">
               <i data-lucide="leaf" class="w-4 h-4"></i> Discuss Your ESG Requirements
             </a>
@@ -1108,10 +1229,18 @@
           <span class="text-xs font-mono text-slate-600">Targeting MSMEs Across Industrial &amp; Medical Manufacturing</span>
         </div>
 
-        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
-          1) Affordable Digital Twin &amp; Virtual Sandbox for MSMEs
-        </h3>
-        <p class="text-base font-semibold text-amber-800 mb-4">Evaluate Before You Implement</p>
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 font-display">
+              1) Affordable Digital Twin &amp; Virtual Sandbox for MSMEs
+            </h3>
+            <p class="text-base font-semibold text-amber-800 mt-1">Evaluate Before You Implement • Simulation Without Overhead</p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-sky-50 border border-sky-300 text-sky-900 text-xs font-mono font-bold shrink-0">
+            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            ACTIVE SIMULATION SANDBOX
+          </div>
+        </div>
         
         <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
           Small and medium-sized manufacturers may need to assess production layouts, capacity constraints, workflow changes and operational scenarios before committing to physical changes. However, complex simulation solutions can require specialist expertise, implementation effort and investment.
@@ -1132,9 +1261,111 @@
           </div>
         </div>
 
+        <!-- ============================================================== -->
+        <!-- INTERACTIVE MSME DIGITAL TWIN SIMULATION PREVIEW STUDIO         -->
+        <!-- Allows visitors to interactively test factory scenario metrics  -->
+        <!-- ============================================================== -->
+        <div class="mb-12 p-5 sm:p-7 rounded-2xl bg-[#0b101b] border border-amber-500/30 text-white shadow-xl relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-white/10">
+            <div>
+              <span class="text-[10px] font-mono font-bold tracking-widest text-amber-400 uppercase block mb-1">Interactive Sandbox Preview Engine</span>
+              <h4 class="text-lg sm:text-xl font-bold font-display text-white">Live MSME Production Sandbox Simulator</h4>
+            </div>
+            <!-- Interactive Scenario Tabs -->
+            <div class="flex items-center gap-1.5 bg-white/5 p-1 rounded-xl border border-white/10 text-xs font-mono">
+              <button onclick="setSandboxScenario('throughput')" id="btnSbThroughput" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white font-bold transition-all">1. Throughput</button>
+              <button onclick="setSandboxScenario('bottleneck')" id="btnSbBottleneck" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">2. Bottlenecks</button>
+              <button onclick="setSandboxScenario('roi')" id="btnSbRoi" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">3. Working Capital</button>
+            </div>
+          </div>
+
+          <!-- Live Scenario Telemetry Dashboard -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+            <!-- Simulated Metric Gauges -->
+            <div class="space-y-3.5">
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                  <span>OVERALL EQUIPMENT EFFECTIVENESS</span>
+                  <span id="sbOeeDelta" class="text-emerald-400 font-bold">+18.5%</span>
+                </div>
+                <div class="text-2xl font-bold font-mono text-white mt-1" id="sbOeeVal">94.2% <span class="text-xs text-slate-400 font-normal">OEE</span></div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full mt-2 overflow-hidden">
+                  <div id="sbOeeBar" class="h-full bg-gradient-to-r from-amber-500 to-emerald-400 transition-all duration-700" style="width: 94%;"></div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                  <span>ESTIMATED CYCLE TIME PER UNIT</span>
+                  <span id="sbCycleDelta" class="text-sky-400 font-bold">-26s</span>
+                </div>
+                <div class="text-2xl font-bold font-mono text-white mt-1" id="sbCycleVal">42.0s <span class="text-xs text-slate-400 font-normal">(vs 68s baseline)</span></div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full mt-2 overflow-hidden">
+                  <div id="sbCycleBar" class="h-full bg-sky-400 transition-all duration-700" style="width: 62%;"></div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                  <span>SIMULATED PAYBACK HORIZON</span>
+                  <span id="sbPaybackDelta" class="text-amber-400 font-bold">Fast</span>
+                </div>
+                <div class="text-2xl font-bold font-mono text-white mt-1" id="sbPaybackVal">3.8 Months</div>
+                <div class="text-[11px] text-slate-400 mt-1">Capital saved prior to physical shop-floor changes</div>
+              </div>
+            </div>
+
+            <!-- Visual Production Pipeline Stage Telemetry -->
+            <div class="lg:col-span-2 p-4 rounded-xl bg-black/40 border border-white/10 flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                  <span id="sbScenarioTitle" class="text-amber-300 font-bold">SCENARIO A: CONTINUOUS CELLULAR LINE FLOW</span>
+                  <span class="flex items-center gap-1.5 text-emerald-400"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> SIMULATING</span>
+                </div>
+
+                <!-- Pipeline Stages Visualization -->
+                <div class="grid grid-cols-4 gap-2 mb-4 text-center text-[11px] font-mono">
+                  <div class="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <div class="text-slate-400 text-[10px]">STAGE 1</div>
+                    <div class="text-white font-bold mt-1">Raw Ingest</div>
+                    <div class="text-emerald-400 text-[10px] mt-1" id="sbStage1">100% Flow</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <div class="text-slate-400 text-[10px]">STAGE 2</div>
+                    <div class="text-white font-bold mt-1">CNC Machining</div>
+                    <div class="text-amber-300 text-[10px] mt-1" id="sbStage2">92% Util</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <div class="text-slate-400 text-[10px]">STAGE 3</div>
+                    <div class="text-white font-bold mt-1">Vision QA</div>
+                    <div class="text-sky-400 text-[10px] mt-1" id="sbStage3">0.8% Scrap</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                    <div class="text-slate-400 text-[10px]">STAGE 4</div>
+                    <div class="text-white font-bold mt-1">Packaging</div>
+                    <div class="text-emerald-400 text-[10px] mt-1" id="sbStage4">140/hr Out</div>
+                  </div>
+                </div>
+
+                <!-- Dynamic Description Box -->
+                <p id="sbScenarioDesc" class="text-xs text-slate-300 leading-relaxed font-sans bg-white/5 p-3 rounded-lg border border-white/5">
+                  Virtual simulation models a continuous flow layout eliminating queue pile-ups between CNC machining stations and QA inspection benches. Evaluates floor footprint and material transit without risking ongoing manufacturing commitments.
+                </p>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-mono text-[11px]">Ready to model your factory shop-floor?</span>
+                <a href="#contact" class="text-amber-400 hover:text-amber-300 font-bold inline-flex items-center gap-1">
+                  Request Custom Sandbox Evaluation &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Section 3: Proposed Platform Modules -->
         <div class="mb-10">
-          <h4 class="text-lg font-bold text-slate-900 mb-4">Proposed Platform Modules (Concept Stage)</h4>
+          <h4 class="text-lg font-bold text-slate-900 mb-4 font-display">Proposed Platform Modules (Concept Stage)</h4>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
@@ -2688,6 +2919,180 @@
 
       animateSoft();
     }
+
+    // ==========================================
+    // 4. INTERACTIVE SERVICE VIEW FILTER
+    // ==========================================
+    function filterServiceView(svcId) {
+      const buttons = document.querySelectorAll('.svc-filter-btn');
+      buttons.forEach(b => {
+        b.className = 'svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50';
+      });
+
+      if (svcId === 'all') {
+        document.getElementById('svcTabAll').className = 'svc-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-sm';
+        document.querySelectorAll('.service-block').forEach(c => {
+          c.style.display = 'block';
+          c.classList.remove('ring-2', 'ring-amber-500');
+        });
+      } else {
+        const activeBtn = {
+          'svc1': 'svcTab1',
+          'svc2': 'svcTab2',
+          'svc3': 'svcTab3',
+          'svc4': 'svcTab4'
+        }[svcId];
+        if (activeBtn && document.getElementById(activeBtn)) {
+          document.getElementById(activeBtn).className = 'svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-sm';
+        }
+
+        const targetCard = {
+          'svc1': 'cardSvc1',
+          'svc2': 'cardSvc2',
+          'svc3': 'cardSvc3',
+          'svc4': 'cardSvc4'
+        }[svcId];
+
+        if (targetCard && document.getElementById(targetCard)) {
+          const card = document.getElementById(targetCard);
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('ring-2', 'ring-amber-500');
+          setTimeout(() => {
+            card.classList.remove('ring-2', 'ring-amber-500');
+          }, 2000);
+        }
+      }
+    }
+
+    // ==========================================
+    // 5. INTERACTIVE MSME SANDBOX SCENARIO SWITCHER
+    // ==========================================
+    const sandboxScenarios = {
+      throughput: {
+        title: 'SCENARIO A: CONTINUOUS CELLULAR LINE FLOW',
+        oee: '94.2%',
+        oeeDelta: '+18.5%',
+        oeeWidth: '94%',
+        cycle: '42.0s',
+        cycleDelta: '-26s',
+        cycleWidth: '62%',
+        payback: '3.8 Months',
+        paybackDelta: 'Rapid',
+        stage1: '100% Flow',
+        stage2: '92% Util',
+        stage3: '0.8% Scrap',
+        stage4: '140/hr Out',
+        desc: 'Virtual simulation models a continuous flow layout eliminating queue pile-ups between CNC machining stations and QA inspection benches. Evaluates floor footprint and material transit without risking ongoing manufacturing commitments.'
+      },
+      bottleneck: {
+        title: 'SCENARIO B: DYNAMIC BUFFER & CAPACITY RECOVERY',
+        oee: '89.6%',
+        oeeDelta: '+12.4%',
+        oeeWidth: '90%',
+        cycle: '49.5s',
+        cycleDelta: '-18.5s',
+        cycleWidth: '73%',
+        payback: '4.2 Months',
+        paybackDelta: 'Predictable',
+        stage1: '95% Flow',
+        stage2: '98% Heavy',
+        stage3: 'Automated Buffer',
+        stage4: '124/hr Out',
+        desc: 'Detects thermal and tool-wear bottlenecks at critical CNC milling centers. Simulates automated intermediate buffer staging to protect downstream QA stations from line starvation.'
+      },
+      roi: {
+        title: 'SCENARIO C: WORKING CAPITAL & SCRAP REDUCTION',
+        oee: '96.1%',
+        oeeDelta: '+21.0%',
+        oeeWidth: '96%',
+        cycle: '38.2s',
+        cycleDelta: '-29.8s',
+        cycleWidth: '56%',
+        payback: '2.9 Months',
+        paybackDelta: 'Max ROI',
+        stage1: 'JIT Ingest',
+        stage2: '₹14.2L Freed',
+        stage3: '-34.8% Scrap',
+        stage4: '158/hr Out',
+        desc: 'Models lean JIT raw material replenishment combined with optical QA sorting. Frees an estimated ₹14.2 Lakhs in locked floor inventory while accelerating delivery cycle by 35%.'
+      }
+    };
+
+    function setSandboxScenario(type) {
+      const data = sandboxScenarios[type];
+      if (!data) return;
+
+      document.getElementById('btnSbThroughput').className = type === 'throughput' ? 'px-3 py-1.5 rounded-lg bg-amber-600 text-white font-bold transition-all' : 'px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all';
+      document.getElementById('btnSbBottleneck').className = type === 'bottleneck' ? 'px-3 py-1.5 rounded-lg bg-amber-600 text-white font-bold transition-all' : 'px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all';
+      document.getElementById('btnSbRoi').className = type === 'roi' ? 'px-3 py-1.5 rounded-lg bg-amber-600 text-white font-bold transition-all' : 'px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all';
+
+      document.getElementById('sbScenarioTitle').innerText = data.title;
+      document.getElementById('sbOeeVal').innerHTML = `${data.oee} <span class="text-xs text-slate-400 font-normal">OEE</span>`;
+      document.getElementById('sbOeeDelta').innerText = data.oeeDelta;
+      document.getElementById('sbOeeBar').style.width = data.oeeWidth;
+
+      document.getElementById('sbCycleVal').innerHTML = `${data.cycle} <span class="text-xs text-slate-400 font-normal">(vs 68s baseline)</span>`;
+      document.getElementById('sbCycleDelta').innerText = data.cycleDelta;
+      document.getElementById('sbCycleBar').style.width = data.cycleWidth;
+
+      document.getElementById('sbPaybackVal').innerText = data.payback;
+      document.getElementById('sbPaybackDelta').innerText = data.paybackDelta;
+
+      document.getElementById('sbStage1').innerText = data.stage1;
+      document.getElementById('sbStage2').innerText = data.stage2;
+      document.getElementById('sbStage3').innerText = data.stage3;
+      document.getElementById('sbStage4').innerText = data.stage4;
+
+      document.getElementById('sbScenarioDesc').innerText = data.desc;
+    }
+
+    // ==========================================
+    // 6. COPY TO CLIPBOARD HELPER
+    // ==========================================
+    function copyText(text, label) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast((label || text) + ' copied to clipboard!');
+        });
+      } else {
+        showToast('Info: ' + text);
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('copyToast');
+      const textElem = document.getElementById('toastMsg');
+      if (!toast || !textElem) return;
+      textElem.textContent = msg;
+      toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2600);
+    }
+
+    // ==========================================
+    // 7. SMOOTH SCROLL REVEAL OBSERVER
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
   </script>
 
 </body>
