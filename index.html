@@ -221,7 +221,109 @@
       background: rgba(15, 23, 42, 0.65);
       backdrop-filter: blur(8px);
     }
+
+    /* Single-Page Application (SPA) Multi-Tab View Router */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .page-view.active {
+      display: block;
+      opacity: 1;
+      animation: fadeInPageView 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeInPageView {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Active Navigation Tabs */
+    .nav-tab.active-nav-link {
+      color: #9a3412 !important;
+      font-weight: 800 !important;
+    }
+    .nav-tab.active-nav-link::after {
+      width: 100% !important;
+      background-color: #ea580c !important;
+    }
+
+    /* Molbio-Inspired Hero Motion Graphics & Carousel */
+    .hero-molbio-container {
+      position: relative;
+      min-height: 580px;
+      overflow: hidden;
+      background: #060b14;
+    }
+    @media (min-width: 768px) {
+      .hero-molbio-container {
+        min-height: 640px;
+      }
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-out;
+      transform: scale(1.02);
+      z-index: 1;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    /* Running Motion Wireframe Canvas in Hero */
+    #heroMotionCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.85;
+      mix-blend-mode: screen;
+    }
+
+    /* Inquiry Button (Styled after reference image & Molbio Product Enquiry) */
+    .btn-inquiry {
+      background: linear-gradient(135deg, #0d9488 0%, #059669 50%, #0284c7 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-inquiry:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.5);
+      background: linear-gradient(135deg, #0f766e 0%, #047857 50%, #0369a1 100%);
+    }
+    .btn-inquiry::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: rotate(30deg);
+      animation: inquiryShimmer 3.5s infinite;
+    }
+    @keyframes inquiryShimmer {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      20%, 100% { transform: translateX(100%) rotate(30deg); }
+    }
+
+    /* NOX Chatbot Cyan Glow (Item 4) */
+    .nox-glow {
+      filter: drop-shadow(0px 0px 8px rgba(0, 210, 255, 0.4));
+    }
   </style>
+
 </head>
 <body class="selection:bg-amber-500/20 selection:text-amber-900">
 
@@ -229,18 +331,44 @@
   <canvas id="systemRunningCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-50"></canvas>
 
   <!-- Sticky Header: Exact Brochure Light Titanium Grey with Black Logo Text -->
-  <header class="sticky top-0 z-50 bg-[#eaedf1]/95 backdrop-blur-xl border-b border-slate-300/80 transition-all shadow-sm">
+    <!-- Sticky Header: Molbio Style with Top Utility Strip & Embedded Transparent Logo -->
+  <header class="sticky top-0 z-50 transition-all shadow-md bg-[#eaedf1]/98 backdrop-blur-xl border-b border-slate-300/80">
+    <!-- Top Utility Bar (like Molbio Diagnostics) -->
+    <div class="hidden md:block bg-[#0c121e] text-slate-300 py-1.5 px-4 sm:px-6 lg:px-8 border-b border-slate-800 text-[11px] font-medium">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1.5 text-amber-400">
+            <i data-lucide="map-pin" class="w-3 h-3"></i> Bengaluru, India
+          </span>
+          <span class="text-slate-600">•</span>
+          <span class="text-slate-400">Execution-Focused Business Platform for MSMEs &amp; Global Enterprises</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#careers" class="hover:text-amber-400 transition-colors">Careers &amp; Collaborations</a>
+          <span class="text-slate-700">|</span>
+          <a href="#contact" class="hover:text-amber-400 transition-colors">Contact Us</a>
+          <span class="text-slate-700">|</span>
+          <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400 font-semibold">
+            <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp Desk
+          </a>
+          <span class="text-slate-700">|</span>
+          <a href="mailto:contact@thrunoxsystems.in" class="hover:text-amber-400 transition-colors">contact@thrunoxsystems.in</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo linking to About Us page -->
+        <!-- Logo (Embedded, Transparent PNG, no white box) -->
         <a href="#about" class="flex items-center gap-3 group transition-opacity hover:opacity-90 py-1" aria-label="Thrunox Systems Home">
           <img src="logo.png" alt="Thrunox Systems" class="header-logo h-9 sm:h-10 md:h-11 w-auto object-contain">
         </a>
 
-        <!-- Main Desktop Navigation: 4 Core Tabs with Animated Hover Indicators -->
+        <!-- Main Desktop Navigation: 4 Core Tabs with Active Indicators -->
         <nav class="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-700">
-          <a href="#about" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">About Us</a>
+          <a href="#about" class="nav-tab active-nav-link hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">About Us</a>
           <a href="#services" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">Services</a>
           <a href="#industries" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">Industries</a>
           <a href="#innovation" class="nav-tab hover:text-amber-800 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-600 hover:after:w-full after:transition-all after:duration-300">Innovation &amp; Solutions</a>
@@ -249,8 +377,14 @@
           </span>
         </nav>
 
-        <!-- Fast Actions & Header Contact Us Button -->
+        <!-- Fast Actions: Inquiry Button, Contact Us, WhatsApp -->
         <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Item 2: Inquiry Button (High-conversion styled button) -->
+          <button type="button" onclick="openInquiryModal()" class="btn-inquiry inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2.5 rounded-xl cursor-pointer">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+            <span>Inquiry</span>
+          </button>
+
           <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl btn-gold shadow-md">
             <i data-lucide="mail" class="w-3.5 h-3.5"></i> Contact Us
           </a>
@@ -283,6 +417,9 @@
         </a>
       </div>
       <div class="pt-2 flex flex-col gap-2">
+        <button type="button" onclick="openInquiryModal(); document.getElementById('mobileDrawer').classList.add('hidden');" class="btn-inquiry w-full py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i> Submit Inquiry
+        </button>
         <a href="#contact" class="w-full text-center py-2.5 rounded-xl btn-gold text-white font-bold text-xs flex items-center justify-center gap-2">
           <i data-lucide="mail" class="w-4 h-4"></i> Contact Us
         </a>
@@ -293,10 +430,158 @@
     </div>
   </header>
 
+    <!-- ========================================== -->
+  <!-- PAGE 1: ABOUT US & HERO VIEW (Isolated Tab) -->
   <!-- ========================================== -->
+  <main id="page-about" class="page-view active">
+    <!-- ======================================================== -->
+    <!-- HERO SECTION: MOLBIO-INSPIRED RUNNING MOTION GRAPHICS   -->
+    <!-- 3 FLOATING SLIDES: ENVISION, EXECUTE, EVOLVE             -->
+    <!-- ======================================================== -->
+    <div class="hero-molbio-container relative w-full overflow-hidden border-b border-slate-800">
+      
+      <!-- RUNNING MOTION GRAPHICS CANVAS (Slow animation: machinery wireframes, golden lines, code stream) -->
+      <canvas id="heroMotionCanvas"></canvas>
+
+      <!-- SLIDE 1: ENVISION -->
+      <div class="hero-slide active" data-slide="0">
+        <img src="images/hero-envision.jpg" alt="Envision - Digital Twin & Virtual Sandbox Platform for MSMEs" class="absolute inset-0 w-full h-full object-cover opacity-40 filter brightness-90">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#060b14]/95 via-[#060b14]/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#060b14] via-transparent to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
+          <div class="max-w-2xl text-left space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              ENVISION
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+              A More Accessible <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-amber-300 bg-clip-text text-transparent">Digital Future</span> for MSMEs.
+            </h1>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-xl">
+              Our long-term vision is to develop an affordable Digital Twin &amp; Virtual Sandbox platform that helps MSMEs model processes, explore scenarios and evaluate decisions before committing to physical changes.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="#innovation" class="btn-inquiry text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
+                Explore Our Innovation &amp; Solution <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <button type="button" onclick="openInquiryModal()" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm border border-white/20 transition-all inline-flex items-center gap-2 backdrop-blur-md">
+                <i data-lucide="sparkles" class="w-4 h-4 text-cyan-300"></i> Request Sandbox Brief
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: EXECUTE -->
+      <div class="hero-slide" data-slide="1">
+        <img src="images/hero-execute.jpg" alt="Execute - Engineering Design, Project Management, and Operations" class="absolute inset-0 w-full h-full object-cover opacity-40 filter brightness-90">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#060b14]/95 via-[#060b14]/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#060b14] via-transparent to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
+          <div class="max-w-2xl text-left space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-950/80 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              EXECUTE
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+              Building the <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Foundations</span> Through Today's Work.
+            </h1>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-xl">
+              Through project management, engineering design and fabrication coordination, operations, and technology-led services, we work on practical business and industrial challenges while building the capabilities that will inform our future solutions.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="#services" class="btn-gold text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
+                Explore Our Capabilities <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="Thrunox-Systems-Company-Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm border border-white/20 transition-all inline-flex items-center gap-2 backdrop-blur-md">
+                <i data-lucide="download" class="w-4 h-4 text-amber-400"></i> Download Brochure
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: EVOLVE -->
+      <div class="hero-slide" data-slide="2">
+        <img src="images/hero-evolve.jpg" alt="Evolve - Simulation and Decision-Support Capabilities" class="absolute inset-0 w-full h-full object-cover opacity-40 filter brightness-90">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#060b14]/95 via-[#060b14]/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#060b14] via-transparent to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
+          <div class="max-w-2xl text-left space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              EVOLVE
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+              From Practical Challenges to <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">Smarter Decisions</span>.
+            </h1>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-xl">
+              We aim to progressively translate industry needs into accessible simulation and decision-support capabilities—helping businesses investigate possibilities before making costly physical commitments.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="#contact" class="btn-inquiry text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
+                Shape the Future With Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <button type="button" onclick="openInquiryModal()" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm border border-white/20 transition-all inline-flex items-center gap-2 backdrop-blur-md">
+                <i data-lucide="message-square" class="w-4 h-4 text-emerald-300"></i> Initiate Dialogue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDER NAVIGATION CONTROLS & TIMERS -->
+      <div class="absolute bottom-6 left-4 sm:left-8 right-4 sm:right-8 z-20 flex items-center justify-between">
+        <!-- 3 Segment Progress Tabs -->
+        <div class="flex items-center gap-2 sm:gap-4">
+          <button type="button" onclick="goToSlide(0)" class="slide-indicator text-left group transition-all" data-slide-btn="0">
+            <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-white mb-1">
+              <span class="font-bold text-cyan-400">01</span>
+              <span class="hidden sm:inline">ENVISION</span>
+            </div>
+            <div class="w-16 sm:w-28 h-1 bg-white/20 rounded-full overflow-hidden">
+              <div class="slide-progress h-full bg-cyan-400 w-0 transition-all"></div>
+            </div>
+          </button>
+
+          <button type="button" onclick="goToSlide(1)" class="slide-indicator text-left group transition-all" data-slide-btn="1">
+            <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-white mb-1">
+              <span class="font-bold text-amber-400">02</span>
+              <span class="hidden sm:inline">EXECUTE</span>
+            </div>
+            <div class="w-16 sm:w-28 h-1 bg-white/20 rounded-full overflow-hidden">
+              <div class="slide-progress h-full bg-amber-400 w-0 transition-all"></div>
+            </div>
+          </button>
+
+          <button type="button" onclick="goToSlide(2)" class="slide-indicator text-left group transition-all" data-slide-btn="2">
+            <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-white mb-1">
+              <span class="font-bold text-emerald-400">03</span>
+              <span class="hidden sm:inline">EVOLVE</span>
+            </div>
+            <div class="w-16 sm:w-28 h-1 bg-white/20 rounded-full overflow-hidden">
+              <div class="slide-progress h-full bg-emerald-400 w-0 transition-all"></div>
+            </div>
+          </button>
+        </div>
+
+        <!-- Prev / Next Arrow Controls -->
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="prevSlide()" aria-label="Previous Slide" class="p-2.5 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/20 transition-all backdrop-blur-md cursor-pointer">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button type="button" onclick="nextSlide()" aria-label="Next Slide" class="p-2.5 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/20 transition-all backdrop-blur-md cursor-pointer">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+<!-- ========================================== -->
   <!-- TAB 1: ABOUT US & HERO SECTION             -->
   <!-- ========================================== -->
-  <section id="about" class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden z-10 border-b border-slate-300/60">
+  <section id="about-section" class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden z-10 border-b border-slate-300/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Introduction & Tagline (from Brochure & Handoff Doc) -->
@@ -336,17 +621,7 @@
         </p>
         
         <!-- Hero Action Buttons with Shimmer & Smooth Interactivity -->
-        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          <a href="#services" class="btn-gold-shimmer text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg group">
-            Explore Our Services <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
-          </a>
-          <a href="#innovation" class="btn-dark px-6 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-md hover:shadow-lg transition-all">
-            Explore Innovation &amp; Solutions <i data-lucide="compass" class="w-4 h-4 text-amber-400"></i>
-          </a>
-          <a href="Thrunox-Systems-Company-Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="btn-secondary px-5 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 border-slate-300 text-slate-800 hover:text-amber-800 shadow-sm hover:border-amber-400 transition-all">
-            <i data-lucide="download" class="w-4 h-4 text-amber-700"></i> Download Company Brochure
-          </a>
-        </div>
+        
 
         <!-- 4-Column Executive Authority & Metrics Strip -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mt-10">
@@ -655,7 +930,8 @@
       </div>
 
       <!-- Why Thrunox & Approach (From Brochure Pages 2 & 4) -->
-      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+<div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div class="thrunox-card p-8 rounded-2xl">
           <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Why Thrunox ?</span>
           <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Proven Leadership &amp; Execution Discipline</h3>
@@ -679,15 +955,61 @@
           </ul>
         </div>
 
-        <div class="thrunox-card p-8 rounded-2xl">
+        
+        <!-- Explore Thrunox Systems Card (Item III: Next to Why Thrunox) -->
+        <div class="thrunox-card p-8 rounded-2xl border-amber-300 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Explore Thrunox Systems</span>
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-4">Integrated Execution Architecture</h3>
+            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+              Explore how Thrunox Systems translates operational requirements into structured blueprints, practical workstreams, and scalable compliance.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <a href="#services" class="w-full btn-gold-shimmer text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between shadow-md">
+              <span>1) Explore Our Services</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#innovation" class="w-full btn-dark text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between shadow-md">
+              <span>2) Explore Innovation &amp; Solutions</span> <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+            </a>
+            <a href="Thrunox-Systems-Company-Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="w-full btn-secondary text-slate-800 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between border-slate-300 hover:border-amber-400 shadow-sm">
+              <span class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 text-amber-700"></i> 3) Download Company Brochure</span>
+              <i data-lucide="download" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2nd Last in About Us Tab: Our Structured Approach (Item III from PDF) -->
+      <div class="mt-12 thrunox-card p-8 sm:p-10 rounded-2xl">
+        <div class="text-center max-w-3xl mx-auto mb-8">
           <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Our Structured Approach</span>
-          <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Execution-Driven Lifecycle</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mb-6">
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <div class="text-xs font-mono font-bold text-amber-800 mb-1">01</div>
-              <div class="text-sm font-bold text-slate-900">Diagnose</div>
-              <div class="text-[11px] text-slate-500 mt-1">Data-driven insight</div>
-            </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Execution-Driven Lifecycle</h3>
+          <p class="text-sm text-slate-600">We combine data-driven insights with hands-on implementation, ensuring outcomes are realized — not just recommended.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="text-xs font-mono font-bold text-amber-800 mb-1">01</div>
+            <div class="text-base font-bold text-slate-900">Diagnose</div>
+            <div class="text-xs text-slate-500 mt-1">Data-driven insight</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="text-xs font-mono font-bold text-amber-800 mb-1">02</div>
+            <div class="text-base font-bold text-slate-900">Design</div>
+            <div class="text-xs text-slate-500 mt-1">Structured blueprint</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="text-xs font-mono font-bold text-amber-800 mb-1">03</div>
+            <div class="text-base font-bold text-slate-900">Deliver</div>
+            <div class="text-xs text-slate-500 mt-1">Hands-on execution</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="text-xs font-mono font-bold text-amber-800 mb-1">04</div>
+            <div class="text-base font-bold text-slate-900">Sustain</div>
+            <div class="text-xs text-slate-500 mt-1">Scalable governance</div>
+          </div>
+        </div>
+      </div>
             <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
               <div class="text-xs font-mono font-bold text-amber-800 mb-1">02</div>
               <div class="text-sm font-bold text-slate-900">Design</div>
@@ -710,24 +1032,34 @@
         </div>
       </div>
 
-      <!-- Section 4: Company Brochure Section (Tab 1, Section 4) -->
-      <div class="mt-16 text-center p-8 sm:p-10 rounded-2xl thrunox-card border-amber-300">
-        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Explore Thrunox Systems</h3>
-        <p class="text-sm text-slate-600 max-w-2xl mx-auto mb-6">
-          Download our company brochure to learn more about Thrunox Systems, our service areas, industry focus and approach to business execution.
-        </p>
-        <a href="Thrunox-Systems-Company-Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="btn-gold px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2 shadow-md">
-          <i data-lucide="file-text" class="w-4 h-4"></i> Download Company Brochure
-        </a>
-      </div>
+      
 
     </div>
   </section>
 
+  
+  </main>
+
   <!-- ========================================== -->
+  <!-- PAGE 2: SERVICES VIEW (Isolated Tab)       -->
+  <!-- ========================================== -->
+  <main id="page-services" class="page-view">
+    <!-- Services Page Banner -->
+    <div class="bg-gradient-to-r from-slate-950 via-[#101927] to-slate-900 text-white py-14 border-b border-slate-800 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 mb-3 uppercase tracking-wider">
+          <a href="#about" class="hover:underline">Home</a> <span>/</span> <span>Services</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">Our Services &amp; Capabilities</h1>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          Translating organizational strategy into structured, scalable, and compliant business execution across 9 specialist practice areas.
+        </p>
+      </div>
+    </div>
+<!-- ========================================== -->
   <!-- TAB 2: SERVICES                            -->
   <!-- ========================================== -->
-  <section id="services" class="py-20 relative z-10 border-b border-slate-300/60">
+  <section id="services-section" class="py-20 relative z-10 border-b border-slate-300/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section 1: Services Introduction -->
@@ -1078,10 +1410,29 @@
     </div>
   </section>
 
+  
+  </main>
+
   <!-- ========================================== -->
+  <!-- PAGE 3: INDUSTRIES VIEW (Isolated Tab)     -->
+  <!-- ========================================== -->
+  <main id="page-industries" class="page-view">
+    <!-- Industries Page Banner -->
+    <div class="bg-gradient-to-r from-slate-950 via-[#101927] to-slate-900 text-white py-14 border-b border-slate-800 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 mb-3 uppercase tracking-wider">
+          <a href="#about" class="hover:underline">Home</a> <span>/</span> <span>Industries</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">Industries We Support</h1>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          Cross-sector execution expertise tailored to the unique regulatory, operational, and technical demands of specialized domains.
+        </p>
+      </div>
+    </div>
+<!-- ========================================== -->
   <!-- TAB 3: INDUSTRIES                          -->
   <!-- ========================================== -->
-  <section id="industries" class="py-20 relative z-10 border-b border-slate-300/60">
+  <section id="industries-section" class="py-20 relative z-10 border-b border-slate-300/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section 1: Industries Introduction -->
@@ -1199,10 +1550,29 @@
     </div>
   </section>
 
+  
+  </main>
+
   <!-- ========================================== -->
+  <!-- PAGE 4: INNOVATION & SOLUTIONS (Isolated Tab)-->
+  <!-- ========================================== -->
+  <main id="page-innovation" class="page-view">
+    <!-- Innovation Page Banner -->
+    <div class="bg-gradient-to-r from-slate-950 via-[#101927] to-slate-900 text-white py-14 border-b border-slate-800 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-3 uppercase tracking-wider">
+          <a href="#about" class="hover:underline">Home</a> <span>/</span> <span>Innovation &amp; Solutions</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">Innovation &amp; Future Solutions</h1>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          Developing an accessible Digital Twin &amp; Virtual Sandbox platform to help MSMEs evaluate operational scenarios before capital commitment.
+        </p>
+      </div>
+    </div>
+<!-- ========================================== -->
   <!-- TAB 4: INNOVATION & SOLUTIONS              -->
   <!-- ========================================== -->
-  <section id="innovation" class="py-20 relative z-10 border-b border-slate-300/60">
+  <section id="innovation-section" class="py-20 relative z-10 border-b border-slate-300/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section 1: Innovation Introduction -->
@@ -1507,10 +1877,29 @@
     </div>
   </section>
 
+  
+  </main>
+
   <!-- ========================================== -->
+  <!-- PAGE 5: CAREERS & COLLABORATIONS (Isolated)-->
+  <!-- ========================================== -->
+  <main id="page-careers" class="page-view">
+    <!-- Careers Page Banner -->
+    <div class="bg-gradient-to-r from-slate-950 via-[#101927] to-slate-900 text-white py-14 border-b border-slate-800 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-2 text-xs font-mono text-amber-400 mb-3 uppercase tracking-wider">
+          <a href="#about" class="hover:underline">Home</a> <span>/</span> <span>Careers</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">Careers &amp; Collaborations</h1>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          Partner with Thrunox Systems to build capabilities and create measurable operational impact.
+        </p>
+      </div>
+    </div>
+<!-- ========================================== -->
   <!-- TAB 5: CAREERS & COLLABORATIONS            -->
   <!-- ========================================== -->
-  <section id="careers" class="py-20 relative z-10 border-b border-slate-300/60">
+  <section id="careers-section" class="py-20 relative z-10 border-b border-slate-300/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -1568,10 +1957,29 @@
     </div>
   </section>
 
+  
+  </main>
+
   <!-- ========================================== -->
+  <!-- PAGE 6: CONTACT US & INQUIRY VIEW (Isolated)-->
+  <!-- ========================================== -->
+  <main id="page-contact" class="page-view">
+    <!-- Contact Page Banner -->
+    <div class="bg-gradient-to-r from-slate-950 via-[#101927] to-slate-900 text-white py-14 border-b border-slate-800 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-3 uppercase tracking-wider">
+          <a href="#about" class="hover:underline">Home</a> <span>/</span> <span>Contact</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">Contact &amp; Project Inquiry</h1>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          Initiate an execution dialogue with our leadership team. We respond to verified business inquiries within 24-48 business hours.
+        </p>
+      </div>
+    </div>
+<!-- ========================================== -->
   <!-- TAB 6: CONTACT US                          -->
   <!-- ========================================== -->
-  <section id="contact" class="py-20 relative z-10">
+  <section id="contact-section" class="py-20 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -1732,6 +2140,9 @@
     </div>
   </section>
 
+  
+  </main>
+
   <!-- ========================================== -->
   <!-- FOOTER (All Pages Requirement)             -->
   <!-- Anchored in deep slate/obsidian corporate  -->
@@ -1834,15 +2245,15 @@
   <!-- ========================================== -->
   <div class="fixed bottom-6 left-6 z-40">
     <!-- Chatbot Toggle Launcher Button (Friendly Female AI Assistant Avatar) -->
-    <button id="chatbotToggleBtn" onclick="toggleChatbot()" aria-label="Open Thrunox Assistant" class="relative group p-1.5 sm:p-2 rounded-full bg-white border-2 border-amber-500 shadow-xl shadow-slate-900/15 transition-all transform hover:scale-105 flex items-center gap-2.5">
-      <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-slate-200 shrink-0">
-        <img src="images/assistant-avatar.png" alt="Thrunox Assistant" class="w-full h-full object-cover">
-        <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white"></span>
+    <button id="chatbotToggleBtn" onclick="toggleChatbot()" aria-label="Open NOX AI Assistant" class="relative group p-1.5 sm:p-2 rounded-full bg-[#0a0f1d] border-2 border-cyan-400 shadow-xl shadow-cyan-950/40 transition-all transform hover:scale-105 flex items-center gap-2.5">
+      <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0 flex items-center justify-center bg-[#070b14]">
+        <img src="images/nox-standalone-icon-56.png" alt="NOX AI Assistant" class="w-9 h-9 object-contain nox-glow">
+        <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-cyan-400 border-2 border-[#0a0f1d] animate-pulse"></span>
       </div>
       <div class="hidden sm:flex flex-col text-left pr-2">
-        <span class="text-xs font-extrabold text-slate-900 leading-tight">Thrunox Assistant</span>
-        <span class="text-[10px] text-amber-800 font-semibold flex items-center gap-1">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Online • Ask me anything
+        <span class="text-xs font-extrabold text-white leading-tight">NOX</span>
+        <span class="text-[10px] text-cyan-300 font-semibold flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> AI Agent • Online
         </span>
       </div>
     </button>
@@ -2093,6 +2504,350 @@
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
+
+    // ==========================================
+    // 0. SPA MULTI-PAGE VIEW ROUTER (Item IV)
+    // ==========================================
+    function navigateTo(pageId) {
+      const validPages = ['about', 'services', 'industries', 'innovation', 'careers', 'contact'];
+      if (!validPages.includes(pageId)) pageId = 'about';
+
+      // Toggle views
+      document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      // Update desktop nav highlights
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        const href = tab.getAttribute('href');
+        if (href === '#' + pageId || (pageId === 'about' && href === '#about')) {
+          tab.classList.add('active-nav-link');
+        } else {
+          tab.classList.remove('active-nav-link');
+        }
+      });
+
+      // Update mobile nav highlights
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#' + pageId) {
+          link.classList.add('bg-amber-100', 'text-amber-900');
+        } else {
+          link.classList.remove('bg-amber-100', 'text-amber-900');
+        }
+      });
+
+      // Smooth scroll to top of page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Refresh icons in newly rendered view
+      if (window.lucide) lucide.createIcons();
+
+      // Trigger canvas animation refresh
+      if (pageId === 'about' && typeof initHeroMotion === 'function') {
+        initHeroMotion();
+      }
+    }
+
+    // Intercept internal hash links
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        const hash = link.getAttribute('href').replace('#', '');
+        const validPages = ['about', 'services', 'industries', 'innovation', 'careers', 'contact'];
+        if (validPages.includes(hash)) {
+          e.preventDefault();
+          history.pushState(null, null, '#' + hash);
+          navigateTo(hash);
+        }
+      }
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '') || 'about';
+      navigateTo(hash);
+    });
+
+    // ==========================================
+    // 0.1 INQUIRY MODAL HANDLER (Item 2)
+    // ==========================================
+    function openInquiryModal(serviceName) {
+      const modal = document.getElementById('inquiryModal');
+      if (modal) {
+        if (serviceName) {
+          const select = document.getElementById('inqInterest');
+          if (select) select.value = serviceName;
+        }
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeInquiryModal() {
+      const modal = document.getElementById('inquiryModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleQuickInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('inqName').value;
+      const org = document.getElementById('inqOrg').value;
+      const email = document.getElementById('inqEmail').value;
+      const phone = document.getElementById('inqPhone').value || 'Not provided';
+      const interest = document.getElementById('inqInterest').value;
+      const desc = document.getElementById('inqDesc').value;
+
+      const subject = encodeURIComponent(`[Website Quick Inquiry] ${interest} - ${name} (${org})`);
+      const body = encodeURIComponent(
+        `Thrunox Systems Quick Inquiry\n` +
+        `----------------------------------------\n` +
+        `Name: ${name}\n` +
+        `Organisation: ${org}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone}\n` +
+        `Interest: ${interest}\n\n` +
+        `Requirement:\n${desc}\n` +
+        `----------------------------------------`
+      );
+
+      window.location.href = `mailto:contact@thrunoxsystems.in?bcc=thrunoxsystems@gmail.com&subject=${subject}&body=${body}`;
+      alert(`Thank you, ${name}! Your inquiry has been generated. If your mail client does not open automatically, reach us directly at contact@thrunoxsystems.in or WhatsApp.`);
+      closeInquiryModal();
+      document.getElementById('quickInquiryForm').reset();
+    }
+
+    // ==========================================
+    // 0.2 MOLBIO-INSPIRED HERO CAROUSEL SLIDER
+    // ==========================================
+    let currentHeroSlide = 0;
+    let heroSlideTimer = null;
+    let heroProgressInterval = null;
+    let heroProgressPct = 0;
+    const HERO_SLIDE_DURATION = 6000; // 6 seconds
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const tabs = document.querySelectorAll('.slide-indicator');
+      if (!slides.length) return;
+
+      currentHeroSlide = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, idx) => {
+        if (idx === currentHeroSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Reset progress bars
+      document.querySelectorAll('.slide-progress').forEach((bar, idx) => {
+        if (idx < currentHeroSlide) {
+          bar.style.width = '100%';
+        } else if (idx === currentHeroSlide) {
+          bar.style.width = '0%';
+        } else {
+          bar.style.width = '0%';
+        }
+      });
+
+      heroProgressPct = 0;
+    }
+
+    function nextSlide() {
+      showSlide(currentHeroSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentHeroSlide - 1);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    function startHeroAutoplay() {
+      if (heroSlideTimer) clearInterval(heroSlideTimer);
+      if (heroProgressInterval) clearInterval(heroProgressInterval);
+
+      heroProgressPct = 0;
+      const stepMs = 50;
+      const increment = (stepMs / HERO_SLIDE_DURATION) * 100;
+
+      heroProgressInterval = setInterval(() => {
+        heroProgressPct += increment;
+        const activeBar = document.querySelectorAll('.slide-progress')[currentHeroSlide];
+        if (activeBar) {
+          activeBar.style.width = Math.min(heroProgressPct, 100) + '%';
+        }
+        if (heroProgressPct >= 100) {
+          heroProgressPct = 0;
+          nextSlide();
+        }
+      }, stepMs);
+    }
+
+    function pauseHeroAutoplay() {
+      if (heroProgressInterval) clearInterval(heroProgressInterval);
+    }
+
+    // ==========================================
+    // 0.3 RUNNING WIREFRAME MOTION GRAPHICS CANVAS
+    // Slow animation: faint wireframe machinery lines,
+    // golden nodes, software code stream telemetry
+    // ==========================================
+    function initHeroMotion() {
+      const canvas = document.getElementById('heroMotionCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = canvas.parentElement.offsetWidth;
+      let h = canvas.height = canvas.parentElement.offsetHeight;
+
+      window.addEventListener('resize', () => {
+        if (canvas.parentElement) {
+          w = canvas.width = canvas.parentElement.offsetWidth;
+          h = canvas.height = canvas.parentElement.offsetHeight;
+        }
+      });
+
+      // Machinery wireframe shapes (gear teeth, orthogonal CAD traces)
+      const nodes = [];
+      const NODE_COUNT = 32;
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.45,
+          vy: (Math.random() - 0.5) * 0.35,
+          color: Math.random() > 0.6 ? 'rgba(217, 119, 6, ' : 'rgba(6, 182, 212, ',
+          radius: Math.random() * 2 + 1.2
+        });
+      }
+
+      // Code telemetry stream snippets
+      const codeLines = [
+        "const twin = new DigitalTwin({ msme_id: 'TX-492' });",
+        "await twin.simulateProcessFlow({ throughput: '1,420 u/h' });",
+        "telemetry.stream.pipe(pipelineOptimizer);",
+        "sandbox.validateCapExROI({ paybackMonths: 3.8 });",
+        "sys.compliance.auditPass({ esg_score: 98.4 });",
+        "virtualLine.syncSensors({ oeeDelta: '+18.5%' });"
+      ];
+      let codeY = 40;
+
+      let frame = 0;
+      function animate() {
+        ctx.clearRect(0, 0, w, h);
+        frame++;
+
+        // Draw faint machinery grid blueprint
+        ctx.strokeStyle = 'rgba(217, 119, 6, 0.04)';
+        ctx.lineWidth = 1;
+        const gridSize = 45;
+        for (let x = 0; x < w; x += gridSize) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, h);
+          ctx.stroke();
+        }
+        for (let y = 0; y < h; y += gridSize) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
+
+        // Draw moving nodes & connection lines (Golden + Cyan)
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          n.x += n.vx;
+          n.y += n.vy;
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+
+          ctx.fillStyle = n.color + '0.7)';
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j];
+            const dx = n.x - m.x;
+            const dy = n.y - m.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              const alpha = (1 - dist / 130) * 0.28;
+              ctx.strokeStyle = n.color + alpha + ')';
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(m.x, m.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Slow animated rotating digital twin ring in center-right
+        const cx = w * 0.75;
+        const cy = h * 0.48;
+        const ringAngle = frame * 0.005;
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(ringAngle);
+        ctx.strokeStyle = 'rgba(217, 119, 6, 0.15)';
+        ctx.lineWidth = 1.2;
+        ctx.setLineDash([8, 6]);
+        ctx.beginPath();
+        ctx.arc(0, 0, Math.min(w, h) * 0.28, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.rotate(-ringAngle * 2);
+        ctx.strokeStyle = 'rgba(6, 182, 212, 0.18)';
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.arc(0, 0, Math.min(w, h) * 0.22, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+
+        // Right-hand slow-scrolling code telemetry
+        if (w > 800) {
+          ctx.font = '10px monospace';
+          ctx.fillStyle = 'rgba(6, 182, 212, 0.25)';
+          const startY = (frame * 0.25) % 180;
+          for (let k = 0; k < codeLines.length; k++) {
+            const yPos = (startY + k * 35) % (h * 0.8) + 40;
+            ctx.fillText(codeLines[k], w - 460, yPos);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // Attach listeners on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const initialHash = window.location.hash.replace('#', '') || 'about';
+      navigateTo(initialHash);
+
+      // Hero carousel init
+      showSlide(0);
+      startHeroAutoplay();
+
+      const heroContainer = document.querySelector('.hero-molbio-container');
+      if (heroContainer) {
+        heroContainer.addEventListener('mouseenter', pauseHeroAutoplay);
+        heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+      }
+
+      initHeroMotion();
+    });
+
 
     // Mobile Drawer Toggle
     const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -3089,6 +3844,86 @@
     });
 
   </script>
+
+
+  <!-- ========================================== -->
+  <!-- INQUIRY POPUP MODAL (Item 2 Requirement)   -->
+  <!-- ========================================== -->
+  <div id="inquiryModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="relative bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 overflow-hidden">
+      <!-- Glow Header Strip -->
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-teal-500 via-emerald-500 to-sky-500"></div>
+
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Project / Service Inquiry</h3>
+            <p class="text-xs text-slate-500">Directly routed to Thrunox Systems Leadership</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeInquiryModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="quickInquiryForm" onsubmit="handleQuickInquirySubmit(event)" class="mt-5 space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Your Full Name *</label>
+            <input type="text" id="inqName" required class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="e.g. Rahul Sharma">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Organisation / Company *</label>
+            <input type="text" id="inqOrg" required class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="Company Name">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Business Email *</label>
+            <input type="email" id="inqEmail" required class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="name@company.com">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Phone / WhatsApp</label>
+            <input type="tel" id="inqPhone" class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Service or Solution Interest *</label>
+          <select id="inqInterest" class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none bg-white">
+            <option value="Digital Twin &amp; Virtual Sandbox for MSMEs">Digital Twin &amp; Virtual Sandbox Platform</option>
+            <option value="Project Management &amp; Coordination">Project Management &amp; Coordination</option>
+            <option value="Business Operations &amp; Process Transformation">Operations &amp; Process Transformation</option>
+            <option value="Supply Chain &amp; Logistics Execution">Supply Chain &amp; Logistics Execution</option>
+            <option value="Accounting &amp; Financial Operations">Accounting &amp; Financial Operations</option>
+            <option value="US Healthcare RCM &amp; Operational Coordination">US Healthcare RCM</option>
+            <option value="Digital Compliance &amp; Governance">Digital Compliance &amp; Governance</option>
+            <option value="Cyber Security &amp; IT Governance">Cyber Security &amp; IT Governance</option>
+            <option value="ESG &amp; Sustainability Advisory">ESG &amp; Sustainability Advisory</option>
+            <option value="General Corporate Consultation">General Corporate Consultation</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Brief Description of Requirement *</label>
+          <textarea id="inqDesc" rows="3" required class="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="Describe scope, objectives, or operational challenges..."></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between gap-3">
+          <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20I%20would%20like%20to%20submit%20an%20urgent%20inquiry." target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-300 hover:bg-emerald-100 text-xs font-bold inline-flex items-center gap-1.5 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i> WhatsApp Fast Inquiry
+          </a>
+          <button type="submit" class="btn-inquiry px-6 py-2.5 rounded-xl text-xs font-bold text-white shadow-md cursor-pointer">
+            Submit Inquiry Now &rarr;
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>
