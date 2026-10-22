@@ -7,13 +7,10 @@
   <meta name="description" content="Thrunox Systems is an execution-focused business platform translating strategy into structured, practical, and scalable execution across Project Management, Operations, Supply Chain, Accounting, US Healthcare RCM, Digital Compliance, Cyber Security, and ESG Advisory.">
   <link rel="icon" href="logo.png">
 
-  <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, Manrope -->
+  <!-- Google Fonts: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,8 +23,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', '"Manrope"', 'sans-serif'],
-            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Manrope"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            display: ['"Manrope"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace', 'ui-monospace']
           },
           colors: {
@@ -121,6 +118,14 @@
       background: rgba(255, 255, 255, 0.98);
       border-color: rgba(184, 134, 11, 0.35);
       box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Universal Typography: Manrope across all website text */
+    *, html, body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    code, pre, .font-mono, [class*="font-mono"] {
+      font-family: 'JetBrains Mono', monospace, ui-monospace !important;
     }
 
     /* Exact Thrunox Brochure Color & Theme System */
