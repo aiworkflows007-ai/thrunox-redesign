@@ -249,20 +249,20 @@
     }
 
     
-    /* Header Fixed Glassmorphic Over Hero Motion Graphics */
+    /* Header Fixed Transparent Over Hero Motion Video */
     #mainHeader {
-      background: linear-gradient(180deg, rgba(6, 11, 20, 0.85) 0%, rgba(6, 11, 20, 0.45) 75%, rgba(6, 11, 20, 0.25) 100%);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.35s ease;
+      transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     }
     #mainHeader.header-scrolled {
-      background: rgba(6, 11, 20, 0.96) !important;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(51, 65, 85, 0.6) !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      background: rgba(6, 11, 20, 0.92) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     /* Hero Motion Container - Extends to top edge covering navbar */
@@ -375,7 +375,7 @@
     <!-- Fixed Glass Header Over Running Motion Graphics (Molbio Architecture) -->
   <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 text-white">
     <!-- Top Utility Bar (like Molbio Diagnostics) -->
-    <div class="hidden md:block bg-black/45 text-slate-300 py-1.5 px-4 sm:px-6 lg:px-8 border-b border-white/10 text-[11px] font-medium backdrop-blur-md">
+    <div class="hidden md:block bg-transparent text-slate-300 py-1.5 px-4 sm:px-6 lg:px-8 border-b border-white/10 text-[11px] font-medium transition-colors">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <div class="flex items-center gap-3">
           <span class="flex items-center gap-1.5 text-amber-400 font-semibold">
