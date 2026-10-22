@@ -305,16 +305,23 @@
       padding-bottom: 50px !important;
     }
 
-    /* Molbio-Inspired Hero Motion Graphics & Carousel */
+    /* Hero Motion Container - Full 16:9 Video Visibility */
     .hero-molbio-container {
       position: relative;
-      min-height: 580px;
+      min-height: 680px;
+      height: 82vh;
+      max-height: 880px;
       overflow: hidden;
-      background: #060b14;
+      background: #040810;
     }
     @media (min-width: 768px) {
       .hero-molbio-container {
-        min-height: 640px;
+        min-height: 760px;
+      }
+    }
+    @media (min-width: 1280px) {
+      .hero-molbio-container {
+        min-height: 820px;
       }
     }
     .hero-slide {
@@ -466,22 +473,22 @@
       <!-- Continuous 18s Blue Tech Showcase Video (6s Envision -> 6s Execute -> 6s Evolve) -->
       <video id="heroBgVideo" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/header-main-video.mp4" autoplay loop muted playsinline poster="images/header-main-video-poster.jpg"></video>
       
-      <!-- Subtle Ambient Gradients: Leaves video 75%+ visible with a thin, transparent layer for text legibility -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-[1] pointer-events-none w-full lg:w-[60%]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-[1] pointer-events-none"></div>
+      <!-- Feather-Light Vignette: Video is 100% crisp, unblurred and fully visible -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent z-[1] pointer-events-none w-full lg:w-[45%]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/15 z-[1] pointer-events-none"></div>
 
       <!-- SLIDE 1: ENVISION (0s to 6s) -->
       <div class="hero-slide active" data-slide="0">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
-          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/35 sm:bg-[#040810]/25 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 py-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-black/40 border border-amber-400/50 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase backdrop-blur-sm shadow-md">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               ENVISION
             </div>
-            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)]">
               A More Accessible <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Digital Future for MSMEs.</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-relaxed drop-shadow-sm">
+            <p class="text-xs sm:text-sm md:text-base text-white/95 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Our long-term vision is to develop an affordable Digital Twin &amp; Virtual Sandbox platform that helps MSMEs model processes, explore scenarios and evaluate decisions before committing to physical changes.
             </p>
             <div class="pt-2 flex items-center gap-4">
@@ -496,15 +503,15 @@
       <!-- SLIDE 2: EXECUTE (6s to 12s) -->
       <div class="hero-slide" data-slide="1">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
-          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/35 sm:bg-[#040810]/25 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 py-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-black/40 border border-amber-400/50 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase backdrop-blur-sm shadow-md">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               EXECUTE
             </div>
-            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)]">
               Building the Foundations <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Through Today's Work.</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-relaxed drop-shadow-sm">
+            <p class="text-xs sm:text-sm md:text-base text-white/95 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Through project management, engineering design and fabrication coordination, operations, and technology-led services, we work on practical business and industrial challenges while building the capabilities that will inform our future solutions.
             </p>
             <div class="pt-2 flex items-center gap-4">
@@ -519,15 +526,15 @@
       <!-- SLIDE 3: EVOLVE (12s to 18s) -->
       <div class="hero-slide" data-slide="2">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
-          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/35 sm:bg-[#040810]/25 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 py-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-black/40 border border-amber-400/50 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase backdrop-blur-sm shadow-md">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               EVOLVE
             </div>
-            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)]">
               From Practical Challenges <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">to Smarter Decisions.</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-relaxed drop-shadow-sm">
+            <p class="text-xs sm:text-sm md:text-base text-white/95 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               We aim to progressively translate industry needs into accessible simulation and decision-support capabilities—helping businesses investigate possibilities before making costly physical commitments.
             </p>
             <div class="pt-2 flex items-center gap-4">
@@ -555,105 +562,116 @@
   <!-- TAB 1: ABOUT US & HERO SECTION             -->
   <!-- ========================================== -->
   <section id="about-section" class="relative pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden z-10 border-b border-slate-300/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section 1: What We Focus On (Tab 1, Section 1) -->
-      <div>
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Our Focus Areas</h2>
-          <p class="text-sm text-slate-600">Structured competencies designed to bring clarity, discipline, and measurable outcomes to operational challenges.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">      
+      <!-- ============================================================== -->
+      <!-- 4 CORE PILLARS: 2ND TO LAST IN ABOUT US TAB                    -->
+      <!-- From Complex Challenges to Structured Execution                 -->
+      <!-- ============================================================== -->
+      <div class="mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800 block mb-2">From Complex Challenges to Structured Execution</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-950 mb-3 font-display">
+            Solving today’s challenges. Building the foundations for tomorrow's possibilities.
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600">Practical, integrated solutions designed for real-world execution.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           
-          <div class="thrunox-card p-6 rounded-xl">
-            <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800 mb-4 shadow-sm">
-              <i data-lucide="briefcase" class="w-5 h-5"></i>
+          <!-- Pillar 1: Delivery -->
+          <div class="thrunox-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border border-slate-200/90 shadow-sm hover:border-amber-400 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-extrabold text-amber-700 uppercase tracking-widest bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
+                  01 / DELIVERY
+                </span>
+                <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800">
+                  <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 mb-2.5 font-display">
+                Strategy into Structured Execution
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                We support business execution across project management, operations and supply chain; accounting, bookkeeping and revenue cycle management; Compliance &amp; Cybersecurity; and ESG advisory—bringing greater structure, coordination and visibility to business requirements.
+              </p>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Business Operations &amp; Project Execution</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Bringing structure, coordination and accountability to operational initiatives.
-            </p>
           </div>
 
-          <div class="thrunox-card p-6 rounded-xl">
-            <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800 mb-4 shadow-sm">
-              <i data-lucide="truck" class="w-5 h-5"></i>
+          <!-- Pillar 2: Technology & Engineering -->
+          <div class="thrunox-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border border-slate-200/90 shadow-sm hover:border-amber-400 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-extrabold text-amber-700 uppercase tracking-widest bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
+                  02 / TECHNOLOGY &amp; ENGINEERING
+                </span>
+                <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800">
+                  <i data-lucide="cpu" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 mb-2.5 font-display">
+                Connecting Physical &amp; Digital Capabilities
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Through software engineering, AI solutions, mechanical design and fabrication, we address practical technical challenges across digital systems, engineered products and physical operations.
+              </p>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Supply Chain &amp; Process Improvement</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Supporting better visibility, coordination and workflow efficiency.
-            </p>
           </div>
 
-          <div class="thrunox-card p-6 rounded-xl">
-            <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800 mb-4 shadow-sm">
-              <i data-lucide="calculator" class="w-5 h-5"></i>
+          <!-- Pillar 3: Industry Understanding -->
+          <div class="thrunox-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border border-slate-200/90 shadow-sm hover:border-amber-400 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-extrabold text-amber-700 uppercase tracking-widest bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
+                  03 / INDUSTRY UNDERSTANDING
+                </span>
+                <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800">
+                  <i data-lucide="factory" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 mb-2.5 font-display">
+                Rooted in Real-World Challenges
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Our focus spans deep-tech businesses, manufacturing and industrial operations, engineering services and fabrication, and pharmaceutical, healthcare and medical equipment—environments shaped by equipment, workflows, process constraints, operational demands and compliance requirements.
+              </p>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Financial &amp; Revenue Cycle Support</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Helping organisations organise accounting, bookkeeping and revenue cycle processes.
-            </p>
           </div>
 
-          <div class="thrunox-card p-6 rounded-xl">
-            <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800 mb-4 shadow-sm">
-              <i data-lucide="shield-check" class="w-5 h-5"></i>
+          <!-- Pillar 4: Future Technology Vision -->
+          <div class="thrunox-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border border-slate-200/90 shadow-sm hover:border-amber-400 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-extrabold text-amber-700 uppercase tracking-widest bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
+                  04 / FUTURE TECHNOLOGY VISION
+                </span>
+                <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900 mb-2.5 font-display">
+                Making Digital Possibilities More Accessible
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Our long-term ambition is to develop an affordable Digital Twin &amp; Virtual Sandbox platform for MSMEs, enabling them to model industrial processes, explore alternative scenarios and evaluate potential changes before committing to physical implementation.
+              </p>
             </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Regulatory &amp; Digital Compliance Coordination</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Supporting defined licensing, liaisoning and digital compliance requirements.
-            </p>
-          </div>
-
-          <div class="thrunox-card p-6 rounded-xl">
-            <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800 mb-4 shadow-sm">
-              <i data-lucide="cpu" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Technology &amp; Innovation</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Exploring practical digital solutions for operational challenges.
-            </p>
-          </div>
-
-          <div class="thrunox-card p-6 rounded-xl">
-            <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center text-amber-800 mb-4 shadow-sm">
-              <i data-lucide="leaf" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-2">Sustainability &amp; ESG Advisory</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Supporting organisations in understanding and structuring their environmental, social and governance requirements.
-            </p>
           </div>
 
         </div>
       </div>
 
-      <!-- Section 3: Innovation Direction (Tab 1, Section 3) -->
-      <div class="mt-16 p-8 sm:p-10 rounded-2xl thrunox-card border-amber-300 relative overflow-hidden">
-        <div class="max-w-3xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Innovation Direction</span>
-          <h3 class="text-2xl font-extrabold text-slate-900 mb-4">Building Towards More Accessible Industrial Simulation</h3>
-          <p class="text-sm text-slate-700 leading-relaxed mb-4">
-            Our current work across Business Operations, Engineering, Compliance and Technology Services helps us understand the practical challenges organisations face in planning, coordinating and improving complex workflows. These real-world insights will inform our long-term vision of developing an affordable Digital Twin &amp; Virtual Sandbox Platform that enables MSMEs to model processes, evaluate operational scenarios and validate decisions before committing to physical implementation.
-          </p>
-          <p class="text-xs text-slate-600 leading-relaxed mb-6">
-            The long-term vision is to make practical simulation and evidence-based operational decision-making more accessible to businesses that may not have the resources or specialist teams required for complex industrial simulation platforms. This initiative is at the concept and development-planning stage. Its scope will be refined through technical exploration, prototype development and appropriate validation.
-          </p>
-          <a href="#innovation" class="btn-gold px-4 py-2.5 rounded-xl font-bold text-xs inline-flex items-center gap-2">
-            Explore Innovation &amp; Solutions <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Why Thrunox & Explore Architecture: Symmetrical 2-Column Grid -->
-      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <!-- ============================================================== -->
+      <!-- FINAL SECTION IN ABOUT US TAB:                                 -->
+      <!-- Left: Why Thrunox ? | Right: Explore Thrunox Systems (3 Buttons)-->
+      <!-- ============================================================== -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         
         <!-- Left: Why Thrunox ? -->
         <div class="thrunox-card p-8 sm:p-10 rounded-2xl flex flex-col justify-between border border-slate-200/90 shadow-sm">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Why Thrunox ?</span>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6">Proven Leadership &amp; Execution Discipline</h3>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 font-display">Proven Leadership &amp; Execution Discipline</h3>
             <ul class="space-y-4 text-sm text-slate-700">
               <li class="flex items-start gap-3">
                 <i data-lucide="award" class="w-5 h-5 text-amber-700 shrink-0 mt-0.5"></i>
@@ -682,16 +700,16 @@
         <div class="thrunox-card p-8 sm:p-10 rounded-2xl border-amber-300 flex flex-col justify-between shadow-sm">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Explore Thrunox Systems</span>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">Integrated Execution Architecture</h3>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 font-display">Integrated Execution Architecture</h3>
             <p class="text-sm text-slate-600 mb-6 leading-relaxed">
               Explore how Thrunox Systems translates operational requirements into structured blueprints, practical workstreams, and scalable compliance.
             </p>
           </div>
           <div class="space-y-3">
-            <a href="#services" class="w-full btn-gold-shimmer text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between shadow-md">
+            <a href="#services" onclick="navigateTo('services', event)" class="w-full btn-gold-shimmer text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between shadow-md">
               <span>1) Explore Our Services</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <a href="#innovation" class="w-full btn-dark text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between shadow-md">
+            <a href="#innovation" onclick="navigateTo('innovation', event)" class="w-full btn-dark text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between shadow-md">
               <span>2) Explore Innovation &amp; Solutions</span> <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
             </a>
             <a href="Thrunox-Systems-Company-Brochure.pdf" download="Thrunox-Systems-Company-Brochure.pdf" class="w-full btn-secondary text-slate-800 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between border-slate-300 hover:border-amber-400 shadow-sm">
@@ -701,40 +719,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Full-Width: Our Structured Approach (Execution-Driven Lifecycle) -->
-      <div class="mt-16 thrunox-card p-8 sm:p-10 rounded-2xl shadow-sm border border-slate-200">
-        <div class="text-center max-w-3xl mx-auto mb-8">
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">Our Structured Approach</span>
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Execution-Driven Lifecycle</h3>
-          <p class="text-sm text-slate-600">We combine data-driven insights with hands-on implementation, ensuring outcomes are realized — not just recommended.</p>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="text-xs font-mono font-bold text-amber-800 mb-1">01</div>
-            <div class="text-base font-bold text-slate-900">Diagnose</div>
-            <div class="text-xs text-slate-500 mt-1">Data-driven insight</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="text-xs font-mono font-bold text-amber-800 mb-1">02</div>
-            <div class="text-base font-bold text-slate-900">Design</div>
-            <div class="text-xs text-slate-500 mt-1">Structured blueprint</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="text-xs font-mono font-bold text-amber-800 mb-1">03</div>
-            <div class="text-base font-bold text-slate-900">Deliver</div>
-            <div class="text-xs text-slate-500 mt-1">Hands-on execution</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="text-xs font-mono font-bold text-amber-800 mb-1">04</div>
-            <div class="text-base font-bold text-slate-900">Sustain</div>
-            <div class="text-xs text-slate-500 mt-1">Scalable governance</div>
-          </div>
-        </div>
-      </div>
-
-      
-
     </div>
   </section>
 
