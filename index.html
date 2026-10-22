@@ -463,17 +463,17 @@
     <!-- ======================================================== -->
     <div class="hero-molbio-container relative w-full overflow-hidden border-b border-slate-800 pt-28 sm:pt-32 lg:pt-36">
       
-      <!-- SLIDE 1: ENVISION (Physical Plant vs Digital Twin Wireframe) -->
-      <div class="hero-slide active" data-slide="0">
-        <!-- 60-70% Section Background Video: One side physical machinery, other side glowing digital twin design -->
-        <video class="hero-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-envision-video.mp4" autoplay loop muted playsinline poster="images/hero-envision.jpg"></video>
-        
-        <!-- Ambient Contrast Gradients: Leaves 60-70% of video vividly visible -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#040810]/95 via-[#040810]/80 to-transparent z-[1] pointer-events-none w-full lg:w-[52%]"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#040810]/90 via-transparent to-[#040810]/60 z-[1] pointer-events-none"></div>
+      <!-- Continuous 18s Blue Tech Showcase Video (6s Envision -> 6s Execute -> 6s Evolve) -->
+      <video id="heroBgVideo" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/header-main-video.mp4" autoplay loop muted playsinline poster="images/header-main-video-poster.jpg"></video>
+      
+      <!-- Subtle Ambient Gradients: Leaves video 75%+ visible with a thin, transparent layer for text legibility -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-[1] pointer-events-none w-full lg:w-[60%]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-[1] pointer-events-none"></div>
 
+      <!-- SLIDE 1: ENVISION (0s to 6s) -->
+      <div class="hero-slide active" data-slide="0">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
-          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/80 lg:bg-[#040810]/65 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/35 sm:bg-[#040810]/25 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               ENVISION
@@ -481,7 +481,7 @@
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
               A More Accessible <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Digital Future for MSMEs.</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-base text-slate-200 font-medium leading-relaxed">
+            <p class="text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-relaxed drop-shadow-sm">
               Our long-term vision is to develop an affordable Digital Twin &amp; Virtual Sandbox platform that helps MSMEs model processes, explore scenarios and evaluate decisions before committing to physical changes.
             </p>
             <div class="pt-2 flex items-center gap-4">
@@ -493,17 +493,10 @@
         </div>
       </div>
 
-      <!-- SLIDE 2: EXECUTE (Software Code vs 3D CAD Output Design) -->
+      <!-- SLIDE 2: EXECUTE (6s to 12s) -->
       <div class="hero-slide" data-slide="1">
-        <!-- 60-70% Section Background Video: One side software development, other side output 3D CAD mechanical design -->
-        <video class="hero-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-execute-video.mp4" loop muted playsinline poster="images/hero-execute.jpg"></video>
-        
-        <!-- Ambient Contrast Gradients: Leaves 60-70% of video vividly visible -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#040810]/95 via-[#040810]/80 to-transparent z-[1] pointer-events-none w-full lg:w-[52%]"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#040810]/90 via-transparent to-[#040810]/60 z-[1] pointer-events-none"></div>
-
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
-          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/80 lg:bg-[#040810]/65 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/35 sm:bg-[#040810]/25 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               EXECUTE
@@ -511,7 +504,7 @@
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
               Building the Foundations <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Through Today's Work.</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-base text-slate-200 font-medium leading-relaxed">
+            <p class="text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-relaxed drop-shadow-sm">
               Through project management, engineering design and fabrication coordination, operations, and technology-led services, we work on practical business and industrial challenges while building the capabilities that will inform our future solutions.
             </p>
             <div class="pt-2 flex items-center gap-4">
@@ -523,17 +516,10 @@
         </div>
       </div>
 
-      <!-- SLIDE 3: EVOLVE (Factory Floor to Simulation & Sandbox Decisions) -->
+      <!-- SLIDE 3: EVOLVE (12s to 18s) -->
       <div class="hero-slide" data-slide="2">
-        <!-- 60-70% Section Background Video: Real world factory transitioning to digital twin simulation and sandbox -->
-        <video class="hero-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-evolve-video.mp4" loop muted playsinline poster="images/hero-evolve.jpg"></video>
-        
-        <!-- Ambient Contrast Gradients: Leaves 60-70% of video vividly visible -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#040810]/95 via-[#040810]/80 to-transparent z-[1] pointer-events-none w-full lg:w-[52%]"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#040810]/90 via-transparent to-[#040810]/60 z-[1] pointer-events-none"></div>
-
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
-          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/80 lg:bg-[#040810]/65 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/35 sm:bg-[#040810]/25 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               EVOLVE
@@ -541,7 +527,7 @@
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
               From Practical Challenges <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">to Smarter Decisions.</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-base text-slate-200 font-medium leading-relaxed">
+            <p class="text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-relaxed drop-shadow-sm">
               We aim to progressively translate industry needs into accessible simulation and decision-support capabilities—helping businesses investigate possibilities before making costly physical commitments.
             </p>
             <div class="pt-2 flex items-center gap-4">
@@ -2349,10 +2335,7 @@
     // 0.2 MOLBIO-INSPIRED HERO CAROUSEL SLIDER
     // ==========================================
     let currentHeroSlide = 0;
-    let heroSlideTimer = null;
-    let heroProgressInterval = null;
-    let heroProgressPct = 0;
-    const HERO_SLIDE_DURATION = 8000; // 8 seconds per slide to match video loops
+    const heroBgVideo = document.getElementById('heroBgVideo');
 
     function showSlide(index) {
       const slides = document.querySelectorAll('.hero-slide');
@@ -2361,70 +2344,76 @@
       currentHeroSlide = (index + slides.length) % slides.length;
 
       slides.forEach((slide, idx) => {
-        const vid = slide.querySelector('video');
         if (idx === currentHeroSlide) {
           slide.classList.add('active');
-          if (vid) {
-            vid.currentTime = 0;
-            vid.play().catch(() => {});
-          }
         } else {
           slide.classList.remove('active');
-          if (vid) {
-            vid.pause();
-          }
         }
       });
+    }
 
-      heroProgressPct = 0;
+    // Synchronize text slides with the continuous 18s background video
+    // 0.0s - 6.0s: ENVISION (Slide 0)
+    // 6.0s - 12.0s: EXECUTE (Slide 1)
+    // 12.0s - 18.0s: EVOLVE (Slide 2)
+    function syncHeroWithVideo() {
+      const vid = document.getElementById('heroBgVideo');
+      if (!vid || isNaN(vid.currentTime)) return;
+      const t = vid.currentTime % 18;
+      let targetSlide = 0;
+      if (t >= 12.0) {
+        targetSlide = 2;
+      } else if (t >= 6.0) {
+        targetSlide = 1;
+      } else {
+        targetSlide = 0;
+      }
+      if (targetSlide !== currentHeroSlide) {
+        showSlide(targetSlide);
+      }
     }
 
     function nextSlide() {
-      showSlide(currentHeroSlide + 1);
-      startHeroAutoplay();
+      const next = (currentHeroSlide + 1) % 3;
+      goToSlide(next);
     }
 
     function prevSlide() {
-      showSlide(currentHeroSlide - 1);
-      startHeroAutoplay();
+      const prev = (currentHeroSlide + 2) % 3;
+      goToSlide(prev);
     }
 
     function goToSlide(index) {
-      showSlide(index);
-      startHeroAutoplay();
+      currentHeroSlide = (index + 3) % 3;
+      const vid = document.getElementById('heroBgVideo');
+      if (vid) {
+        vid.currentTime = currentHeroSlide * 6.0;
+        vid.play().catch(() => {});
+      }
+      showSlide(currentHeroSlide);
     }
 
+    // Keep continuous playback and fallback timer if video is blocked
+    let heroFallbackTimer = null;
     function startHeroAutoplay() {
-      if (heroSlideTimer) clearInterval(heroSlideTimer);
-      if (heroProgressInterval) clearInterval(heroProgressInterval);
-
-      heroProgressPct = 0;
-      const stepMs = 50;
-      const increment = (stepMs / HERO_SLIDE_DURATION) * 100;
-
-      heroProgressInterval = setInterval(() => {
-        heroProgressPct += increment;
-        if (heroProgressPct >= 100) {
-          heroProgressPct = 0;
+      const vid = document.getElementById('heroBgVideo');
+      if (vid) {
+        vid.play().catch(() => {});
+      }
+      if (heroFallbackTimer) clearInterval(heroFallbackTimer);
+      heroFallbackTimer = setInterval(() => {
+        const v = document.getElementById('heroBgVideo');
+        if (!v || v.paused) {
           nextSlide();
         }
-      }, stepMs);
+      }, 6000);
     }
 
     function pauseHeroAutoplay() {
-      if (heroProgressInterval) clearInterval(heroProgressInterval);
+      // Kept for backward compatibility
     }
 
-    
-    // ==========================================
-    // 0.3 RICH INDUSTRIAL MOTION GRAPHICS ENGINE
-    // - Covers navbar with full-bleed canvas
-    // - Mode 0 (ENVISION): Faint golden wireframe machinery replication & laser scan
-    // - Mode 1 (EXECUTE): Isometric 3D rotating CAD gear assembly & telemetry
-    // - Mode 2 (EVOLVE): 3 dynamic scenario simulation curves & decision nodes
-    // - Right: Live scrolling code telemetry stream
-    // ==========================================
-    function initHeroMotion() {
+        function initHeroMotion() {
       // Overlapping canvas removed: Background is 100% pure industrial video
     }
 
@@ -2446,15 +2435,14 @@
       const initialHash = window.location.hash.replace('#', '') || 'about';
       navigateTo(initialHash);
 
-      // Hero carousel init
+      // Hero carousel & continuous 18s video sync
       showSlide(0);
-      startHeroAutoplay();
-
-      const heroContainer = document.querySelector('.hero-molbio-container');
-      if (heroContainer) {
-        heroContainer.addEventListener('mouseenter', pauseHeroAutoplay);
-        heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+      const mainVid = document.getElementById('heroBgVideo');
+      if (mainVid) {
+        mainVid.addEventListener('timeupdate', syncHeroWithVideo);
+        mainVid.play().catch(() => {});
       }
+      startHeroAutoplay();
 
       initHeroMotion();
     });
