@@ -461,76 +461,90 @@
     <!-- ======================================================== -->
     <div class="hero-molbio-container relative w-full overflow-hidden border-b border-slate-800 pt-28 sm:pt-32 lg:pt-36">
       
-      <!-- REAL FULL-WIDTH INDUSTRIAL VIDEO BACKGROUND (Autoplay, Loop, Muted, Playsinline) -->
-      <video class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-video.mp4" autoplay loop muted playsinline poster="images/hero-envision.jpg"></video>
-
-      <!-- Gentle Dark Vignette for Text Contrast (Video 100% visible) -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/30 z-[1] pointer-events-none"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 z-[1] pointer-events-none"></div>
-
-      <!-- SLIDE 1: ENVISION -->
+      <!-- SLIDE 1: ENVISION (Physical Plant vs Digital Twin Wireframe) -->
       <div class="hero-slide active" data-slide="0">
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
-          <div class="max-w-2xl text-left space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold tracking-widest uppercase">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        <!-- 60-70% Section Background Video: One side physical machinery, other side glowing digital twin design -->
+        <video class="hero-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-envision-video.mp4" autoplay loop muted playsinline poster="images/hero-envision.jpg"></video>
+        
+        <!-- Ambient Contrast Gradients: Leaves 60-70% of video vividly visible -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#040810]/95 via-[#040810]/80 to-transparent z-[1] pointer-events-none w-full lg:w-[52%]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#040810]/90 via-transparent to-[#040810]/60 z-[1] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/80 lg:bg-[#040810]/65 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               ENVISION
             </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
-              Intelligent <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-amber-300 bg-clip-text text-transparent">Robotics.</span>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+              A More Accessible <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Digital Future for MSMEs.</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-200 font-medium max-w-lg leading-relaxed">
-              Virtual Sandboxes &amp; Digital Twins to de-risk manufacturing before physical deployment.
+            <p class="text-xs sm:text-sm md:text-base text-slate-200 font-medium leading-relaxed">
+              Our long-term vision is to develop an affordable Digital Twin &amp; Virtual Sandbox platform that helps MSMEs model processes, explore scenarios and evaluate decisions before committing to physical changes.
             </p>
             <div class="pt-2 flex items-center gap-4">
-              <a href="#innovation" class="btn-inquiry text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
-                Explore Innovation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <a href="#innovation" onclick="navigateTo('innovation', event)" class="btn-gold text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg transform hover:scale-[1.02] transition-all">
+                Explore Our Innovation &amp; Solution <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 2: EXECUTE -->
+      <!-- SLIDE 2: EXECUTE (Software Code vs 3D CAD Output Design) -->
       <div class="hero-slide" data-slide="1">
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
-          <div class="max-w-2xl text-left space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-950/80 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+        <!-- 60-70% Section Background Video: One side software development, other side output 3D CAD mechanical design -->
+        <video class="hero-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-execute-video.mp4" loop muted playsinline poster="images/hero-execute.jpg"></video>
+        
+        <!-- Ambient Contrast Gradients: Leaves 60-70% of video vividly visible -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#040810]/95 via-[#040810]/80 to-transparent z-[1] pointer-events-none w-full lg:w-[52%]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#040810]/90 via-transparent to-[#040810]/60 z-[1] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/80 lg:bg-[#040810]/65 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               EXECUTE
             </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
-              Foundations <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">in Motion.</span>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+              Building the Foundations <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Through Today's Work.</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-200 font-medium max-w-lg leading-relaxed">
-              Precision robotics, line balancing, and turnkey automation for modern factory floors.
+            <p class="text-xs sm:text-sm md:text-base text-slate-200 font-medium leading-relaxed">
+              Through project management, engineering design and fabrication coordination, operations, and technology-led services, we work on practical business and industrial challenges while building the capabilities that will inform our future solutions.
             </p>
             <div class="pt-2 flex items-center gap-4">
-              <a href="#services" class="btn-gold text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
-                Explore Capabilities <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <a href="#services" onclick="navigateTo('services', event)" class="btn-gold text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg transform hover:scale-[1.02] transition-all">
+                Explore Our Capabilities <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- SLIDE 3: EVOLVE -->
+      <!-- SLIDE 3: EVOLVE (Factory Floor to Simulation & Sandbox Decisions) -->
       <div class="hero-slide" data-slide="2">
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
-          <div class="max-w-2xl text-left space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold tracking-widest uppercase">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <!-- 60-70% Section Background Video: Real world factory transitioning to digital twin simulation and sandbox -->
+        <video class="hero-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-evolve-video.mp4" loop muted playsinline poster="images/hero-evolve.jpg"></video>
+        
+        <!-- Ambient Contrast Gradients: Leaves 60-70% of video vividly visible -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#040810]/95 via-[#040810]/80 to-transparent z-[1] pointer-events-none w-full lg:w-[52%]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#040810]/90 via-transparent to-[#040810]/60 z-[1] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-12 sm:py-16 lg:py-24">
+          <div class="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 bg-[#040810]/80 lg:bg-[#040810]/65 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               EVOLVE
             </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
-              Exponential <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">Growth.</span>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] font-display">
+              From Practical Challenges <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">to Smarter Decisions.</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-200 font-medium max-w-lg leading-relaxed">
-              Industrial IoT telemetry, predictive AI, and continuous operational acceleration.
+            <p class="text-xs sm:text-sm md:text-base text-slate-200 font-medium leading-relaxed">
+              We aim to progressively translate industry needs into accessible simulation and decision-support capabilities—helping businesses investigate possibilities before making costly physical commitments.
             </p>
             <div class="pt-2 flex items-center gap-4">
-              <a href="#contact" class="btn-inquiry text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
-                Shape the Future <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <a href="#contact" onclick="navigateTo('contact', event)" class="btn-gold text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg transform hover:scale-[1.02] transition-all">
+                Shape the Future With Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
             </div>
           </div>
@@ -543,11 +557,11 @@
         <div class="flex items-center gap-2 sm:gap-4">
           <button type="button" onclick="goToSlide(0)" class="slide-indicator text-left group transition-all" data-slide-btn="0">
             <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-white mb-1">
-              <span class="font-bold text-cyan-400">01</span>
+              <span class="font-bold text-amber-400">01</span>
               <span class="hidden sm:inline">ENVISION</span>
             </div>
             <div class="w-16 sm:w-28 h-1 bg-white/20 rounded-full overflow-hidden">
-              <div class="slide-progress h-full bg-cyan-400 w-0 transition-all"></div>
+              <div class="slide-progress h-full bg-amber-400 w-0 transition-all"></div>
             </div>
           </button>
 
@@ -563,11 +577,11 @@
 
           <button type="button" onclick="goToSlide(2)" class="slide-indicator text-left group transition-all" data-slide-btn="2">
             <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-white mb-1">
-              <span class="font-bold text-emerald-400">03</span>
+              <span class="font-bold text-amber-400">03</span>
               <span class="hidden sm:inline">EVOLVE</span>
             </div>
             <div class="w-16 sm:w-28 h-1 bg-white/20 rounded-full overflow-hidden">
-              <div class="slide-progress h-full bg-emerald-400 w-0 transition-all"></div>
+              <div class="slide-progress h-full bg-amber-400 w-0 transition-all"></div>
             </div>
           </button>
         </div>
@@ -2587,7 +2601,7 @@
     let heroSlideTimer = null;
     let heroProgressInterval = null;
     let heroProgressPct = 0;
-    const HERO_SLIDE_DURATION = 3000; // 6 seconds
+    const HERO_SLIDE_DURATION = 8000; // 8 seconds per slide to match video loops
 
     function showSlide(index) {
       const slides = document.querySelectorAll('.hero-slide');
@@ -2597,10 +2611,18 @@
       currentHeroSlide = (index + slides.length) % slides.length;
 
       slides.forEach((slide, idx) => {
+        const vid = slide.querySelector('video');
         if (idx === currentHeroSlide) {
           slide.classList.add('active');
+          if (vid) {
+            vid.currentTime = 0;
+            vid.play().catch(() => {});
+          }
         } else {
           slide.classList.remove('active');
+          if (vid) {
+            vid.pause();
+          }
         }
       });
 
