@@ -328,18 +328,6 @@
       z-index: 2;
     }
 
-    /* Running Motion Wireframe Canvas in Hero */
-    #heroMotionCanvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-      pointer-events: none;
-      opacity: 0.85;
-      mix-blend-mode: screen;
-    }
-
     /* Inquiry Button (Styled after reference image & Molbio Product Enquiry) */
     .btn-inquiry {
       background: linear-gradient(135deg, #0d9488 0%, #059669 50%, #0284c7 100%);
@@ -493,21 +481,15 @@
     <!-- ======================================================== -->
     <div class="hero-molbio-container relative w-full overflow-hidden border-b border-slate-800 pt-28 sm:pt-32 lg:pt-36">
       
-      <!-- REAL FULL-WIDTH VIDEO BACKGROUND (Autoplay, Loop, Muted, Playsinline) -->
+      <!-- REAL FULL-WIDTH INDUSTRIAL VIDEO BACKGROUND (Autoplay, Loop, Muted, Playsinline) -->
       <video class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" src="images/hero-video.mp4" autoplay loop muted playsinline poster="images/hero-envision.jpg"></video>
 
-      <!-- High-Tech Dark Obsidian Gradient Vignette Overlays -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#050912]/92 via-[#050912]/75 to-[#050912]/80 z-[1] pointer-events-none"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#050912] via-transparent to-[#050912]/70 z-[1] pointer-events-none"></div>
-
-      <!-- RUNNING MOTION GRAPHICS CANVAS (Slow animation: machinery wireframes, golden lines, code stream) -->
-      <canvas id="heroMotionCanvas" class="z-[2]"></canvas>
+      <!-- Gentle Dark Vignette for Text Contrast (Video 100% visible) -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/30 z-[1] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 z-[1] pointer-events-none"></div>
 
       <!-- SLIDE 1: ENVISION -->
       <div class="hero-slide active" data-slide="0">
-        <img src="images/hero-envision.jpg" alt="Envision" class="hero-bg-img absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay filter brightness-110 contrast-125 pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#060b14]/95 via-[#060b14]/70 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#060b14] via-transparent to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
           <div class="max-w-2xl text-left space-y-4">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold tracking-widest uppercase">
@@ -515,10 +497,10 @@
               ENVISION
             </div>
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
-              Digital Future <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-amber-300 bg-clip-text text-transparent">for MSMEs.</span>
+              Intelligent <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-amber-300 bg-clip-text text-transparent">Robotics.</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-300 font-medium max-w-lg leading-relaxed">
-              Affordable Digital Twin &amp; Virtual Sandbox simulation before physical commitment.
+            <p class="text-base sm:text-lg text-slate-200 font-medium max-w-lg leading-relaxed">
+              Virtual Sandboxes &amp; Digital Twins to de-risk manufacturing before physical deployment.
             </p>
             <div class="pt-2 flex items-center gap-4">
               <a href="#innovation" class="btn-inquiry text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
@@ -531,9 +513,6 @@
 
       <!-- SLIDE 2: EXECUTE -->
       <div class="hero-slide" data-slide="1">
-        <img src="images/hero-execute.jpg" alt="Execute" class="hero-bg-img absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay filter brightness-110 contrast-125 pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#060b14]/95 via-[#060b14]/70 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#060b14] via-transparent to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
           <div class="max-w-2xl text-left space-y-4">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-950/80 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase">
@@ -543,8 +522,8 @@
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
               Foundations <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-400 bg-clip-text text-transparent">in Motion.</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-300 font-medium max-w-lg leading-relaxed">
-              Structured project management, engineering design, and scalable operations.
+            <p class="text-base sm:text-lg text-slate-200 font-medium max-w-lg leading-relaxed">
+              Precision robotics, line balancing, and turnkey automation for modern factory floors.
             </p>
             <div class="pt-2 flex items-center gap-4">
               <a href="#services" class="btn-gold text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
@@ -557,9 +536,6 @@
 
       <!-- SLIDE 3: EVOLVE -->
       <div class="hero-slide" data-slide="2">
-        <img src="images/hero-evolve.jpg" alt="Evolve" class="hero-bg-img absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay filter brightness-110 contrast-125 pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#060b14]/95 via-[#060b14]/70 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#060b14] via-transparent to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-16 sm:py-24">
           <div class="max-w-2xl text-left space-y-4">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold tracking-widest uppercase">
@@ -567,10 +543,10 @@
               EVOLVE
             </div>
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-display">
-              Smarter Decisions, <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">Real Results.</span>
+              Exponential <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">Growth.</span>
             </h1>
-            <p class="text-base sm:text-lg text-slate-300 font-medium max-w-lg leading-relaxed">
-              Predictive simulation and operational decision-support for growing enterprises.
+            <p class="text-base sm:text-lg text-slate-200 font-medium max-w-lg leading-relaxed">
+              Industrial IoT telemetry, predictive AI, and continuous operational acceleration.
             </p>
             <div class="pt-2 flex items-center gap-4">
               <a href="#contact" class="btn-inquiry text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
@@ -2757,340 +2733,7 @@
     // - Right: Live scrolling code telemetry stream
     // ==========================================
     function initHeroMotion() {
-      const canvas = document.getElementById('heroMotionCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      function resizeCanvas() {
-        const parent = canvas.parentElement;
-        if (parent) {
-          canvas.width = parent.offsetWidth;
-          canvas.height = parent.offsetHeight;
-        }
-      }
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-
-      // Ambient connecting nodes
-      const ambientNodes = [];
-      for (let i = 0; i < 40; i++) {
-        ambientNodes.push({
-          x: Math.random() * (canvas.width || 1200),
-          y: Math.random() * (canvas.height || 800),
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.3,
-          color: Math.random() > 0.55 ? 'rgba(245, 158, 11, ' : 'rgba(6, 182, 212, ',
-          radius: Math.random() * 2 + 1
-        });
-      }
-
-      // Code telemetry stream
-      const codeTelemetry = [
-        "const digitalTwin = new VirtualSandbox({ org: 'MSME-409' });",
-        "await digitalTwin.replicateAssemblyLine({ fidelity: 0.998 });",
-        "laserScan.sweepGeometry({ resolution: '0.02mm' });",
-        "simulation.evaluateScenarios({ lineA: 'Continuous Flow' });",
-        "telemetry.stream.pipe(pipelineOptimizer);",
-        "cad.validateTolerances({ axial: 0.002, torque: '420Nm' });",
-        "sandbox.computeROI({ oeeDelta: '+18.5%', payback: '3.8 mo' });",
-        "sys.compliance.auditPass({ esg_score: 98.4, sec_level: 'A+' });"
-      ];
-
-      let frame = 0;
-      let scanX = 0;
-      let scanDir = 1;
-
-      function renderFrame() {
-        const w = canvas.width;
-        const h = canvas.height;
-        ctx.clearRect(0, 0, w, h);
-        frame++;
-
-        // ----------------------------------------------------
-        // LAYER 1: Isometric Blueprint Coordinate Grid
-        // Extends all the way behind the fixed navbar
-        // ----------------------------------------------------
-        ctx.strokeStyle = 'rgba(217, 119, 6, 0.035)';
-        ctx.lineWidth = 1;
-        const gridStep = 48;
-        for (let x = 0; x < w; x += gridStep) {
-          ctx.beginPath();
-          ctx.moveTo(x, 0);
-          ctx.lineTo(x, h);
-          ctx.stroke();
-        }
-        for (let y = 0; y < h; y += gridStep) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(w, y);
-          ctx.stroke();
-        }
-
-        // ----------------------------------------------------
-        // LAYER 2: Ambient Particle Constellation (Gold + Cyan)
-        // ----------------------------------------------------
-        for (let i = 0; i < ambientNodes.length; i++) {
-          const n = ambientNodes[i];
-          n.x += n.vx;
-          n.y += n.vy;
-          if (n.x < 0 || n.x > w) n.vx *= -1;
-          if (n.y < 0 || n.y > h) n.vy *= -1;
-
-          ctx.fillStyle = n.color + '0.6)';
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
-          ctx.fill();
-
-          for (let j = i + 1; j < ambientNodes.length; j++) {
-            const m = ambientNodes[j];
-            const dx = n.x - m.x;
-            const dy = n.y - m.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 125) {
-              const alpha = (1 - dist / 125) * 0.22;
-              ctx.strokeStyle = n.color + alpha + ')';
-              ctx.lineWidth = 0.7;
-              ctx.beginPath();
-              ctx.moveTo(n.x, n.y);
-              ctx.lineTo(m.x, m.y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        // Center-Right Anchor Coordinates for Visual Highlights
-        const cx = w > 1024 ? w * 0.72 : w * 0.65;
-        const cy = h * 0.52;
-
-        // ----------------------------------------------------
-        // LAYER 3: SLIDE-SPECIFIC MOTION GRAPHICS VISUALS
-        // ----------------------------------------------------
-        if (currentHeroSlide === 0) {
-          // ================================================
-          // ENVISION: Physical Machinery Wireframe Replication
-          // with Faint Golden Lines & Sweeping Laser Scan
-          // ================================================
-          const machWidth = Math.min(w * 0.45, 420);
-          const machHeight = Math.min(h * 0.45, 260);
-          const mx = cx - machWidth / 2;
-          const my = cy - machHeight / 2;
-
-          // Physical machinery structural frames (Faint Golden lines)
-          ctx.strokeStyle = 'rgba(245, 158, 11, 0.45)';
-          ctx.lineWidth = 1.4;
-          ctx.strokeRect(mx, my + 40, machWidth, machHeight - 40);
-
-          // Internal conveyor rollers / assembly line gears
-          const numRollers = 6;
-          for (let r = 0; r < numRollers; r++) {
-            const rx = mx + (machWidth / (numRollers + 1)) * (r + 1);
-            const ry = my + machHeight - 35;
-            ctx.beginPath();
-            ctx.arc(rx, ry, 18, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
-            ctx.stroke();
-
-            // Inner rotating spoke
-            const spokeAngle = frame * 0.02 * (r % 2 === 0 ? 1 : -1);
-            ctx.beginPath();
-            ctx.moveTo(rx - Math.cos(spokeAngle) * 16, ry - Math.sin(spokeAngle) * 16);
-            ctx.lineTo(rx + Math.cos(spokeAngle) * 16, ry + Math.sin(spokeAngle) * 16);
-            ctx.stroke();
-          }
-
-          // CNC Spindle gantry head
-          const gantryX = mx + (machWidth * 0.3) + Math.sin(frame * 0.015) * (machWidth * 0.25);
-          ctx.strokeStyle = 'rgba(245, 158, 11, 0.6)';
-          ctx.strokeRect(gantryX - 25, my + 10, 50, 45);
-          ctx.beginPath();
-          ctx.moveTo(gantryX, my + 55);
-          ctx.lineTo(gantryX, my + 100);
-          ctx.strokeStyle = 'rgba(6, 182, 212, 0.7)';
-          ctx.stroke();
-
-          // Laser scan line sweeping across machinery
-          scanX += 1.8 * scanDir;
-          if (scanX > machWidth) { scanDir = -1; }
-          if (scanX < 0) { scanDir = 1; }
-          const laserCurrentX = mx + scanX;
-
-          // Glowing vertical laser sweep line
-          const laserGrad = ctx.createLinearGradient(laserCurrentX, my, laserCurrentX, my + machHeight);
-          laserGrad.addColorStop(0, 'rgba(6, 182, 212, 0)');
-          laserGrad.addColorStop(0.5, 'rgba(6, 182, 212, 0.85)');
-          laserGrad.addColorStop(1, 'rgba(6, 182, 212, 0)');
-          ctx.strokeStyle = laserGrad;
-          ctx.lineWidth = 2.5;
-          ctx.beginPath();
-          ctx.moveTo(laserCurrentX, my);
-          ctx.lineTo(laserCurrentX, my + machHeight);
-          ctx.stroke();
-
-          // Holographic digital twin mesh rendered on right of laser
-          ctx.strokeStyle = 'rgba(6, 182, 212, 0.28)';
-          ctx.lineWidth = 0.8;
-          ctx.setLineDash([4, 4]);
-          for (let gy = my + 40; gy < my + machHeight; gy += 24) {
-            ctx.beginPath();
-            ctx.moveTo(Math.max(mx, laserCurrentX), gy);
-            ctx.lineTo(mx + machWidth, gy);
-            ctx.stroke();
-          }
-          ctx.setLineDash([]);
-
-          // Digital Twin HUD Tag
-          ctx.font = '10px monospace';
-          ctx.fillStyle = 'rgba(6, 182, 212, 0.85)';
-          ctx.fillText("[TWIN REPLICATION // 99.8% FIDELITY]", mx, my - 8);
-          ctx.fillStyle = 'rgba(245, 158, 11, 0.8)';
-          ctx.fillText("[VIRTUAL SANDBOX: SIMULATING]", mx + machWidth - 190, my - 8);
-
-        } else if (currentHeroSlide === 1) {
-          // ================================================
-          // EXECUTE: 3D Isometric Precision CAD Gear Assembly
-          // Dimensional Callouts & Orthogonal Circuitry Bus
-          // ================================================
-          const gearRadius = Math.min(w, h) * 0.16;
-          const gearAngle = frame * 0.008;
-
-          ctx.save();
-          ctx.translate(cx, cy);
-
-          // Outer dimension circle
-          ctx.strokeStyle = 'rgba(245, 158, 11, 0.2)';
-          ctx.lineWidth = 1;
-          ctx.setLineDash([6, 6]);
-          ctx.beginPath();
-          ctx.arc(0, 0, gearRadius + 30, 0, Math.PI * 2);
-          ctx.stroke();
-          ctx.setLineDash([]);
-
-          // Dimension Callout Arrows
-          ctx.strokeStyle = 'rgba(245, 158, 11, 0.6)';
-          ctx.beginPath();
-          ctx.moveTo(-gearRadius - 20, -gearRadius - 40);
-          ctx.lineTo(gearRadius + 20, -gearRadius - 40);
-          ctx.stroke();
-          ctx.font = '9px monospace';
-          ctx.fillStyle = 'rgba(245, 158, 11, 0.9)';
-          ctx.fillText("<--- Ø 142.80 mm [TOL: ±0.002] --->", -80, -gearRadius - 46);
-
-          // Planetary Gear Teeth (Procedural 16-tooth precision profile)
-          const teeth = 16;
-          ctx.strokeStyle = 'rgba(245, 158, 11, 0.7)';
-          ctx.lineWidth = 1.8;
-          ctx.beginPath();
-          for (let t = 0; t < teeth; t++) {
-            const a1 = (t / teeth) * Math.PI * 2 + gearAngle;
-            const a2 = ((t + 0.35) / teeth) * Math.PI * 2 + gearAngle;
-            const a3 = ((t + 0.55) / teeth) * Math.PI * 2 + gearAngle;
-            const a4 = ((t + 0.9) / teeth) * Math.PI * 2 + gearAngle;
-            const rInner = gearRadius - 12;
-            const rOuter = gearRadius + 14;
-
-            ctx.lineTo(Math.cos(a1) * rInner, Math.sin(a1) * rInner);
-            ctx.lineTo(Math.cos(a2) * rOuter, Math.sin(a2) * rOuter);
-            ctx.lineTo(Math.cos(a3) * rOuter, Math.sin(a3) * rOuter);
-            ctx.lineTo(Math.cos(a4) * rInner, Math.sin(a4) * rInner);
-          }
-          ctx.closePath();
-          ctx.stroke();
-
-          // Inner rotating coordinate axes
-          ctx.rotate(-gearAngle * 1.5);
-          ctx.strokeStyle = 'rgba(6, 182, 212, 0.6)';
-          ctx.lineWidth = 1.2;
-          ctx.beginPath();
-          ctx.arc(0, 0, gearRadius * 0.45, 0, Math.PI * 2);
-          ctx.stroke();
-
-          ctx.restore();
-
-          // Real-time oscilloscope waveform on bottom
-          ctx.strokeStyle = 'rgba(6, 182, 212, 0.55)';
-          ctx.lineWidth = 1.5;
-          ctx.beginPath();
-          const waveW = 280;
-          const waveX = cx - waveW / 2;
-          const waveY = cy + gearRadius + 50;
-          for (let wx = 0; wx < waveW; wx += 4) {
-            const wy = waveY + Math.sin(wx * 0.05 + frame * 0.08) * 12 * Math.cos(wx * 0.02);
-            if (wx === 0) ctx.moveTo(waveX + wx, wy);
-            else ctx.lineTo(waveX + wx, wy);
-          }
-          ctx.stroke();
-          ctx.font = '10px monospace';
-          ctx.fillStyle = 'rgba(6, 182, 212, 0.8)';
-          ctx.fillText("[EXECUTION TELEMETRY // CYCLE: 42.0s // 94.2% OEE]", waveX, waveY + 28);
-
-        } else if (currentHeroSlide === 2) {
-          // ================================================
-          // EVOLVE: 3 Dynamic Multi-Scenario Simulation Flow Curves
-          // & Converging Decision Tree Constellation
-          // ================================================
-          const flowW = Math.min(w * 0.42, 380);
-          const flowStartX = cx - flowW / 2;
-          const flowBaseY = cy - 20;
-
-          // 3 Diverging Scenario Trendlines (Continuous Flow, Buffer, Scrap Red.)
-          const scenarios = [
-            { color: 'rgba(6, 182, 212, ', label: 'SCENARIO A: +18.5% Throughput', freq: 0.015, amp: 28, offset: -45 },
-            { color: 'rgba(245, 158, 11, ', label: 'SCENARIO B: Buffer Optimization', freq: 0.02, amp: 20, offset: 0 },
-            { color: 'rgba(16, 185, 129, ', label: 'SCENARIO C: -34.8% Scrap Reduction', freq: 0.012, amp: 34, offset: 45 }
-          ];
-
-          scenarios.forEach((sc, idx) => {
-            ctx.strokeStyle = sc.color + '0.75)';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            for (let px = 0; px <= flowW; px += 6) {
-              const py = flowBaseY + sc.offset + Math.sin((px * sc.freq) + (frame * 0.04) + idx) * sc.amp;
-              if (px === 0) ctx.moveTo(flowStartX + px, py);
-              else ctx.lineTo(flowStartX + px, py);
-            }
-            ctx.stroke();
-
-            // Flowing packets along scenario curves
-            const packetPos = (frame * 2.5 + idx * 80) % flowW;
-            const packetY = flowBaseY + sc.offset + Math.sin((packetPos * sc.freq) + (frame * 0.04) + idx) * sc.amp;
-            ctx.fillStyle = sc.color + '1)';
-            ctx.beginPath();
-            ctx.arc(flowStartX + packetPos, packetY, 4, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Labels
-            ctx.font = '10px monospace';
-            ctx.fillStyle = sc.color + '0.9)';
-            ctx.fillText(sc.label, flowStartX + flowW + 12, flowBaseY + sc.offset + 4);
-          });
-
-          // Converging Decision Node HUD
-          ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
-          ctx.strokeRect(flowStartX - 10, flowBaseY - 80, flowW + 20, 160);
-          ctx.font = '10px monospace';
-          ctx.fillStyle = 'rgba(245, 158, 11, 0.9)';
-          ctx.fillText("[PREDICTIVE DECISION SUPPORT // MULTI-SCENARIO MODELING]", flowStartX, flowBaseY - 90);
-        }
-
-        // ----------------------------------------------------
-        // LAYER 4: LIVE SCROLLING SOFTWARE CODE TELEMETRY STREAM
-        // Faint, high-tech syntax telemetry running on the right side
-        // ----------------------------------------------------
-        if (w > 860) {
-          ctx.font = '10px monospace';
-          const codeX = w - 420;
-          const codeStartY = ((frame * 0.3) % 240);
-          for (let c = 0; c < codeTelemetry.length; c++) {
-            const itemY = ((codeStartY + c * 32) % (h * 0.75)) + 110;
-            const alpha = Math.sin((itemY / h) * Math.PI) * 0.35;
-            ctx.fillStyle = c % 2 === 0 ? `rgba(6, 182, 212, ${alpha})` : `rgba(245, 158, 11, ${alpha})`;
-            ctx.fillText(codeTelemetry[c], codeX, itemY);
-          }
-        }
-
-        requestAnimationFrame(renderFrame);
-      }
-      renderFrame();
+      // Overlapping canvas removed: Background is 100% pure industrial video
     }
 
     // Header scroll transparency listener
