@@ -2337,7 +2337,7 @@
   <!-- ========================================== -->
   <!-- FLOATING WHATSAPP BUTTON (Unobtrusive)     -->
   <!-- ========================================== -->
-  <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+  <div class="fixed bottom-6 left-6 z-40 flex items-center gap-3">
     <a href="https://wa.me/919980182009?text=Hello%20Thrunox%20Systems,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20business%20requirement.%20Please%20let%20me%20know%20the%20appropriate%20next%20steps." target="_blank" aria-label="Chat on WhatsApp" class="p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-950/40 transition-all transform hover:scale-110 flex items-center justify-center border border-emerald-400/30 group">
       <i data-lucide="message-circle" class="w-6 h-6"></i>
       <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold pl-0 group-hover:pl-2">
@@ -2347,94 +2347,108 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- WEBSITE CHATBOT: THRUNOX ASSISTANT         -->
+  <!-- WEBSITE CHATBOT: NOX AI ASSISTANT (Bottom Right) -->
   <!-- ========================================== -->
-  <div class="fixed bottom-6 left-6 z-40">
-    <!-- Chatbot Toggle Launcher Button (Friendly Female AI Assistant Avatar) -->
-    <button id="chatbotToggleBtn" onclick="toggleChatbot()" aria-label="Open NOX AI Assistant" class="relative group p-1.5 sm:p-2 rounded-full bg-[#0a0f1d] border-2 border-cyan-400 shadow-xl shadow-cyan-950/40 transition-all transform hover:scale-105 flex items-center gap-2.5">
-      <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0 flex items-center justify-center bg-[#070b14]">
-        <img src="images/nox-standalone-icon-56.png" alt="NOX AI Assistant" class="w-9 h-9 object-contain nox-glow">
-        <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-cyan-400 border-2 border-[#0a0f1d] animate-pulse"></span>
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+    <!-- Chatbot Toggle Launcher Button (Scaled to exactly 56px x 56px on Dark Background) -->
+    <button id="chatbotToggleBtn" onclick="toggleChatbot()" aria-label="Open NOX AI Assistant" class="relative group p-1.5 rounded-full bg-[#0A0F1D] border-2 border-cyan-400/80 shadow-2xl shadow-cyan-950/80 transition-all transform hover:scale-105 hover:border-cyan-300 flex items-center gap-3">
+      <div class="relative w-[56px] h-[56px] rounded-full overflow-hidden shrink-0 flex items-center justify-center bg-[#070B14]">
+        <img src="images/nox-standalone-icon-56.png" alt="NOX AI Assistant" width="56" height="56" class="w-[56px] h-[56px] object-contain nox-glow">
+        <span class="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-[#0A0F1D] animate-pulse"></span>
       </div>
-      <div class="hidden sm:flex flex-col text-left pr-2">
-        <span class="text-xs font-extrabold text-white leading-tight">NOX</span>
-        <span class="text-[10px] text-cyan-300 font-semibold flex items-center gap-1">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> AI Agent • Online
+      <div class="hidden sm:flex flex-col text-left pr-3">
+        <span class="text-xs font-black tracking-wider text-white leading-tight flex items-center gap-1.5">
+          NOX <span class="text-[9px] uppercase tracking-widest px-1.5 py-0.5 rounded bg-cyan-950/90 text-cyan-300 border border-cyan-500/30 font-bold">AI AGENT</span>
+        </span>
+        <span class="text-[10px] text-cyan-300/90 font-medium flex items-center gap-1 mt-0.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Titanium Silver • Online
         </span>
       </div>
     </button>
 
-    <!-- Chatbot Window -->
-    <div id="chatbotWindow" class="hidden absolute bottom-16 left-0 w-[92vw] sm:w-[420px] max-h-[80vh] h-[580px] bg-white border border-slate-300 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+    <!-- Chatbot Window (Anchored above launcher in bottom right, dark #0A0F1D background) -->
+    <div id="chatbotWindow" class="hidden absolute bottom-20 right-0 w-[calc(100vw-3rem)] sm:w-[420px] max-h-[82vh] h-[580px] bg-[#0A0F1D] border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-950/90 flex flex-col overflow-hidden">
       
-      <!-- Chat Header (Female AI Assistant Avatar) -->
-      <div class="p-4 bg-[#eaedf1] border-b border-slate-300 flex items-center justify-between">
+      <!-- Chat Header (Full Brandmark scaled to max-h-[32px]) -->
+      <div class="px-4 py-3 bg-[#070B15] border-b border-cyan-500/20 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shadow-sm shrink-0">
-            <img src="images/assistant-avatar.png" alt="Thrunox Assistant" class="w-full h-full object-cover">
-            <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white"></span>
+          <div class="flex items-center justify-center p-1 rounded-lg bg-[#0A0F1D] border border-cyan-500/30 shadow-xs">
+            <img src="images/nox-full-brandmark.png" alt="NOX Full Brandmark" class="max-h-[32px] h-8 w-auto object-contain nox-glow">
           </div>
           <div>
-            <h4 class="text-xs font-bold text-slate-900">Thrunox AI Assistant</h4>
-            <span class="text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span> Online • Instant Advisory
+            <div class="flex items-center gap-1.5">
+              <h4 class="text-xs font-black tracking-wide text-white">NOX</h4>
+              <span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-cyan-950/90 text-cyan-300 border border-cyan-500/30 font-bold">AI Assistant</span>
+            </div>
+            <span class="text-[10px] text-cyan-400 font-medium flex items-center gap-1 mt-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Titanium Silver • Online
             </span>
           </div>
         </div>
         <div class="flex items-center gap-1">
-          <button onclick="resetChatbot()" title="Restart Conversation" class="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-black/5 text-xs">
+          <button onclick="resetChatbot()" title="Restart Conversation" class="p-1.5 text-slate-400 hover:text-cyan-300 rounded-lg hover:bg-white/5 text-xs transition-colors">
             <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
           </button>
-          <button onclick="toggleChatbot()" title="Close" class="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-black/5 text-xs">
+          <button onclick="toggleChatbot()" title="Close" class="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-white/5 text-xs transition-colors">
             <i data-lucide="x" class="w-4 h-4"></i>
           </button>
         </div>
       </div>
 
-      <!-- Messages Log Container -->
-      <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-slate-50/50">
+      <!-- Messages Log Container (Dark #070B15 surface) -->
+      <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#070B15]">
         
         <!-- Welcome Message -->
         <div class="flex items-start gap-2.5">
-          <div class="w-8 h-8 rounded-full overflow-hidden border border-amber-400 shadow-xs shrink-0 mt-0.5">
-            <img src="images/assistant-avatar.png" alt="Thrunox Assistant" class="w-full h-full object-cover">
+          <div class="w-8 h-8 rounded-full overflow-hidden border border-cyan-400/50 bg-[#0A0F1D] shadow-xs shrink-0 mt-0.5 flex items-center justify-center">
+            <img src="images/nox-standalone-icon-56.png" alt="NOX" class="w-7 h-7 object-contain nox-glow">
           </div>
-          <div class="p-3 rounded-2xl rounded-tl-none bg-white border border-slate-200 text-slate-700 leading-relaxed shadow-sm">
+          <div class="p-3.5 rounded-2xl rounded-tl-none bg-[#0E1626] border border-cyan-500/20 text-slate-200 leading-relaxed shadow-sm">
+            <div class="font-bold text-white mb-1 flex items-center gap-1.5">
+              <span>NOX Systems Advisory</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            </div>
             Hello and welcome to Thrunox Systems.<br><br>
-            I can help you explore our services, industries, Innovation &amp; Solutions, company brochure and collaboration options.<br><br>
-            What would you like to know?
+            I can help you explore our services, industry verticals, Innovation &amp; Solutions, official company brochure, and collaboration options.<br><br>
+            What would you like to explore?
           </div>
         </div>
 
         <!-- Main Menu Buttons Container -->
-        <div id="chatMenuButtons" class="pl-8 space-y-1.5 pt-1">
-          <button onclick="handleMenuClick('Explore Services')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>1. Explore Services</span> &rarr;
+        <div id="chatMenuButtons" class="pl-10 space-y-2 pt-1">
+          <button onclick="handleMenuClick('Explore Services')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">1. Explore Services</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Explore Innovation & Solutions')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>2. Explore Innovation &amp; Solutions</span> &rarr;
+          <button onclick="handleMenuClick('Explore Innovation & Solutions')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">2. Explore Innovation &amp; Solutions</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Industries We Support')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>3. Industries We Support</span> &rarr;
+          <button onclick="handleMenuClick('Industries We Support')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">3. Industries We Support</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Download Company Brochure')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>4. Download Company Brochure</span> &rarr;
+          <button onclick="handleMenuClick('Download Company Brochure')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">4. Download Company Brochure</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Careers & Collaborations')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>5. Careers &amp; Collaborations</span> &rarr;
+          <button onclick="handleMenuClick('Careers & Collaborations')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">5. Careers &amp; Collaborations</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Contact Thrunox')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>6. Contact Thrunox</span> &rarr;
+          <button onclick="handleMenuClick('Contact Thrunox')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">6. Contact Thrunox</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
         </div>
 
       </div>
 
       <!-- Quick FAQs Carousel & Input -->
-      <div class="p-3 bg-[#eaedf1] border-t border-slate-300">
+      <div class="p-3 bg-[#0A0F1D] border-t border-cyan-500/20">
         <form onsubmit="handleChatSubmit(event)" class="flex gap-2">
-          <input type="text" id="chatInput" placeholder="Ask a question about our services or FAQ..." class="flex-1 px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-800 placeholder-slate-400 text-xs focus:outline-none focus:border-amber-700">
-          <button type="submit" class="btn-gold p-2 rounded-xl text-white">
+          <input type="text" id="chatInput" placeholder="Ask NOX about engineering, services, or FAQs..." class="flex-1 px-3.5 py-2 rounded-xl bg-[#070B15] border border-cyan-500/30 text-white placeholder-slate-400 text-xs focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors">
+          <button type="submit" aria-label="Send message" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white p-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition-all transform hover:scale-105 flex items-center justify-center">
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
         </form>
@@ -2988,7 +3002,7 @@
       const msgDiv = document.createElement('div');
       msgDiv.className = 'flex items-start justify-end gap-2';
       msgDiv.innerHTML = `
-        <div class="p-3 rounded-2xl rounded-tr-none bg-amber-700 text-white leading-relaxed max-w-[85%]">
+        <div class="p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-cyan-600 to-blue-700 text-white leading-relaxed max-w-[85%] shadow-sm">
           ${text}
         </div>
       `;
@@ -2999,13 +3013,13 @@
     function appendBotMessage(text) {
       const container = document.getElementById('chatMessages');
       const msgDiv = document.createElement('div');
-      msgDiv.className = 'flex items-start gap-2';
+      msgDiv.className = 'flex items-start gap-2.5';
       const formatted = text.replace(/\n/g, '<br>');
       msgDiv.innerHTML = `
-        <div class="w-8 h-8 rounded-full overflow-hidden border border-amber-400 shadow-xs shrink-0 mt-0.5">
-          <img src="images/assistant-avatar.png" alt="Thrunox Assistant" class="w-full h-full object-cover">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-cyan-400/50 bg-[#0A0F1D] shadow-xs shrink-0 mt-0.5 flex items-center justify-center">
+          <img src="images/nox-standalone-icon-56.png" alt="NOX" class="w-7 h-7 object-contain nox-glow">
         </div>
-        <div class="p-3 rounded-2xl rounded-tl-none bg-white border border-slate-200 text-slate-700 leading-relaxed max-w-[85%] shadow-sm">
+        <div class="p-3.5 rounded-2xl rounded-tl-none bg-[#0E1626] border border-cyan-500/20 text-slate-200 leading-relaxed max-w-[85%] shadow-sm">
           ${formatted}
         </div>
       `;
@@ -3046,7 +3060,7 @@
         } else if (action === 'Download Company Brochure') {
           appendBotMessage(
             "Here is the verified company brochure link:\n" +
-            "<a href='Thrunox-Systems-Company-Brochure.pdf' download class='text-amber-800 underline font-bold'>Click here to Download Thrunox Systems Brochure (PDF)</a>"
+            "<a href='Thrunox-Systems-Company-Brochure.pdf' download class='text-cyan-400 hover:text-cyan-300 underline font-bold'>Click here to Download Thrunox Systems Brochure (PDF)</a>"
           );
         } else if (action === 'Careers & Collaborations') {
           appendBotMessage(
@@ -3102,34 +3116,44 @@
     function resetChatbot() {
       const container = document.getElementById('chatMessages');
       container.innerHTML = `
-        <div class="flex items-start gap-2">
-          <div class="w-8 h-8 rounded-full overflow-hidden border border-amber-400 shadow-xs shrink-0 mt-0.5">
-            <img src="images/assistant-avatar.png" alt="Thrunox Assistant" class="w-full h-full object-cover">
+        <div class="flex items-start gap-2.5">
+          <div class="w-8 h-8 rounded-full overflow-hidden border border-cyan-400/50 bg-[#0A0F1D] shadow-xs shrink-0 mt-0.5 flex items-center justify-center">
+            <img src="images/nox-standalone-icon-56.png" alt="NOX" class="w-7 h-7 object-contain nox-glow">
           </div>
-          <div class="p-3 rounded-2xl rounded-tl-none bg-white border border-slate-200 text-slate-700 leading-relaxed shadow-sm">
+          <div class="p-3.5 rounded-2xl rounded-tl-none bg-[#0E1626] border border-cyan-500/20 text-slate-200 leading-relaxed shadow-sm">
+            <div class="font-bold text-white mb-1 flex items-center gap-1.5">
+              <span>NOX Systems Advisory</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            </div>
             Hello and welcome to Thrunox Systems.<br><br>
-            I can help you explore our services, industries, Innovation &amp; Solutions, company brochure and collaboration options.<br><br>
-            What would you like to know?
+            I can help you explore our services, industry verticals, Innovation &amp; Solutions, official company brochure, and collaboration options.<br><br>
+            What would you like to explore?
           </div>
         </div>
-        <div id="chatMenuButtons" class="pl-8 space-y-1.5 pt-1">
-          <button onclick="handleMenuClick('Explore Services')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>1. Explore Services</span> &rarr;
+        <div id="chatMenuButtons" class="pl-10 space-y-2 pt-1">
+          <button onclick="handleMenuClick('Explore Services')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">1. Explore Services</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Explore Innovation & Solutions')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>2. Explore Innovation &amp; Solutions</span> &rarr;
+          <button onclick="handleMenuClick('Explore Innovation & Solutions')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">2. Explore Innovation &amp; Solutions</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Industries We Support')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>3. Industries We Support</span> &rarr;
+          <button onclick="handleMenuClick('Industries We Support')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">3. Industries We Support</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Download Company Brochure')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>4. Download Company Brochure</span> &rarr;
+          <button onclick="handleMenuClick('Download Company Brochure')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">4. Download Company Brochure</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Careers & Collaborations')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>5. Careers &amp; Collaborations</span> &rarr;
+          <button onclick="handleMenuClick('Careers & Collaborations')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">5. Careers &amp; Collaborations</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
-          <button onclick="handleMenuClick('Contact Thrunox')" class="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-amber-50 text-slate-700 hover:text-amber-900 border border-slate-200 transition-all text-xs font-medium flex items-center justify-between shadow-xs">
-            <span>6. Contact Thrunox</span> &rarr;
+          <button onclick="handleMenuClick('Contact Thrunox')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#0F172A] hover:bg-[#1E293B] text-slate-200 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-400/40 transition-all text-xs font-medium flex items-center justify-between group shadow-xs">
+            <span class="group-hover:translate-x-0.5 transition-transform">6. Contact Thrunox</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
         </div>
       `;
