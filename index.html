@@ -767,26 +767,22 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section 1: Services Introduction -->
-      <div class="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">
-          <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-700"></i> Core Competencies
-        </div>
+      <div class="text-left max-w-4xl mb-8 reveal-on-scroll">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 mb-4 font-display">Practical Support for Business Execution</h2>
         <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
           Every business faces operational, financial, regulatory and organisational challenges that require the right combination of planning, coordination and specialist support.
         </p>
-        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+        <p class="text-sm sm:text-base text-slate-700 mt-3 leading-relaxed">
           Thrunox Systems helps businesses structure these requirements and explore practical ways to address them. Depending on the engagement, we coordinate with relevant professionals and specialist service partners to support defined business objectives.
         </p>
       </div>
 
       <!-- Interactive Quick Switcher Filter Bar -->
-      <div class="flex items-center justify-center flex-wrap gap-2 mb-12">
-        <button onclick="filterServiceView('all')" id="svcTabAll" class="svc-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-sm">All 4 Verticals</button>
-        <button onclick="filterServiceView('svc1')" id="svcTab1" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">1. Projects &amp; SCM</button>
-        <button onclick="filterServiceView('svc2')" id="svcTab2" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">2. Finance &amp; US RCM</button>
-        <button onclick="filterServiceView('svc3')" id="svcTab3" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">3. Compliance &amp; Cyber Security</button>
-        <button onclick="filterServiceView('svc4')" id="svcTab4" class="svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50">4. ESG Advisory</button>
+      <div class="flex items-center justify-start flex-wrap gap-2.5 sm:gap-3 mb-12">
+        <button onclick="filterServiceView('svc1')" id="svcTab1" class="svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-amber-600 border border-amber-600 text-white shadow-md ring-2 ring-amber-400/40">1. Project Management, Operations &amp; Supply Chain</button>
+        <button onclick="filterServiceView('svc2')" id="svcTab2" class="svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-blue-50/80 border border-blue-300 text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600">2. Accounting, Bookkeeping &amp; Revenue Cycle Management</button>
+        <button onclick="filterServiceView('svc3')" id="svcTab3" class="svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-purple-50/80 border border-purple-300 text-purple-900 hover:bg-purple-600 hover:text-white hover:border-purple-600">3. Compliance &amp; Cyber Security</button>
+        <button onclick="filterServiceView('svc4')" id="svcTab4" class="svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-50/80 border border-emerald-300 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600">4. ESG Advisory</button>
       </div>
 
       <!-- Section 2: Service Verticals (Stacked Cards with Specific CTAs) -->
@@ -3211,44 +3207,59 @@
     }
 
     // ==========================================
-    // 4. INTERACTIVE SERVICE VIEW FILTER
+    // 4. INTERACTIVE SERVICE VIEW FILTER (Dedicated Vertical Colors)
     // ==========================================
+    const svcButtonConfig = {
+      'svc1': {
+        btnId: 'svcTab1',
+        cardId: 'cardSvc1',
+        activeClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-amber-600 border border-amber-600 text-white shadow-md ring-2 ring-amber-400/40',
+        defaultClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-amber-50/80 border border-amber-300 text-amber-900 hover:bg-amber-600 hover:text-white hover:border-amber-600',
+        ringClass: 'ring-amber-500'
+      },
+      'svc2': {
+        btnId: 'svcTab2',
+        cardId: 'cardSvc2',
+        activeClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-blue-600 border border-blue-600 text-white shadow-md ring-2 ring-blue-400/40',
+        defaultClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-blue-50/80 border border-blue-300 text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600',
+        ringClass: 'ring-blue-500'
+      },
+      'svc3': {
+        btnId: 'svcTab3',
+        cardId: 'cardSvc3',
+        activeClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-purple-600 border border-purple-600 text-white shadow-md ring-2 ring-purple-400/40',
+        defaultClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-purple-50/80 border border-purple-300 text-purple-900 hover:bg-purple-600 hover:text-white hover:border-purple-600',
+        ringClass: 'ring-purple-500'
+      },
+      'svc4': {
+        btnId: 'svcTab4',
+        cardId: 'cardSvc4',
+        activeClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-600 border border-emerald-600 text-white shadow-md ring-2 ring-emerald-400/40',
+        defaultClass: 'svc-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-50/80 border border-emerald-300 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600',
+        ringClass: 'ring-emerald-500'
+      }
+    };
+
     function filterServiceView(svcId) {
-      const buttons = document.querySelectorAll('.svc-filter-btn');
-      buttons.forEach(b => {
-        b.className = 'svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-300 text-slate-700 hover:text-amber-800 hover:bg-slate-50';
+      // Reset all buttons to their dedicated default styling
+      Object.keys(svcButtonConfig).forEach(key => {
+        const item = svcButtonConfig[key];
+        const btn = document.getElementById(item.btnId);
+        if (btn) btn.className = item.defaultClass;
       });
 
-      if (svcId === 'all') {
-        document.getElementById('svcTabAll').className = 'svc-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-sm';
-        document.querySelectorAll('.service-block').forEach(c => {
-          c.style.display = 'block';
-          c.classList.remove('ring-2', 'ring-amber-500');
-        });
-      } else {
-        const activeBtn = {
-          'svc1': 'svcTab1',
-          'svc2': 'svcTab2',
-          'svc3': 'svcTab3',
-          'svc4': 'svcTab4'
-        }[svcId];
-        if (activeBtn && document.getElementById(activeBtn)) {
-          document.getElementById(activeBtn).className = 'svc-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-sm';
-        }
+      // Highlight selected button with its dedicated active color and scroll smoothly to vertical card
+      const active = svcButtonConfig[svcId];
+      if (active) {
+        const btn = document.getElementById(active.btnId);
+        if (btn) btn.className = active.activeClass;
 
-        const targetCard = {
-          'svc1': 'cardSvc1',
-          'svc2': 'cardSvc2',
-          'svc3': 'cardSvc3',
-          'svc4': 'cardSvc4'
-        }[svcId];
-
-        if (targetCard && document.getElementById(targetCard)) {
-          const card = document.getElementById(targetCard);
+        const card = document.getElementById(active.cardId);
+        if (card) {
           card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          card.classList.add('ring-2', 'ring-amber-500');
+          card.classList.add('ring-2', active.ringClass);
           setTimeout(() => {
-            card.classList.remove('ring-2', 'ring-amber-500');
+            card.classList.remove('ring-2', active.ringClass);
           }, 2000);
         }
       }
